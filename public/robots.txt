@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://smartprepaxom.in/sitemap.xml
+Sitemap: https://smart-axom-prep-bivanjits-projects.vercel.app/sitemap.xml
