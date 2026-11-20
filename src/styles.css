@@ -158,3 +158,12 @@ a,button{-webkit-tap-highlight-color:transparent}
 @media(max-width:900px){.pyq-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.section{padding-block:60px}.pyq-intro{grid-template-columns:1fr;padding:27px}.pyq-stat{border-left:0;border-top:1px solid #587399;padding:18px 0 0}.contact-layout{grid-template-columns:1fr}.contact-card,.contact-aside{padding:23px}.page-title{margin-bottom:32px}}
 @media(max-width:420px){.pyq-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}}
+
+/* Contrast correction: dark test-series banner must keep all copy light */
+.banner{color:#f8fbff}
+.banner h2,.banner h2 strong,.banner h2 em{color:#ffffff!important;text-shadow:0 1px 1px rgba(0,0,0,.12)}
+.banner>div:first-child>p,.banner p{color:#dce9fb!important}
+.banner .eyebrow,.banner>div:first-child .eyebrow{color:#9ed7ff!important}
+.banner-price strong{color:#ffffff!important}
+.banner-price small{color:#b9d0ef!important}
+.banner-price span{color:#dce9fb!important}
