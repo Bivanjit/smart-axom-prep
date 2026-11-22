@@ -35,7 +35,7 @@ export default function Admin(){
 
  async function saveLecture(e:React.FormEvent){
   e.preventDefault();if(!supabase)return;const order=Number(lectureOrder);
-  if(!lectureTitle.trim()||!/^https?:\\/\\//i.test(lectureUrl.trim())||!Number.isInteger(order)||order<1){setError("Enter a title, valid video URL and positive lecture order.");return;}
+  if(!lectureTitle.trim()||!(lectureUrl.trim().startsWith("https://")||lectureUrl.trim().startsWith("http://"))||!Number.isInteger(order)||order<1){setError("Enter a title, valid video URL and positive lecture order.");return;}
   setBusy(true);const {error}=await supabase.from("lectures").upsert({subject:lectureSubject,title:lectureTitle.trim(),description:lectureDescription.trim()||null,video_url:lectureUrl.trim(),lecture_order:order,is_published:true},{onConflict:"subject,lecture_order"});
   if(error)setError(error.message);else{setMessage("Lecture published to the app.");setLectureTitle("");setLectureDescription("");setLectureUrl("");const {data}=await supabase.from("lectures").select("*").order("subject").order("lecture_order");setLectures(data||[])}setBusy(false)
  }
