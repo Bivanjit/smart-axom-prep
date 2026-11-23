@@ -108,9 +108,21 @@ export default function Admin(){
   if(!title||!body){setError("Enter both a title and message.");return;}
   const payload:Row={title,body,audience:"all",announcement_type:announcementKind,is_published:true,starts_at:new Date().toISOString(),ends_at:announcementEnds?new Date(announcementEnds).toISOString():null,created_by:session?.user?.id||null,update_type:announcementKind==="app_update"?updateType:null,version_name:announcementKind==="app_update"?updateVersion.trim():null,version_code:announcementKind==="app_update"?Number(updateVersionCode):null,download_url:announcementKind==="app_update"?updateDownload.trim():null,action_url:announcementKind==="app_update"?"https://smart-axom-prep.vercel.app/app":null};
   if(announcementKind==="app_update"&&(!payload.version_name||!Number.isInteger(payload.version_code)||payload.version_code<=35100||!payload.download_url)){setError("App updates need a version name, version code greater than 35100, and website update URL.");return;}
-  setBusy(true);setError("");const {data,error}=await supabase.from("announcements").insert(payload).select().single();
-  if(error)setError(error.message);else{setAnnouncements(v=>[data,...v]);setAnnouncementTitle("");setAnnouncementBody("");setUpdateVersion("");setUpdateVersionCode("");setMessage(announcementKind==="app_update"?"App update published to the app.":"Announcement published to the app.");}
-  setBusy(false);
+  setBusy(true);setError("");setMessage("");
+  try{
+   const {data,error}=await supabase.from("announcements").insert(payload).select().single();
+   if(error)throw error;
+   setAnnouncements(v=>[data,...v]);setAnnouncementTitle("");setAnnouncementBody("");setUpdateVersion("");setUpdateVersionCode("");
+   if(announcementKind==="notification"){
+    const {data:pushData,error:pushError}=await supabase.functions.invoke("send-push-notification",{body:{title,body,action_path:"/notifications"}});
+    if(pushError)throw new Error("The announcement was saved, but FCM delivery failed: "+pushError.message);
+    if(pushData?.error)throw new Error("The announcement was saved, but FCM delivery failed: "+pushData.error);
+    setMessage("Notification published. FCM sent to "+(pushData?.sent??0)+" of "+(pushData?.total??0)+" devices; "+(pushData?.failed??0)+" failed.");
+   }else{
+    setMessage(announcementKind==="app_update"?"App update published to the app.":"Announcement published to the app.");
+   }
+  }catch(err){setError(err instanceof Error?err.message:"Could not publish the message.");}
+  finally{setBusy(false);}
 }
 async function toggleAnnouncement(row:Row){if(!supabase)return;const {error}=await supabase.from("announcements").update({is_published:!row.is_published,updated_at:new Date().toISOString()}).eq("id",row.id);if(error)setError(error.message);else{setAnnouncements(v=>v.map(x=>x.id===row.id?{...x,is_published:!row.is_published}:x));setMessage(row.is_published?"Announcement unpublished.":"Announcement published.");}}
 async function loadStatsOnly(){if(!supabase)return;const [q,t]=await Promise.all([supabase.from("questions").select("id",{count:"exact",head:true}),supabase.from("mock_tests").select("id",{count:"exact",head:true})]);setStats(x=>({...x,questions:q.count||0,tests:t.count||0}))}
