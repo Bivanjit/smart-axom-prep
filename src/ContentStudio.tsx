@@ -63,7 +63,7 @@ export default function ContentStudio(){
  const filteredQuestions=useMemo(()=>questions.filter(q=>(q.prompt||"").toLowerCase().includes(questionSearch.toLowerCase())),[questions,questionSearch]);
  const tabs: [Section,string,any][]=[["batches","Batches",Layers],["pyqs","PYQ archive",CalendarDays],["practice","Practice sets",BookOpen],["topics","Topics",BookOpen],["premium","Premium plans",Crown],["home","Home design",Settings2]];
  const selectQuestion=(id:string,checked:boolean)=>setSelectedQuestionIds(old=>checked?[...old,id]:old.filter(x=>x!==id));
- const itemOptions=itemType==="chapter"?chapters:itemType==="lecture"?lectures:itemType==="practice_set"?practiceSets:itemType==="mock_test"?tests:papers;
+ const itemOptions=(itemType==="chapter"?chapters:itemType==="lecture"?lectures:itemType==="practice_set"?practiceSets:itemType==="mock_test"?tests:papers).filter(x=>itemType==="chapter"||(itemType==="lecture"?x.is_published:x.status==="published"));
  return <section style={{display:"grid",gap:17}}>
   <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>{tabs.map(([id,label,Icon])=><button key={id} onClick={()=>setSection(id)} style={{...secondary,background:section===id?"#14532D":"#fff",color:section===id?"#fff":"#14532D"}}><Icon size={15}/>{label}</button>)}</div>
   {error&&<Notice>{error}</Notice>}{message&&<Notice>{message}</Notice>}
