@@ -7,14 +7,22 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
     return res.status(405).send("Method not allowed");
   }
 
-  const rawTag = typeof _req.query.tag === "string" ? _req.query.tag : "";\n  if (rawTag && !/^v\\d+\\.\\d+\\.\\d+(?:-[a-zA-Z0-9.-]+)?$/.test(rawTag)) return res.status(400).send("Invalid release tag");\n\n  try {
-    const upstream = await fetch(
-      rawTag ? `https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/download/${rawTag}/app-release.apk` : "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/app-release.apk",
-      { redirect: "follow", headers: { "User-Agent": "SmartPrep-Axom-Download/1.0" } }
-    );
+  const rawTag = typeof _req.query.tag === "string" ? _req.query.tag : "";
+  if (rawTag && !/^v[0-9]+[.][0-9]+[.][0-9]+(?:-[A-Za-z0-9.-]+)?$/.test(rawTag)) {
+    return res.status(400).send("Invalid release tag");
+  }
+
+  try {
+    const releaseUrl = rawTag
+      ? `https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/download/${rawTag}/app-release.apk`
+      : "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/app-release.apk";
+    const upstream = await fetch(releaseUrl, {
+      redirect: "follow",
+      headers: { "User-Agent": "SmartPrep-Axom-Download/1.0" }
+    });
 
     if (!upstream.ok || !upstream.body) {
-      return res.status(upstream.status || 503).send("The latest SmartPrep Axom APK is not available yet. Please try again shortly.");
+      return res.status(upstream.status || 503).send("The configured SmartPrep Axom APK is not available yet. Please try again shortly.");
     }
 
     res.setHeader("Content-Type", "application/vnd.android.package-archive");
