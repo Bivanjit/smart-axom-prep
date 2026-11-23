@@ -6,8 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
   try {
     const upstream = await fetch("https://api.github.com/repos/Bivanjit/SMART-PREP-AXOM-APP/releases/latest", {
-      headers: { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "SmartPrep-Axom-Download-Stats/1.0" },
-      next: { revalidate: 300 } as any
+      headers: { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "SmartPrep-Axom-Download-Stats/1.0" }
     });
     if (!upstream.ok) return res.status(502).json({ error: "Download statistics are temporarily unavailable" });
     const release = await upstream.json() as { tag_name?: string; assets?: Array<{ name: string; download_count: number }> };
