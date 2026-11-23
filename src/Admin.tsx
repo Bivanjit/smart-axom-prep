@@ -76,7 +76,7 @@ export default function Admin(){
   e.preventDefault();if(!supabase)return;const title=announcementTitle.trim(),body=announcementBody.trim();
   if(!title||!body){setError("Enter both a title and message.");return;}
   const payload:Row={title,body,audience:"all",announcement_type:announcementKind,is_published:true,starts_at:new Date().toISOString(),ends_at:announcementEnds?new Date(announcementEnds).toISOString():null,created_by:session?.user?.id||null,update_type:announcementKind==="app_update"?updateType:null,version_name:announcementKind==="app_update"?updateVersion.trim():null,version_code:announcementKind==="app_update"?Number(updateVersionCode):null,download_url:announcementKind==="app_update"?updateDownload.trim():null,action_url:announcementKind==="app_update"?"https://smart-axom-prep.vercel.app/app":null};
-  if(announcementKind==="app_update"&&(!payload.version_name||!Number.isInteger(payload.version_code)||payload.version_code<=0||!payload.download_url)){setError("App updates need a version name, positive version code and website update URL.");return;}
+  if(announcementKind==="app_update"&&(!payload.version_name||!Number.isInteger(payload.version_code)||payload.version_code<=35100||!payload.download_url)){setError("App updates need a version name, version code greater than 35100, and website update URL.");return;}
   setBusy(true);setError("");const {data,error}=await supabase.from("announcements").insert(payload).select().single();
   if(error)setError(error.message);else{setAnnouncements(v=>[data,...v]);setAnnouncementTitle("");setAnnouncementBody("");setUpdateVersion("");setUpdateVersionCode("");setMessage(announcementKind==="app_update"?"App update published to the app.":"Announcement published to the app.");}
   setBusy(false);
