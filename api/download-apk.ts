@@ -7,9 +7,9 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
     return res.status(405).send("Method not allowed");
   }
 
-  try {
+  const rawTag = typeof _req.query.tag === "string" ? _req.query.tag : "";\n  if (rawTag && !/^v\\d+\\.\\d+\\.\\d+(?:-[a-zA-Z0-9.-]+)?$/.test(rawTag)) return res.status(400).send("Invalid release tag");\n\n  try {
     const upstream = await fetch(
-      "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/app-release.apk",
+      rawTag ? `https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/download/${rawTag}/app-release.apk` : "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/app-release.apk",
       { redirect: "follow", headers: { "User-Agent": "SmartPrep-Axom-Download/1.0" } }
     );
 
