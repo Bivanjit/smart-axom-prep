@@ -107,12 +107,6 @@ export default function Admin(){
 }
 function normalizeImportRows(rows:Row[]):Row[]{
   const normalizeName=(value:any)=>String(value??"").normalize("NFKC").trim().replace(/\s+/g," ").toLocaleLowerCase();
-  const parseBoolean=(value:any,rowNumber:number)=>{
-    if(value===undefined||value===null||value==="")return false;
-    if(value===true||value===1||String(value).trim().toLowerCase()==="true"||String(value).trim()==="1")return true;
-    if(value===false||value===0||String(value).trim().toLowerCase()==="false"||String(value).trim()==="0")return false;
-    throw new Error("Row "+rowNumber+": is_published must be true or false.");
-  };
   return rows.map((row,index)=>{
     const rowNumber=index+2;
     if(!row||typeof row!=="object"||Array.isArray(row))throw new Error("Row "+rowNumber+": each question must be a JSON object.");
