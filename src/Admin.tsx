@@ -86,7 +86,7 @@ export default function Admin(){
     if(ch==='"'&&quoted&&trimmed[i+1]==='"'){cell+='"';i++;continue;}
     if(ch==='"'){quoted=!quoted;continue;}
     if(ch===','&&!quoted){record.push(cell);cell="";continue;}
-    if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\\r'&&trimmed[i+1]==='\n')i++;record.push(cell);records.push(record);record=[];cell="";continue;}
+    if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&trimmed[i+1]==='\n')i++;record.push(cell);records.push(record);record=[];cell="";continue;}
     cell+=ch;
   }
   record.push(cell);if(record.some(x=>x.trim()))records.push(record);
