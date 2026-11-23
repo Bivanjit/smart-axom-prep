@@ -79,7 +79,25 @@ export default function ContentStudio(){
  async function toggleTopic(row:Row){const {error}=await supabase!.from("topics").update({is_active:!row.is_active,updated_at:new Date().toISOString()}).eq("id",row.id);if(error)setError(error.message);else await load()}
  async function saveBenefit(row:Row){const {error}=await supabase!.from("product_plan_benefits").update({benefit_text:row.benefit_text,is_active:row.is_active}).eq("id",row.id);if(error)setError(error.message);else setMessage("Premium benefit saved.")}
  async function savePlan(row:Row){const {error}=await supabase!.from("product_plans").update({price_inr:Number(row.price_inr),compare_at_price_inr:row.compare_at_price_inr?Number(row.compare_at_price_inr):null,duration_days:Number(row.duration_days),updated_at:new Date().toISOString()}).eq("id",row.id);if(error)setError(error.message);else setMessage("Plan pricing saved.")}
- async function saveHero(e:React.FormEvent){e.preventDefault();let image=hero.image;if(heroImage){const ext=heroImage.name.split(".").pop()||"jpg";const path="app/home-hero-"+Date.now()+"."+ext;const {error}=await supabase!.storage.from("learning-assets").upload(path,heroImage,{upsert:true,contentType:heroImage.type});if(error){setError(error.message);return;}image=path;}const value={...hero,image};const {data:{user}}=await supabase!.auth.getUser();const {error}=await supabase!.from("app_content_settings").upsert({setting_key:"home_hero",setting_value:value,is_public:true,updated_by:user?.id||null,updated_at:new Date().toISOString()},{onConflict:"setting_key"});if(error)setError(error.message);else{setHero(value);setMessage("Home hero settings saved.");await audit("update","app_content_settings","home_hero",value)}}
+ async function saveHero(e:React.FormEvent){
+  e.preventDefault();if(!supabase)return;setBusy(true);setError("");setMessage("");
+  try{
+   let image=hero.image;
+   if(heroImage){
+    if(!["image/jpeg","image/png","image/webp"].includes(heroImage.type))throw new Error("Choose a JPG, PNG or WebP banner.");
+    if(heroImage.size>10*1024*1024)throw new Error("Banner image must be 10 MB or smaller.");
+    const ext=heroImage.type==="image/png"?"png":heroImage.type==="image/webp"?"webp":"jpg";
+    const path="app/home-hero-"+Date.now()+"."+ext;
+    const {error:uploadError}=await supabase.storage.from("learning-assets").upload(path,heroImage,{upsert:true,contentType:heroImage.type,cacheControl:"3600"});
+    if(uploadError)throw uploadError;image=path;
+   }
+   const value={...hero,image};const {data:{user}}=await supabase.auth.getUser();
+   const {error}=await supabase.from("app_content_settings").upsert({setting_key:"home_hero",setting_value:value,is_public:true,updated_by:user?.id||null,updated_at:new Date().toISOString()},{onConflict:"setting_key"});
+   if(error)throw error;
+   setHero(value);setHeroImage(null);setMessage("Home hero saved and published. The app will display it on its next refresh.");await audit("update","app_content_settings","home_hero",value);
+  }catch(e){setError(e instanceof Error?e.message:"Could not publish the home banner.");}
+  finally{setBusy(false);}
+ }
  const filteredQuestions=useMemo(()=>questions.filter(q=>(q.prompt||"").toLowerCase().includes(questionSearch.toLowerCase())),[questions,questionSearch]);
  const tabs: [Section,string,any][]=[["chapters","Chapters",BookOpen],["batches","Batches",Layers],["pyqs","PYQ archive",CalendarDays],["practice","Practice sets",BookOpen],["topics","Topics",BookOpen],["premium","Premium plans",Crown],["home","Home design",Settings2]];
  const selectQuestion=(id:string,checked:boolean)=>setSelectedQuestionIds(old=>checked?[...old,id]:old.filter(x=>x!==id));
