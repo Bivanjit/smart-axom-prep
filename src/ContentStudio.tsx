@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "./lib/supabase";
-import { BookOpen, Layers, CalendarDays, Settings2, Crown, Upload, Plus, Save, Eye, EyeOff, Trash2, CheckCircle2, RefreshCw } from "lucide-react";
+import { BookOpen, Layers, CalendarDays, Settings2, Crown, Upload, Plus, Save } from "lucide-react";
 
 type Row = Record<string, any>;
 type Section = "batches" | "pyqs" | "practice" | "topics" | "premium" | "home";
