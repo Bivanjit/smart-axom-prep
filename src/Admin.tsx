@@ -151,7 +151,7 @@ function normalizeImportRows(rows:Row[]):Row[]{
       difficulty,
       language,
       access_tier:accessTier,
-      is_published:parseBoolean(row.is_published,rowNumber),
+      // Imports are intended to become usable in the student app immediately. Drafts can still be created from the manual editor.\n      is_published:true,
       source_type:sourceType,
       topic_id:row.topic_id||null,
       source_year:row.source_year===""||row.source_year===undefined?null:row.source_year,
@@ -180,7 +180,7 @@ async function importRows(rows:Row[]){
       if(data===false||data===null)throw new Error("Question "+(index+1)+" of "+normalizedRows.length+": the database did not confirm the save. "+count+" earlier question(s) were saved.");
       count++;
     }
-    setMessage(count+" questions imported successfully as drafts/published according to is_published.");await reloadQuestions();await loadStatsOnly();
+    setMessage(count+" questions imported and published. They are now eligible to appear in the student app under their mapped chapters.");await reloadQuestions();await loadStatsOnly();
   }finally{setBusy(false);}
 }
 async function importFile(file:File){try{await importRows(parseImport(await file.text()));}catch(e){setError(e instanceof Error?e.message:"Could not import file.");}}
