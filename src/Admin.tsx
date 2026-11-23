@@ -72,7 +72,7 @@ export default function Admin(){
 
  async function loadStatsOnly(){if(!supabase)return;const [q,t]=await Promise.all([supabase.from("questions").select("id",{count:"exact",head:true}),supabase.from("mock_tests").select("id",{count:"exact",head:true})]);setStats(x=>({...x,questions:q.count||0,tests:t.count||0}))}
  function parseImport(rawText:string):Row[]{
-  const input=rawText.replace(/^\\uFEFF/,"").trim();
+  const input=rawText.replace(/^\uFEFF/,"").trim();
   if(!input)throw new Error("Paste JSON or CSV data first.");
   if(input.startsWith("[")||input.startsWith("{")){
     let parsed:any;
@@ -87,12 +87,12 @@ export default function Admin(){
     if(ch==='"'&&quoted&&input[i+1]==='"'){cell+='"';i++;continue;}
     if(ch==='"'){quoted=!quoted;continue;}
     if(ch===","&&!quoted){record.push(cell);cell="";continue;}
-    if((ch==="\\n"||ch==="\\r")&&!quoted){if(ch==="\\r"&&input[i+1]==="\\n")i++;record.push(cell);records.push(record);record=[];cell="";continue;}
+    if((ch==="\n"||ch==="\r")&&!quoted){if(ch==="\r"&&input[i+1]==="\n")i++;record.push(cell);records.push(record);record=[];cell="";continue;}
     cell+=ch;
   }
   if(quoted)throw new Error("CSV has an opening quote without a matching closing quote.");
   record.push(cell);if(record.some(x=>x.trim()))records.push(record);
-  const headers=(records.shift()||[]).map(x=>x.trim().replace(/^\\uFEFF/,"").toLowerCase());
+  const headers=(records.shift()||[]).map(x=>x.trim().replace(/^\uFEFF/,"").toLowerCase());
   if(!headers.length)throw new Error("CSV header row is missing.");
   const required=["prompt","options","answer_key"];
   const missing=required.filter(h=>!headers.includes(h));
@@ -100,13 +100,13 @@ export default function Admin(){
   return records.filter(r=>r.some(x=>x.trim())).map((values,index)=>{
     const row:any={};headers.forEach((h,i)=>row[h]=values[i]??"");
     if(typeof row.options==="string"){
-      try{row.options=JSON.parse(row.options)}catch{throw new Error("CSV row "+(index+2)+": options must be a valid JSON array, for example [\\"Option A\\",\\"Option B\\",\\"Option C\\",\\"Option D\\"] .")}
+      try{row.options=JSON.parse(row.options)}catch{throw new Error("CSV row "+(index+2)+": options must be a valid JSON array, for example [\"Option A\",\"Option B\",\"Option C\",\"Option D\"] .")}
     }
     return row;
   });
 }
 function normalizeImportRows(rows:Row[]):Row[]{
-  const normalizeName=(value:any)=>String(value??"").normalize("NFKC").trim().replace(/\\s+/g," ").toLocaleLowerCase();
+  const normalizeName=(value:any)=>String(value??"").normalize("NFKC").trim().replace(/\s+/g," ").toLocaleLowerCase();
   const parseBoolean=(value:any,rowNumber:number)=>{
     if(value===undefined||value===null||value==="")return false;
     if(value===true||value===1||String(value).trim().toLowerCase()==="true"||String(value).trim()==="1")return true;
@@ -176,7 +176,7 @@ async function importRows(rows:Row[]){
     let count=0;
     for(const [index,payload] of normalizedRows.entries()){
       const {data,error}=await supabase.rpc("admin_upsert_question",{p_question:payload});
-      if(error)throw new Error("Question "+(index+1)+" of "+normalizedRows.length+" was not imported: "+error.message+"\\nThe previous "+count+" question(s) were saved; fix this row and retry only the remaining questions.");
+      if(error)throw new Error("Question "+(index+1)+" of "+normalizedRows.length+" was not imported: "+error.message+"\nThe previous "+count+" question(s) were saved; fix this row and retry only the remaining questions.");
       if(data===false||data===null)throw new Error("Question "+(index+1)+" of "+normalizedRows.length+": the database did not confirm the save. "+count+" earlier question(s) were saved.");
       count++;
     }
