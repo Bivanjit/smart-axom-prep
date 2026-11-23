@@ -1,5 +1,6 @@
 import {syllabus,syllabusNotice} from './syllabus';
-import Admin from './Admin';\nimport {supabase} from './lib/supabase';
+import Admin from './Admin';
+import {supabase} from './lib/supabase';
 import Reviews from './Reviews';
 import {useEffect,useState} from "react";
 import {Link,NavLink,Route,Routes,useLocation,Navigate} from "react-router-dom";
