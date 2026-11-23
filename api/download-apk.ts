@@ -9,7 +9,7 @@ export default async function handler(_req: VercelRequest, res: VercelResponse) 
 
   try {
     const upstream = await fetch(
-      "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/SmartPrep-Axom.apk",
+      "https://github.com/Bivanjit/SMART-PREP-AXOM-APP/releases/latest/download/app-release.apk",
       { redirect: "follow", headers: { "User-Agent": "SmartPrep-Axom-Download/1.0" } }
     );
 
