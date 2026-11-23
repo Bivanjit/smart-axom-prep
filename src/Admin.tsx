@@ -35,8 +35,8 @@ export default function Admin(){
  async function saveWebsiteRelease(e:React.FormEvent){
   e.preventDefault();if(!supabase)return;
   const version=String(releaseSettings.version_name||"").trim(),tag=String(releaseSettings.release_tag||"").trim(),code=Number(releaseSettings.version_code);
-  if(!/^\\d+\\.\\d+\\.\\d+(?:[-+][a-zA-Z0-9.-]+)?$/.test(version)){setError("Enter a version such as 3.5.2.");return;}
-  if(!/^v\\d+\\.\\d+\\.\\d+(?:-[a-zA-Z0-9.-]+)?$/.test(tag)){setError("Release tag must look like v3.5.2.");return;}
+  if(!/^\d+\.\d+\.\d+(?:[-+][a-zA-Z0-9.-]+)?$/.test(version)){setError("Enter a version such as 3.5.2.");return;}
+  if(!/^v\d+\.\d+\.\d+(?:-[a-zA-Z0-9.-]+)?$/.test(tag)){setError("Release tag must look like v3.5.2.");return;}
   if(!Number.isInteger(code)||code<1){setError("Version code must be a positive whole number.");return;}
   setBusy(true);setError("");
   const {error}=await supabase.from("app_release_settings").update({version_name:version,version_code:code,release_tag:tag,is_available:Boolean(releaseSettings.is_available),updated_at:new Date().toISOString()}).eq("id",1);
