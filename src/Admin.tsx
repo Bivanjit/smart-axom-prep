@@ -114,14 +114,9 @@ export default function Admin(){
    const {data,error}=await supabase.from("announcements").insert(payload).select().single();
    if(error)throw error;
    setAnnouncements(v=>[data,...v]);setAnnouncementTitle("");setAnnouncementBody("");setUpdateVersion("");setUpdateVersionCode("");
-   if(announcementKind==="notification"){
-    const {data:pushData,error:pushError}=await supabase.functions.invoke("send-push-notification",{body:{title,body,action_path:"/notifications"}});
-    if(pushError)throw new Error("The announcement was saved, but FCM delivery failed: "+pushError.message);
-    if(pushData?.error)throw new Error("The announcement was saved, but FCM delivery failed: "+pushData.error);
-    setMessage("Notification published. FCM sent to "+(pushData?.sent??0)+" of "+(pushData?.total??0)+" devices; "+(pushData?.failed??0)+" failed.");
-   }else{
-    setMessage(announcementKind==="app_update"?"App update published to the app.":"Announcement published to the app.");
-   }
+   const {data:pushData,error:pushError}=await supabase.functions.invoke("send-push-notification",{body:{title,body,action_path:"/notifications"}});
+   if(pushError||pushData?.error){setError("The item was saved, but push delivery failed: "+(pushError?.message||pushData?.error));}
+   else setMessage("Published. Push sent to "+(pushData?.sent??0)+" of "+(pushData?.total??0)+" devices; "+(pushData?.failed??0)+" failed.");
   }catch(err){setError(err instanceof Error?err.message:"Could not publish the message.");}
   finally{setBusy(false);}
 }
