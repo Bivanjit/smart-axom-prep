@@ -232,11 +232,6 @@ function normalizeImportRows(rows:Row[]):Row[]{
     };
   });
 }
-function downloadImportTemplate(){
-  const template=[{subject:"Physics",chapter:"Units and Measurements",prompt:"Enter your question here",options:["Option A","Option B","Option C","Option D"],answer_key:"A",explanation:"Optional explanation",difficulty:"medium",language:"en",access_tier:"free",is_published:false}];
-  const blob=new Blob([JSON.stringify(template,null,2)],{type:"application/json"});
-  const url=URL.createObjectURL(blob);const link=document.createElement("a");link.href=url;link.download="smartprep-question-import-template.json";document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);
-}
 async function importRows(rows:Row[]){
   if(!supabase)return;
   if(!rows.length)throw new Error("No questions found in the import.");
