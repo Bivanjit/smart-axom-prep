@@ -488,3 +488,12 @@ input,textarea,select{border-radius:13px!important}
 .app-gallery-section{padding:58px 0}.app-brand-art{min-height:250px}
 }
 @media(prefers-reduced-motion:reduce){.nav-links,.app-gallery-shot,.btn{transition:none!important;animation:none!important}}
+
+/* Final mobile hero CTA contrast and vertical rhythm */
+.hero-panel .btn.outline-light{background:#155cf4!important;color:#fff!important;border:1px solid #155cf4!important;box-shadow:0 10px 24px rgba(21,92,244,.2);display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;min-height:52px;padding:14px 24px;font-weight:800;opacity:1!important;text-shadow:none!important}
+.hero-panel .btn.outline-light:hover{background:#0d48cf!important;color:#fff!important;transform:translateY(-2px)}
+.hero-panel .panel-row{padding:19px 0;min-height:88px;align-items:center}
+.subject-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.subject-card{min-height:280px;display:flex;flex-direction:column;justify-content:flex-start}
+.subject-card-action{margin-top:auto;padding-top:20px}
+@media(max-width:700px){.hero-panel{padding:24px 22px!important}.hero-panel .panel-row{min-height:78px;padding:15px 0}.hero-panel .btn.outline-light{margin-top:20px;width:100%;box-sizing:border-box}.subject-grid{grid-template-columns:1fr;gap:16px}.subject-card{min-height:0;padding:24px!important}.subject-card-action{padding-top:18px}}
