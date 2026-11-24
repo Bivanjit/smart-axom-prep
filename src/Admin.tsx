@@ -143,12 +143,11 @@ async function deletePushBroadcast(rows:Row[]){
  if(!window.confirm("Permanently delete this push notification from "+ids.length+" student inbox record(s)? This cannot retract notifications already shown on devices."))return;
  setBusy(true);setError("");setMessage("");
  try{
-  const {error:receiptError}=await supabase.from("user_notification_reads").delete().in("notification_id",ids);
-  if(receiptError)throw receiptError;
-  const {error}=await supabase.from("user_notifications").delete().in("id",ids);
+  const {data:deletedCount,error}=await supabase.rpc("admin_delete_push_broadcast",{p_notification_ids:ids});
   if(error)throw error;
+  if(!deletedCount)throw new Error("No notification records were deleted. Refresh the history and try again.");
   setPushHistory(v=>v.filter(x=>!ids.includes(x.id)));
-  setMessage("Push notification removed from student inboxes.");
+  setMessage("Push notification removed from "+deletedCount+" student inbox record(s).");
  }catch(err){setError(err instanceof Error?err.message:"Could not delete the push notification.");}
  finally{setBusy(false);}
 }
