@@ -1,0 +1,23 @@
+name: Admin Console build check
+on:
+  push:
+    branches: [feat/admin-mock-v4]
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "package.json"
+      - "vite.config.*"
+      - "tsconfig*.json"
+      - ".github/workflows/admin-build-check.yml"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - run: npm run build
