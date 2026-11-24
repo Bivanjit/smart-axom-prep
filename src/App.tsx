@@ -4,7 +4,7 @@ import {supabase} from './lib/supabase';
 import Reviews from './Reviews';
 import {useEffect,useState} from "react";
 import {Link,NavLink,Route,Routes,useLocation,Navigate} from "react-router-dom";
-import {ArrowRight,Atom,FlaskConical,Calculator,BookOpen,ClipboardList,ChartNoAxesColumnIncreasing,Languages,Menu,X,ChevronDown,ShieldCheck,Smartphone} from "lucide-react";
+import {ArrowRight,Atom,FlaskConical,Calculator,BookOpen,ClipboardList,ChartNoAxesColumnIncreasing,Languages,Menu,X,ChevronDown,ShieldCheck,Smartphone,GraduationCap} from "lucide-react";
 const subjects=[{name:"Physics",path:"/practice/physics",icon:Atom,desc:"Concept-focused question practice."},{name:"Chemistry",path:"/practice/chemistry",icon:FlaskConical,desc:"Structured revision and practice."},{name:"Mathematics",path:"/practice/mathematics",icon:Calculator,desc:"Build problem-solving confidence."}];
 const nav=[["Home","/"],["Practice","/practice"],["Test Series","/test-series"],["Pricing","/pricing"],["About","/about"],["App","/app"],["Reviews","/reviews"],["Community","/community"],["Contact","/contact"],["CEE Guide","/exam-guide"],["PYQ Archive","/previous-papers"]];
 const legal:Record<string,[string,string,[string,string][]]>={
