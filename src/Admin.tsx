@@ -266,7 +266,7 @@ async function importPasted(){try{await importRows(parseImport(importText));setI
    const created:string[]=[];
    for(let i=0;i<Math.max(1,Math.min(20,Math.floor(count)));i++){
     const number=nextNumber+i;
-    const payload={title:"Full Mock "+String(number).padStart(2,"0"),description:"Full-length Assam CEE mock examination.",test_type:"full_length",access_tier:"premium",duration_minutes:180,total_marks:480,status:"draft",display_order:number,allow_early_submission:false,leaderboard_enabled:true,anti_cheat_enabled:true,result_release_mode:"manual"};
+    const payload:any={title:"Full Mock "+String(number).padStart(2,"0"),description:"Full-length Assam CEE mock examination.",test_type:"full_length",access_tier:"premium",duration_minutes:180,total_marks:480,status:"draft",display_order:number,allow_early_submission:false,leaderboard_enabled:true,anti_cheat_enabled:true,result_release_mode:"manual"};
     const {data,error}=await supabase.from("mock_tests").insert(payload).select().single();
     if(error)throw error;
     created.push(data.title);
