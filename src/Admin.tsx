@@ -305,7 +305,7 @@ async function importPasted(){try{await importRows(parseImport(importText));setI
    if(already.has(id)||assignments.some(a=>a.question_id===id))continue;
    const raw=rows[i]||{};
    const marks=Number(raw.marks??4),negativeMarks=Number(raw.negative_marks??1);
-   if(!Number.isFinite(marks)||marks<=0||!Number.isFinite(negativeMarks)||negativeMarks<0)throw new Error("Question "+(i+1)+": marks must be positive and negative_marks must be zero or greater.");
+   if(!Number.isInteger(marks)||marks<=0||!Number.isFinite(negativeMarks)||negativeMarks<0)throw new Error("Question "+(i+1)+": marks must be positive and negative_marks must be zero or greater.");
    assignments.push({mock_test_id:selectedTest,question_id:id,question_order:nextOrder+assignments.length,marks,negative_marks:negativeMarks});
    imported++;
   }
