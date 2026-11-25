@@ -12,12 +12,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
     if (!response.ok) return res.status(503).json({ error: "Latest GitHub release unavailable" });
     const release = await response.json() as GithubRelease;
+    const versionMatch = release.tag_name?.match(/^v(\d+\.\d+\.\d+)(?:-[0-9A-Za-z.-]+)?$/);
     const apk = release.assets?.find(asset => asset.name.toLowerCase().endsWith(".apk") && asset.state === "uploaded");
-    if (release.draft || release.prerelease || !release.tag_name || !/^v\d+\.\d+\.\d+$/.test(release.tag_name) || !apk) {
+    if (release.draft || release.prerelease || !versionMatch || !apk) {
       return res.status(503).json({ error: "No published Android APK release available" });
     }
     return res.status(200).json({
-      version_name: release.tag_name.slice(1),
+      version_name: versionMatch[1],
       release_tag: release.tag_name,
       download_url: apk.browser_download_url,
       size_bytes: apk.size,
