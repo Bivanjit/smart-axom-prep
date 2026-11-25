@@ -230,3 +230,7 @@
 .trend-year-column small{font-size:8px;color:#7b879d}
 .trend-detail>p{font-size:10px}
 @media(max-width:600px){.trend-controls{padding:14px}.trend-control-grid{grid-template-columns:1fr 1fr;gap:10px}.trend-control-grid label:first-child{grid-column:1/-1}.trend-stats>div{min-height:100px;padding:12px 10px}.trend-stats small{font-size:7px}.trend-stats strong{font-size:22px}.trend-list-panel{padding:14px}.trend-list-head{display:grid;grid-template-columns:1fr;gap:11px}.trend-list-head .intel-search{max-width:none;width:100%}.trend-card{padding:12px 10px}.trend-q-count{font-size:24px}.trend-metrics{gap:7px}.trend-metrics>div{padding:8px}.trend-metrics b{font-size:11px}.trend-detail-grid{gap:10px}.trend-year-bars{gap:3px}}
+
+
+.trend-summary-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:15px 2px 17px;color:#7a8499;font-size:10px}
+.trend-summary-line b{color:#2d467f;font-size:11px}
