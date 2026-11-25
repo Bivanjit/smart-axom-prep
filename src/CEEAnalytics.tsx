@@ -1,7 +1,7 @@
 import {useEffect,useMemo,useState} from "react";
 import {Link,useLocation} from "react-router-dom";
 import {supabase} from "./lib/supabase";
-import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,ClipboardList,FlaskConical,Calculator,Info,LoaderCircle,ShieldCheck,TrendingUp} from "lucide-react";
+import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,FlaskConical,Calculator,Info,LoaderCircle,ShieldCheck,TrendingUp} from "lucide-react";
 import "./cee-analytics.css";
 
 type Row={id:string;dataset_version_id:string;exam_year:number;subject_id:string;chapter_id:string;question_count:number;classified_easy:number;classified_moderate:number;classified_hard:number;verified:boolean;source_url:string|null};
@@ -11,7 +11,6 @@ type Dataset={id:string;version:string;label:string;source_description:string|nu
 const YEAR_OPTIONS=Array.from({length:9},(_,i)=>2018+i);
 const fmt=(n:number)=>Number(n||0).toLocaleString("en-IN");
 const pct=(n:number)=>n.toFixed(1)+"%";
-const subjectIcons:Record<string,any>={mathematics:Calculator,physics:ChartNoAxesCombined,chemistry:FlaskConical};
 
 function useAnalytics(){
  const [rows,setRows]=useState<Row[]>([]),[subjects,setSubjects]=useState<Subject[]>([]),[chapters,setChapters]=useState<Chapter[]>([]),[dataset,setDataset]=useState<Dataset|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState("");
