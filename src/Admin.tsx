@@ -13,13 +13,6 @@ const card:React.CSSProperties={background:"#fff",border:"1px solid #e2e8f0",pad
 function Field({label,children}:{label:string;children:React.ReactNode}){return <label style={{display:"grid",gap:7,fontSize:11,fontWeight:700,color:"#536278"}}>{label}{children}</label>}
 function Notice({children}:{children:React.ReactNode}){return <div style={{padding:13,background:"#eef5ff",borderLeft:"3px solid #087bff",fontSize:12,lineHeight:1.6,color:"#41536d"}}>{children}</div>}
 
-function PaidDeviceTransferQueue(){
- const [rows,setRows]=useState<any[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState('');
- async function load(){if(!supabase)return;const {data,error}=await supabase.from('paid_device_transfer_requests').select('id,user_id,current_device_id,requested_device_id,requested_platform,status,created_at').eq('status','pending').order('created_at',{ascending:true});if(error)setError(error.message);else setRows(data||[])}
- useEffect(()=>{void load()},[]);
- async function review(id:string,approve:boolean){if(!supabase)return;setBusy(true);setError('');const {error}=await supabase.rpc('admin_review_paid_device_transfer',{p_request_id:id,p_approve:approve});if(error)setError(error.message);else await load();setBusy(false)}
- return <section style={{...card,marginBottom:18}}><div className="admin-form-head"><h2>Premium device transfer requests</h2><button style={btn} onClick={()=>void load()}>Refresh</button></div><p className="tiny">Approving transfers premium access to the requested device and invalidates the previous device binding. The student must reopen the app to refresh their session.</p>{error&&<p style={{color:'#b42318'}}>{error}</p>}{rows.map(r=><article key={r.id} style={{border:'1px solid #e2e8f0',borderRadius:12,padding:13,marginTop:10}}><b>{r.user_id}</b><p className="tiny">Requested: {r.requested_platform} · {r.requested_device_id}</p><p className="tiny">Current device: {r.current_device_id}</p><p className="tiny">{new Date(r.created_at).toLocaleString()}</p><div className="admin-actions"><button style={{...btn,background:'#13845a'}} disabled={busy} onClick={()=>void review(r.id,true)}>Approve transfer</button><button style={{...btn,background:'#b42318'}} disabled={busy} onClick={()=>void review(r.id,false)}>Reject</button></div></article>)}{!rows.length&&!error&&<p className="tiny">No pending transfer requests.</p>}</section>
-}
 export default function Admin(){
  const questionEditorRef=useRef<HTMLFormElement|null>(null);
  const [blockedAccounts,setBlockedAccounts]=useState<Row[]>([]);
