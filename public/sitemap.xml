@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://smart-axom-prep.vercel.app/</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/about</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/practice</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/practice/physics</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/practice/chemistry</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/practice/mathematics</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/test-series</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/pricing</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/app</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/faq</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/contact</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/privacy-policy</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/terms-and-conditions</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/refund-policy</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/disclaimer</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/copyright</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/exam-guide</loc></url>
-<url><loc>https://smart-axom-prep.vercel.app/previous-papers</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/about</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/practice</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/practice/physics</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/practice/chemistry</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/practice/mathematics</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/test-series</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/pricing</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/app</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/reviews</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/community</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/faq</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/contact</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/privacy-policy</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/terms-and-conditions</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/refund-policy</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/disclaimer</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/copyright</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/exam-guide</loc></url>
+  <url><loc>https://smart-axom-prep.vercel.app/previous-papers</loc></url>
 </urlset>
