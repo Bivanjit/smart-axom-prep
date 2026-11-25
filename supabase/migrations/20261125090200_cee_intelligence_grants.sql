@@ -1,0 +1,7 @@
+grant select on public.analytics_dataset_versions,public.exam_papers,public.exam_questions,public.chapter_aliases,public.chapter_year_stats,public.reference_chapter_counts,public.prediction_versions,public.chapter_predictions,public.engineering_institutions,public.engineering_branches,public.institution_branch_intakes,public.admission_categories,public.counselling_rounds,public.admission_source_documents,public.admission_cutoffs,public.cee_score_rank_points to anon,authenticated;
+grant insert,update,delete on public.analytics_dataset_versions,public.exam_papers,public.exam_questions,public.chapter_aliases,public.chapter_year_stats,public.reference_chapter_counts,public.prediction_versions,public.chapter_predictions,public.prediction_model_settings,public.engineering_institutions,public.engineering_branches,public.institution_branch_intakes,public.admission_categories,public.counselling_rounds,public.admission_source_documents,public.admission_cutoffs,public.cee_score_rank_points to authenticated;
+do $$ begin
+ if not exists(select 1 from pg_constraint where conname='institution_branch_intakes_source_document_id_fkey') then
+  alter table public.institution_branch_intakes add constraint institution_branch_intakes_source_document_id_fkey foreign key(source_document_id) references public.admission_source_documents(id);
+ end if;
+end $$;
