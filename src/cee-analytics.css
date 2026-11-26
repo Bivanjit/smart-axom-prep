@@ -305,3 +305,112 @@ html[data-theme="dark"] .pyq-intro p{color:#c4d0dd!important}
 html[data-theme="dark"] .pyq-intro .eyebrow.light{color:#f1b5a0!important}
 html[data-theme="dark"] .pyq-intro .pyq-stat strong{color:#a9d5f2!important}
 html[data-theme="dark"] .pyq-intro .pyq-stat span{color:#c4d0dd!important}
+
+
+/* ===== Dark-mode contrast: paper difficulty labels and review ratings ===== */
+html[data-theme="dark"] .cea-page .cea-review-card>strong,
+html[data-theme="dark"] .cea-page .cea-review-mini-grid strong{
+ color:#f4f7fb!important;-webkit-text-fill-color:#f4f7fb!important;
+ background:transparent!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-subjects span{
+ color:#c9e8da!important;-webkit-text-fill-color:#c9e8da!important;font-weight:800!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-subjects b,
+html[data-theme="dark"] .cea-page .cea-review-mini-grid b,
+html[data-theme="dark"] .cea-page .cea-review-head>b{
+ color:#f0f5fa!important;-webkit-text-fill-color:#f0f5fa!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-card>p,
+html[data-theme="dark"] .cea-page .cea-review-mini-grid small,
+html[data-theme="dark"] .cea-page .cea-review-subjects small{
+ color:#c2cfdd!important;-webkit-text-fill-color:#c2cfdd!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-source,
+html[data-theme="dark"] .cea-page .cea-review-card>a,
+html[data-theme="dark"] .cea-page .cea-review-mini-grid a{
+ color:#a9dfc8!important;-webkit-text-fill-color:#a9dfc8!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-status{
+ color:#e9f1f8!important;background:#354b60!important;border-color:#526b82!important;
+}
+html[data-theme="dark"] .cea-page .cea-review-status.partial{color:#ffe1a6!important;background:#594522!important}
+html[data-theme="dark"] .cea-page .cea-review-status.dataset{color:#bfe7fa!important;background:#254b65!important}
+html[data-theme="dark"] .cea-page .cea-review-status.reported{color:#bcebd5!important;background:#24513f!important}
+
+/* Make the year-by-year chapter evidence read like designed insight cards, not a cramped list. */
+.cea-page .cea-priority-row{
+ position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;
+ gap:14px;margin:10px 0;padding:16px 16px 15px 19px;
+ border:1px solid #dce8e0;border-radius:13px;background:linear-gradient(120deg,#fbfdfb,#f4f9f6);
+ box-shadow:0 4px 13px rgba(24,54,39,.035);overflow:hidden;
+}
+.cea-page .cea-priority-row:before{
+ content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#1a9668,#49b4a1);
+}
+.cea-page .cea-priority-main{gap:8px}
+.cea-page .cea-priority-main>b{font-size:14px;line-height:1.35;color:#1c382a!important}
+.cea-page .cea-priority-main>small{font-size:10px;line-height:1.5;color:#647a6d!important}
+.cea-page .cea-priority-row>strong{
+ display:grid;place-items:center;align-content:center;min-width:65px;min-height:62px;
+ padding:7px;border:1px solid #cfe4d7;border-radius:11px;background:#e7f4ec;
+ color:#176b4b!important;font-size:23px;line-height:1.1;text-align:center;
+}
+.cea-page .cea-priority-row>strong small{
+ display:block;margin-top:4px;font-size:9px;line-height:1.2;color:#557565!important;text-align:center;
+}
+.cea-page .cea-year-pills{gap:6px;margin-top:2px}
+.cea-page .cea-year-pills span{
+ padding:6px 9px;border:1px solid #d8e6dd;border-radius:7px;
+ background:#fff;color:#486b59;font-size:10px;font-weight:750;
+}
+.cea-page .cea-year-pills span:nth-child(n+6){background:#eef6f1}
+@media(max-width:520px){
+ .cea-page .cea-priority-row{grid-template-columns:minmax(0,1fr) 56px;gap:9px;padding:13px 10px 13px 14px}
+ .cea-page .cea-priority-row>strong{min-width:52px;min-height:54px;font-size:20px}
+ .cea-page .cea-priority-main>b{font-size:13px}
+ .cea-page .cea-priority-main>small{font-size:9px}
+ .cea-page .cea-year-pills{gap:5px}
+ .cea-page .cea-year-pills span{padding:5px 6px;font-size:9px}
+}
+
+/* Dark chapter evidence cards: readable names, supporting stats and frequency chips. */
+html[data-theme="dark"] .cea-page .cea-priority-row{
+ background:linear-gradient(120deg,#1b2b3d,#203448)!important;
+ border-color:#40586e!important;box-shadow:0 5px 16px rgba(0,0,0,.12)!important;
+}
+html[data-theme="dark"] .cea-page .cea-priority-row:before{background:linear-gradient(180deg,#69d5a7,#55b9c4)!important}
+html[data-theme="dark"] .cea-page .cea-priority-main>b{
+ color:#f2f6fb!important;-webkit-text-fill-color:#f2f6fb!important;
+}
+html[data-theme="dark"] .cea-page .cea-priority-main>small{
+ color:#c2cfdd!important;-webkit-text-fill-color:#c2cfdd!important;
+}
+html[data-theme="dark"] .cea-page .cea-priority-row>strong{
+ background:#29465a!important;border-color:#4b7182!important;
+ color:#bce8d5!important;-webkit-text-fill-color:#bce8d5!important;
+}
+html[data-theme="dark"] .cea-page .cea-priority-row>strong small{
+ color:#d0dce6!important;-webkit-text-fill-color:#d0dce6!important;
+}
+html[data-theme="dark"] .cea-page .cea-year-pills span{
+ background:#2a4053!important;border-color:#4a6378!important;
+ color:#e0ebf4!important;-webkit-text-fill-color:#e0ebf4!important;
+}
+html[data-theme="dark"] .cea-page .cea-year-pills span:nth-child(n+6){background:#30495a!important}
+
+/* Test-series marking key: colour the individual tiles, not only their parent grid. */
+html[data-theme="dark"] .exam-paper .marking-grid span{
+ background:#294159!important;border:1px solid #4c6880!important;
+ color:#eaf2f9!important;
+}
+html[data-theme="dark"] .exam-paper .marking-grid span b{
+ color:#bcebd5!important;-webkit-text-fill-color:#bcebd5!important;
+}
+html[data-theme="light"] .exam-paper .marking-grid span{
+ background:#edf4f7!important;border:1px solid #d5e2e9!important;
+ color:#41596b!important;
+}
+html[data-theme="light"] .exam-paper .marking-grid span b{
+ color:#176b50!important;-webkit-text-fill-color:#176b50!important;
+}
