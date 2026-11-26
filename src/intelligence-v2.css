@@ -276,3 +276,28 @@ html[data-theme="dark"] .home-workflow>div small{color:#c1cede!important;opacity
 @media(max-width:520px){.v2-page .v2-grid-2,.v2-page .v2-grid-3{grid-template-columns:minmax(0,1fr)}}
 html[data-theme="dark"] .v2-page .v2-field select{background-color:#122033;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8dfc8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");border-color:#4a6078;color:#f0f5fb}
 html[data-theme="dark"] .v2-page .v2-field select option{background:#122033;color:#f0f5fb}
+
+/* Animated marks <-> rank mode selector and estimate range card */
+.rank-direction-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:14px 0 18px}
+.rank-direction-switch button{display:grid;gap:5px;min-height:72px;padding:13px 14px;border:1px solid #dce7e0;border-radius:12px;background:linear-gradient(145deg,#fff,#f7faf8);text-align:left;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.rank-direction-switch button:active{transform:scale(.985)}
+.rank-direction-switch button.active{border-color:#49a67b;background:linear-gradient(130deg,#e8f6ec,#eef8f6);box-shadow:0 0 0 3px rgba(39,145,94,.1),0 8px 18px rgba(20,105,67,.07)}
+.rank-direction-switch button span{font:800 13px Inter,system-ui,sans-serif;color:#1b5138}
+.rank-direction-switch button small{font:500 10px/1.4 Inter,system-ui,sans-serif;color:#6e8276}
+.rank-result-panel{animation:v2fade .32s ease}
+.rank-result-panel .rank-result-range{display:grid;gap:5px;margin:15px 0;padding:13px 15px;border:1px solid #d8e8dd;border-radius:11px;background:linear-gradient(110deg,#f0f8f2,#f0f8fa);color:#5b7465;font-size:11px}
+.rank-result-panel .rank-result-range b{font:800 17px Inter,system-ui,sans-serif;color:#167b55}
+.rank-result-panel>p{color:#6d7f75;font-size:11px;line-height:1.6}
+.rank-empty-state{animation:v2fade .25s ease}
+html[data-theme="dark"] .rank-direction-switch button{background:linear-gradient(145deg,#1b2e41,#19293a);border-color:#435b70}
+html[data-theme="dark"] .rank-direction-switch button span{color:#d4f0df}
+html[data-theme="dark"] .rank-direction-switch button small{color:#afc0cb}
+html[data-theme="dark"] .rank-direction-switch button.active{background:linear-gradient(130deg,#234b3e,#244858);border-color:#5caa84}
+html[data-theme="dark"] .rank-result-panel .rank-result-range{background:linear-gradient(110deg,#203d35,#20394a);border-color:#456b5b;color:#c1d7ca}
+html[data-theme="dark"] .rank-result-panel .rank-result-range b{color:#b8e7cd}
+html[data-theme="dark"] .rank-result-panel>p{color:#c2cfdd}
+@media(max-width:460px){.rank-direction-switch{gap:7px}.rank-direction-switch button{padding:11px;min-height:68px}.rank-direction-switch button span{font-size:12px}.rank-direction-switch button small{font-size:9px}}
+/* Section entrance motion keeps navigation changes smooth without slowing interaction. */
+.v2-page{animation:v2SectionEnter .28s ease both}
+@keyframes v2SectionEnter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.v2-page{animation:none}}
