@@ -1384,3 +1384,26 @@ html[data-theme="dark"] .app-feature-honesty{background:#1b352f;border-color:#31
 html[data-theme="dark"] .app-feature-honesty p{color:#bad6c9}
 @media(max-width:850px){.home-app-deep-dive-inner{grid-template-columns:1fr;gap:32px}.home-app-art{min-height:230px}.app-feature-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.home-app-deep-dive{padding:60px 0}.home-app-copy h2{font-size:34px}.home-app-art{min-height:210px}.home-app-art img{width:120px;height:120px}.app-features-hero{padding:58px 0}.app-features-hero h1{font-size:39px;letter-spacing:-1.5px}.app-features-content{padding-top:54px;padding-bottom:56px}.app-feature-group-head{gap:12px}.app-feature-group-head>span{flex-basis:36px;width:36px;height:36px}.app-feature-group-head h2{font-size:20px}.app-feature-detail-grid{grid-template-columns:1fr;margin-left:0}.app-feature-detail-grid article{min-height:0}.app-feature-honesty{margin-left:0}.app-features-cta{padding:54px 0}}
+
+
+/* The app showcase intentionally stays dark in both site themes. Keep its copy high-contrast in light mode too. */
+html[data-theme="light"] .home-app-deep-dive .home-app-copy h2,
+html[data-theme="dark"] .home-app-deep-dive .home-app-copy h2{
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  opacity:1!important;
+}
+html[data-theme="light"] .home-app-deep-dive .home-app-copy>p,
+html[data-theme="dark"] .home-app-deep-dive .home-app-copy>p{
+  color:#d8e7f1!important;
+  -webkit-text-fill-color:#d8e7f1!important;
+  opacity:1!important;
+}
+html[data-theme="light"] .home-app-deep-dive .home-app-highlights span,
+html[data-theme="dark"] .home-app-deep-dive .home-app-highlights span,
+html[data-theme="light"] .home-app-deep-dive .home-app-art :is(b,small),
+html[data-theme="dark"] .home-app-deep-dive .home-app-art :is(b,small){
+  color:#eaf4fb!important;
+  -webkit-text-fill-color:#eaf4fb!important;
+  opacity:1!important;
+}
