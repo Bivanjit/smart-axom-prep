@@ -703,3 +703,19 @@ html[data-theme="dark"] .home-subject-section{background:#101722}
 html[data-theme="dark"] .subject-card{background:#1b2838;border-color:#34465c;color:#e5edf6}
 html[data-theme="dark"] .subject-card h3,html[data-theme="dark"] .subject-card p{color:#d0dbe8}
 @media(prefers-reduced-motion:reduce){.route-enter,.home-intelligence-card{animation:none!important}}
+
+
+/* Dark theme coverage for the rest of the website, not only the landing page */
+html[data-theme="dark"] .page-title h1,html[data-theme="dark"] .page h1,html[data-theme="dark"] .page h2,html[data-theme="dark"] .section h2,html[data-theme="dark"] .section h3{color:#edf3fa}
+html[data-theme="dark"] .page-title p,html[data-theme="dark"] .page p,html[data-theme="dark"] .section p{color:#b7c4d3}
+html[data-theme="dark"] .feature,html[data-theme="dark"] .card,html[data-theme="dark"] .notice,html[data-theme="dark"] .app-box,html[data-theme="dark"] .exam-paper,html[data-theme="dark"] .exam-aside,html[data-theme="dark"] .pyq-card,html[data-theme="dark"] .community-card,html[data-theme="dark"] .test-roadmap-item,html[data-theme="dark"] .banner,html[data-theme="dark"] .chapter,html[data-theme="dark"] .pricing-card,html[data-theme="dark"] .review-card{background:#1b2838!important;border-color:#34465c!important;color:#e5edf6!important;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+html[data-theme="dark"] .feature h2,html[data-theme="dark"] .feature h3,html[data-theme="dark"] .card h2,html[data-theme="dark"] .card h3,html[data-theme="dark"] .notice b,html[data-theme="dark"] .app-box h1,html[data-theme="dark"] .exam-paper h2,html[data-theme="dark"] .pyq-card h2,html[data-theme="dark"] .community-card h2,html[data-theme="dark"] .pricing-card h2{color:#edf3fa}
+html[data-theme="dark"] .feature p,html[data-theme="dark"] .card p,html[data-theme="dark"] .notice p,html[data-theme="dark"] .exam-paper p,html[data-theme="dark"] .exam-aside p,html[data-theme="dark"] .pyq-card p,html[data-theme="dark"] .community-card p,html[data-theme="dark"] .pricing-card p{color:#b7c4d3}
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] textarea{background:#142131!important;color:#e5edf6!important;border-color:#40536a!important}
+html[data-theme="dark"] input::placeholder,html[data-theme="dark"] textarea::placeholder{color:#8497ad}
+html[data-theme="dark"] table,html[data-theme="dark"] th,html[data-theme="dark"] td{border-color:#35475d}
+html[data-theme="dark"] th{background:#223248;color:#e3edf6}
+html[data-theme="dark"] .strip{background:#1b2939;color:#d9e4ef;border-color:#35475d}
+html[data-theme="dark"] .footer{background:#111c2a!important}
+html[data-theme="dark"] .home-proof-strip>p{color:#aebdce}
+@media(max-width:720px){.theme-toggle{right:14px;bottom:20px}.new-home-hero .hero-grid{padding-top:30px}}
