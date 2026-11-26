@@ -3,7 +3,7 @@ type Release = { assets?: Array<{ name: string; download_count: number }> };
 const SUPABASE_URL = "https://yydstdwknkgqelbxnvre.supabase.co";
 const SUPABASE_KEY = "sb_publishable_zPHi6yA--NsNBJmXQy0Rhg_gwgP-Xbd";
 
-export const onRequestGet: PagesFunction = async ({ request }) => {
+export const onRequestGet = async ({ request }: { request: Request }) => {
   try {
     const [githubResponse, settingResponse] = await Promise.all([
       fetch("https://api.github.com/repos/Bivanjit/SMART-PREP-AXOM-APP/releases?per_page=100", {
