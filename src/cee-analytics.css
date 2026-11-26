@@ -498,3 +498,13 @@ html[data-theme="dark"] .cea-page .cea-filter-row label,html[data-theme="dark"] 
 html[data-theme="dark"] .cea-page .cea-filter-row select,html[data-theme="dark"] .cea-page .cea-control select{background-color:#17283a;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8dfc8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");border-color:#496477;color:#f0f6f2;color-scheme:dark}
 html[data-theme="dark"] .cea-page .cea-filter-row select option,html[data-theme="dark"] .cea-page .cea-control select option{background:#17283a;color:#f0f6f2}
 html[data-theme="dark"] .cea-page .cea-filter-row input,html[data-theme="dark"] .cea-page .cea-control input{background:#17283a;border-color:#496477;color:#f0f6f2}
+
+/* CEE intelligence sections enter cleanly after route changes. */
+.cea-page{animation:ceaSectionEnter .28s ease both}
+@keyframes ceaSectionEnter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.cea-year-diff{align-items:center}
+.cea-year-diff>div.cea-stacked{min-width:0}
+.cea-year-diff>span{font-variant-numeric:tabular-nums}
+.cea-year-diff .cea-year-breakdown{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:7px 13px;margin-top:-3px;color:#687b70;font:550 10px/1.4 Inter,system-ui,sans-serif}
+.cea-year-breakdown b{font-weight:800;color:#344f40}
+@media(prefers-reduced-motion:reduce){.cea-page{animation:none}}
