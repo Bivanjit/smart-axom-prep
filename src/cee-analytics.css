@@ -98,3 +98,24 @@
 @keyframes ceaFade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){.cea-module-grid{grid-template-columns:1fr 1fr;gap:9px}.cea-module{min-height:175px;padding:15px}.cea-module h2{font-size:14px}.cea-module p{font-size:11px}.cea-tool-tag{font-size:8px}.cea-hero h1{font-size:30px}}
 @media(max-width:480px){.cea-module-grid{grid-template-columns:1fr}.cea-module{min-height:0}.cea-module p{font-size:12px}}
+
+
+/* Accessibility pass: strengthen year and difficulty labels on light review cards */
+.cea-review-card,
+.cea-review-mini-grid article{background:#f7faf8;border-color:#cbdcd1}
+.cea-review-head>b,
+.cea-review-mini-grid b{color:#174b35!important;font-weight:900;letter-spacing:.2px}
+.cea-review-card>strong,
+.cea-review-mini-grid strong{color:#263e32!important;font-weight:850}
+.cea-review-status{color:#314d3d;background:#e3eee7;font-weight:900}
+.cea-review-status.reported{color:#155b3d;background:#d8f0e2}
+.cea-review-status.dataset{color:#075e68;background:#d8f0f1}
+.cea-review-status.partial{color:#78500c;background:#f8ebca}
+.cea-review-status.unavailable{color:#465c50;background:#e6ede8}
+.cea-review-card>p,
+.cea-review-mini-grid small{color:#4d6558!important}
+.cea-review-subjects b{color:#294d3a!important}
+.cea-review-subjects span{color:#155e43!important;font-weight:800}
+.cea-review-subjects small{color:#52695d!important}
+.cea-review-card>a,
+.cea-review-mini-grid a{color:#08734e!important;font-weight:850}
