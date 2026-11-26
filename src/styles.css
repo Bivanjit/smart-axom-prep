@@ -1203,3 +1203,56 @@ html[data-theme="light"] .app-release-card p{color:#52647a!important}
 html[data-theme="dark"] .app-release-card{background:#1b2a3d!important;color:#f2f6fb!important;border-color:#3b5068!important}
 html[data-theme="dark"] .app-release-card :is(h2,b){color:#f2f6fb!important}
 html[data-theme="dark"] .app-release-card p{color:#c1cede!important}
+
+
+/* ===== Test series and shared review contrast fixes ===== */
+html[data-theme="light"] .exam-metrics{background:#e8eef5!important;border-color:#d7e0ea!important}
+html[data-theme="light"] .exam-metrics>div{background:#fff!important;border:1px solid #dbe3ec!important}
+html[data-theme="light"] .exam-metrics strong{color:#183b5d!important;-webkit-text-fill-color:#183b5d!important}
+html[data-theme="light"] .exam-metrics span{color:#52657a!important}
+html[data-theme="light"] .exam-paper{background:#fff!important;color:#17243a!important;border-color:#dce4ed!important}
+html[data-theme="light"] .exam-paper h2{color:#172b43!important}
+html[data-theme="light"] .paper-subject{border-color:#e2e8f0!important}
+html[data-theme="light"] .paper-subject b{color:#263b52!important}
+html[data-theme="light"] .paper-subject span{color:#586b80!important}
+html[data-theme="light"] .paper-subject strong{color:#245b7d!important}
+html[data-theme="light"] .paper-total{background:#edf3f8!important;color:#172b43!important;border:1px solid #d9e3ec!important}
+html[data-theme="light"] .paper-total b,html[data-theme="light"] .paper-total span,html[data-theme="light"] .paper-total strong{color:#172b43!important}
+html[data-theme="light"] .marking-grid{background:#f2f6fa!important;border:1px solid #dce4ed!important}
+html[data-theme="light"] .marking-grid span{color:#52657a!important}
+html[data-theme="light"] .marking-grid span b{color:#176b50!important}
+html[data-theme="light"] .exam-paper .tiny{color:#66788b!important}
+html[data-theme="light"] .exam-aside{background:linear-gradient(125deg,#fff3ed,#f8f5f3)!important;border:1px solid #efd8cd!important;color:#17243a!important}
+html[data-theme="light"] .exam-aside h3{color:#172b43!important}
+html[data-theme="light"] .exam-aside p{color:#52657a!important}
+html[data-theme="light"] .exam-aside p b{color:#a64c35!important}
+html[data-theme="light"] .exam-aside .eyebrow{color:#a64c35!important}
+html[data-theme="light"] .exam-aside .link{color:#176b50!important}
+html[data-theme="dark"] .exam-metrics{background:#24364b!important;border-color:#3e536a!important}
+html[data-theme="dark"] .exam-metrics>div{background:#1b2b3d!important;border:1px solid #40566c!important}
+html[data-theme="dark"] .exam-metrics strong{color:#e9f2fb!important;-webkit-text-fill-color:#e9f2fb!important}
+html[data-theme="dark"] .exam-metrics span{color:#c1cedc!important}
+html[data-theme="dark"] .exam-paper{background:#1b2b3d!important;color:#f1f5fa!important;border-color:#40566c!important}
+html[data-theme="dark"] .exam-paper h2{color:#f4f7fb!important}
+html[data-theme="dark"] .paper-subject{border-color:#40566c!important}
+html[data-theme="dark"] .paper-subject b{color:#f1f5fa!important}
+html[data-theme="dark"] .paper-subject span{color:#c1cedc!important}
+html[data-theme="dark"] .paper-subject strong{color:#b8d9f1!important}
+html[data-theme="dark"] .paper-total{background:#294159!important;color:#f4f7fb!important;border:1px solid #526a80!important}
+html[data-theme="dark"] .paper-total b,html[data-theme="dark"] .paper-total span,html[data-theme="dark"] .paper-total strong{color:#f4f7fb!important}
+html[data-theme="dark"] .marking-grid{background:#24394f!important;border:1px solid #4a6279!important}
+html[data-theme="dark"] .marking-grid span{color:#e3ebf4!important}
+html[data-theme="dark"] .marking-grid span b{color:#9de0c3!important}
+html[data-theme="dark"] .exam-paper .tiny{color:#bdc9d8!important}
+html[data-theme="dark"] .exam-aside{background:linear-gradient(125deg,#1b2b3d,#20384b)!important;border:1px solid #40566c!important;color:#f1f5fa!important}
+html[data-theme="dark"] .exam-aside h3{color:#f4f7fb!important}
+html[data-theme="dark"] .exam-aside p{color:#c4d0dd!important}
+html[data-theme="dark"] .exam-aside p b{color:#f1b5a0!important}
+html[data-theme="dark"] .exam-aside .eyebrow{color:#f1b5a0!important}
+html[data-theme="dark"] .exam-aside .link{color:#b8e5d1!important}
+
+/* Review author names: never use dark green on the dark review cards. */
+html[data-theme="dark"] .review-card .review-card-top b,
+html[data-theme="dark"] .review-card b,
+html[data-theme="dark"] .app-reviews .review-card-top b{color:#f2f6fb!important;-webkit-text-fill-color:#f2f6fb!important}
+html[data-theme="light"] .review-card .review-card-top b{color:#174b35!important}
