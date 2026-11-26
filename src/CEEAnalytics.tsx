@@ -72,14 +72,19 @@ function QuestionBank(){
  const [items,setItems]=useState<QuestionRecord[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState("");
  const [year,setYear]=useState("all"),[subject,setSubject]=useState("all"),[status,setStatus]=useState("all"),[search,setSearch]=useState(""),[page,setPage]=useState(0);
  const pageSize=30;
- useEffect(()=>{let live=true;const load=async()=>{if(!supabase){setError("Database connection is unavailable.");setLoading(false);return;}setLoading(true);try{
+ useEffect(()=>{let live=true;const load=async()=>{if(!supabase){setError("Database connection is unavailable.");setLoading(false);return;}setLoading(true);setError("");try{
   const cols="exam_year,question_number,subject,chapter_slug,difficulty,question_excerpt,analysis_status,source_pdf";
-  const [a,b]=await Promise.all([
-   supabase.from("cee_question_analysis").select(cols).gte("exam_year",2018).lte("exam_year",2026).order("exam_year").order("question_number").range(0,999),
-   supabase.from("cee_question_analysis").select(cols).gte("exam_year",2018).lte("exam_year",2026).order("exam_year").order("question_number").range(1000,1999)
-  ]);
-  if(a.error)throw a.error;if(b.error)throw b.error;
-  if(live)setItems([...(a.data||[]),...(b.data||[])] as QuestionRecord[]);
+  // Respect the project's PostgREST max-rows setting. A single 0-999 range can be silently capped,
+  // so fetch deterministic, non-overlapping pages until the final short page is reached.
+  const batchSize=400;const all:QuestionRecord[]=[];
+  for(let offset=0;offset<2000;offset+=batchSize){
+   const {data,error}=await supabase.from("cee_question_analysis").select(cols).gte("exam_year",2018).lte("exam_year",2026).order("exam_year",{ascending:true}).order("question_number",{ascending:true}).range(offset,offset+batchSize-1);
+   if(error)throw error;
+   const batch=(data||[]) as QuestionRecord[];
+   all.push(...batch);
+   if(batch.length<batchSize)break;
+  }
+  if(live)setItems(all);
  }catch(e){if(live)setError(e instanceof Error?e.message:"Could not load question records.");}finally{if(live)setLoading(false);}};
  void load();return()=>{live=false};
  },[]);
