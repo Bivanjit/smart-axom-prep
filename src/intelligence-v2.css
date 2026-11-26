@@ -301,3 +301,5 @@ html[data-theme="dark"] .rank-result-panel>p{color:#c2cfdd}
 .v2-page{animation:v2SectionEnter .28s ease both}
 @keyframes v2SectionEnter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.v2-page{animation:none}}
+
+.rank-latest-year{grid-column:1/-1;margin:0;padding:0;color:#64748b;font-size:12px;font-weight:600;letter-spacing:0;text-transform:none}.rank-latest-year strong{color:#176b4a;font-weight:800}
