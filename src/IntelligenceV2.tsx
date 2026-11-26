@@ -3,7 +3,8 @@ import {Link,useLocation} from "react-router-dom";
 import {supabase} from "./lib/supabase";
 import {Activity,ArrowLeft,BookOpen,Calculator,ChartNoAxesCombined,Home,Info,LoaderCircle,Search,ShieldCheck,Target,Sparkles,SlidersHorizontal,GraduationCap} from "lucide-react";
 import "./intelligence-v2.css";
-import CEEAnalytics from "./CEEAnalytics";\nimport AnalysisEngine from "./AnalysisEngine";
+import CEEAnalytics from "./CEEAnalytics";
+import AnalysisEngine from "./AnalysisEngine";
 
 type R=Record<string,any>;
 const OFFICIAL_BRANCHES:Record<string,string[]>={
