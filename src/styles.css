@@ -780,3 +780,19 @@ html[data-theme="dark"] .home-intelligence-card p{color:#b8c6d5}
  .home-intelligence-card p{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){.theme-toggle,.home-tool-cta,.home-intelligence-card{transition:none!important}}
+
+
+/* Dark-mode mobile navigation contrast: remove light-theme pastel surfaces */
+html[data-theme="dark"] .menu-btn{color:#e5edf6!important;background:transparent!important}
+html[data-theme="dark"] .nav-links.open{background:rgba(19,31,47,.98)!important;border-bottom-color:#34465c!important;box-shadow:0 18px 35px rgba(0,0,0,.38)!important}
+html[data-theme="dark"] .nav-links.open>a{background:#202e40!important;color:#e8f0f8!important;border:1px solid #3b4e65!important}
+html[data-theme="dark"] .nav-links.open>a.active,html[data-theme="dark"] .nav-links.open>a:hover{background:#293d53!important;color:#8bd0f4!important}
+html[data-theme="dark"] .nav-intelligence{border-bottom-color:#3a4b60!important}
+html[data-theme="dark"] .nav-intel-main>a{background:linear-gradient(110deg,#24364a,#1d3041)!important;border:1px solid #42566d!important;color:#e7f0f8!important}
+html[data-theme="dark"] .nav-intel-main>button{background:#263b4d!important;border:1px solid #496176!important;color:#a9dfc7!important}
+html[data-theme="dark"] .nav-app .nav-intel-main>a{background:linear-gradient(110deg,#3b3026,#342c27)!important;border-color:#66513c!important;color:#ffe1b8!important}
+html[data-theme="dark"] .nav-app .nav-intel-main>button{background:#403326!important;border-color:#66513c!important;color:#ffd39a!important}
+html[data-theme="dark"] .nav-intel-submenu{background:#172536!important;border:1px solid #3b5068!important}
+html[data-theme="dark"] .nav-intel-submenu a{background:#223247!important;border:1px solid #3a5068!important;color:#dce8f3!important}
+html[data-theme="dark"] .nav-intel-submenu a:hover,html[data-theme="dark"] .nav-intel-submenu a.active{background:#2c465d!important;color:#a9e0c8!important;border-color:#55728b!important}
+html[data-theme="dark"] .nav-links.open>a,html[data-theme="dark"] .nav-intel-main>a,html[data-theme="dark"] .nav-intel-submenu a{opacity:1!important;text-shadow:none!important}
