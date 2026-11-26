@@ -122,3 +122,25 @@
 
 
 .cea-review-source{display:block;margin-top:10px;color:#315d49;font-size:10px;font-weight:800;line-height:1.45}
+
+
+/* CEE question bank */
+.cea-qb-filters{display:grid;grid-template-columns:2fr repeat(3,minmax(120px,1fr));gap:12px;margin:20px 0}
+.cea-qb-search{display:flex;align-items:center;gap:8px;border:1px solid var(--cea-line,#cbd8cf);border-radius:12px;padding:0 12px;background:#fff}
+.cea-qb-search input{border:0!important;outline:0!important;box-shadow:none!important;padding-left:0!important;min-width:0}
+.cea-qb-resultline{font-size:12px;font-weight:800;color:#426252;margin:14px 0}
+.cea-qb-list{display:grid;gap:10px}
+.cea-qb-item{border:1px solid #d5e0d8;border-radius:14px;padding:14px;background:#fbfdfb}
+.cea-qb-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cea-qb-top>b{color:#173f2d;font-size:14px}
+.cea-qb-top>span{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;border-radius:20px;padding:5px 8px}
+.cea-qb-top .has-text{background:#dff3e8;color:#17603e}
+.cea-qb-top .no-text{background:#f3ebd9;color:#76541a}
+.cea-qb-meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.cea-qb-meta span{font-size:10px;color:#3f6450;background:#edf4ef;border-radius:20px;padding:5px 8px;text-transform:capitalize}
+.cea-qb-item p{font-size:13px;line-height:1.6;color:#42564a;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.cea-qb-pagination{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px}
+.cea-qb-pagination button{border:1px solid #b8cbbd;border-radius:10px;background:#edf5ef;color:#194d35;font-weight:800;padding:10px 14px}
+.cea-qb-pagination button:disabled{opacity:.4}
+.cea-qb-pagination span{font-size:12px;font-weight:800;color:#486252}
+@media(max-width:700px){.cea-qb-filters{grid-template-columns:1fr 1fr}.cea-qb-filters .cea-control:first-child{grid-column:1/-1}.cea-qb-item{padding:12px}.cea-qb-pagination button{padding:9px 10px}}
