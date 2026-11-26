@@ -1164,3 +1164,42 @@ html[data-theme="light"] .intel-page .v2-mode-tabs button{background:#fff!import
 html[data-theme="dark"] .intel-page .v2-mode-tabs button{background:#203149!important;color:#d2deea!important;border-color:#465b72!important}
 html[data-theme="light"] .intel-page .v2-mode-tabs button.active{background:#1769b4!important;color:#fff!important}
 html[data-theme="dark"] .intel-page .v2-mode-tabs button.active{background:#315b91!important;color:#fff!important}
+
+
+/* Final cross-site contrast pass: app download, home proof strip and common page labels */
+html[data-theme="light"] .new-home-hero .eyebrow.light,
+html[data-theme="light"] .app-home-promo .eyebrow.light,
+html[data-theme="light"] .app-download-hero .eyebrow.light{color:#a65c31!important;opacity:1!important}
+html[data-theme="dark"] .new-home-hero .eyebrow.light,
+html[data-theme="dark"] .app-home-promo .eyebrow.light,
+html[data-theme="dark"] .app-download-hero .eyebrow.light{color:#ffd0a4!important;opacity:1!important}
+html[data-theme="light"] .home-proof-strip .proof-stat strong{color:#173b61!important;opacity:1!important}
+html[data-theme="light"] .home-proof-strip .proof-stat span,
+html[data-theme="light"] .home-proof-strip>p{color:#52647a!important;opacity:1!important}
+html[data-theme="dark"] .home-proof-strip .proof-stat strong{color:#e8f2fc!important;opacity:1!important}
+html[data-theme="dark"] .home-proof-strip .proof-stat span,
+html[data-theme="dark"] .home-proof-strip>p{color:#c1cede!important;opacity:1!important}
+html[data-theme="light"] .home-workflow>div>b{background:#176b50!important;color:#fff!important;border:1px solid #176b50!important;display:grid;place-items:center;min-width:48px;min-height:48px;border-radius:12px}
+html[data-theme="dark"] .home-workflow>div>b{background:#176b50!important;color:#fff!important;border:1px solid #278365!important;display:grid;place-items:center;min-width:48px;min-height:48px;border-radius:12px}
+html[data-theme="light"] .app-download-hero{background:linear-gradient(125deg,#10284a,#173f83 65%,#2055a5)!important}
+html[data-theme="dark"] .app-download-hero{background:linear-gradient(125deg,#091321,#122b4b 65%,#173c70)!important}
+.app-download-hero .app-download-copy h1{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:none!important}
+.app-download-hero .app-download-copy h1 em{color:#9bc9ff!important;-webkit-text-fill-color:#9bc9ff!important}
+.app-download-hero .app-download-copy>p{color:#d1ddec!important;opacity:1!important}
+.app-download-hero .app-store-meta :is(b,small){color:#fff!important;opacity:1!important}
+.app-download-hero .app-store-meta small{color:#b9cbe0!important}
+.app-download-hero .app-trust-note{color:#c6d5e5!important;opacity:1!important}
+html[data-theme="light"] .app-install-section{background:linear-gradient(125deg,#eef5fb,#f1f7f4)!important}
+html[data-theme="dark"] .app-install-section{background:#101b2a!important}
+html[data-theme="light"] .app-install-inner li{background:#fff!important;border:1px solid #d9e2ec!important;color:#14243b!important}
+html[data-theme="light"] .app-install-inner li b{color:#14243b!important;opacity:1!important}
+html[data-theme="light"] .app-install-inner li span{color:#52647a!important;opacity:1!important}
+html[data-theme="dark"] .app-install-inner li{background:#1b2a3d!important;border:1px solid #3b5068!important;color:#f2f6fb!important}
+html[data-theme="dark"] .app-install-inner li b{color:#f2f6fb!important;opacity:1!important}
+html[data-theme="dark"] .app-install-inner li span{color:#c1cede!important;opacity:1!important}
+html[data-theme="light"] .app-release-card{background:#fff!important;color:#14243b!important;border-color:#d9e2ec!important}
+html[data-theme="light"] .app-release-card :is(h2,b){color:#14243b!important}
+html[data-theme="light"] .app-release-card p{color:#52647a!important}
+html[data-theme="dark"] .app-release-card{background:#1b2a3d!important;color:#f2f6fb!important;border-color:#3b5068!important}
+html[data-theme="dark"] .app-release-card :is(h2,b){color:#f2f6fb!important}
+html[data-theme="dark"] .app-release-card p{color:#c1cede!important}
