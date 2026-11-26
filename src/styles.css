@@ -1278,3 +1278,39 @@ html[data-theme="light"] .exam-paper .marking-grid span b{
 .aspirant-counter>span:last-child{color:#d1deed}
 .aspirant-counter-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#50d6a0;box-shadow:0 0 0 4px rgba(80,214,160,.12)}
 @media(max-width:520px){.aspirant-counter{gap:7px;padding:11px 12px;font-size:10px}.aspirant-counter strong{font-size:19px}}
+
+
+/* Landing page polish: accessible light theme, consistent rounded geometry and readable community proof. */
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3,.brand,.aspirant-counter strong{font-family:Manrope,Inter,system-ui,sans-serif}
+.btn{border-radius:999px}
+.new-home-hero .hero-panel{border-radius:24px}
+.new-home-hero .home-trust-pills span{border-radius:999px}
+.aspirant-counter{width:min(100%,600px);max-width:600px;min-height:66px;gap:10px;margin-top:22px;padding:15px 18px;border-radius:18px;font-size:12px;line-height:1.55;box-shadow:0 10px 28px rgba(7,34,24,.08)}
+.aspirant-counter strong{font-size:25px;letter-spacing:-.7px}
+.aspirant-counter-dot{width:9px;height:9px;flex-basis:9px}
+html[data-theme="light"] .new-home-hero{background:radial-gradient(ellipse at 88% 8%,rgba(101,191,233,.22),transparent 36%),radial-gradient(ellipse at 5% 95%,rgba(242,142,55,.13),transparent 34%),linear-gradient(125deg,#f5faf7 0%,#edf6f1 58%,#e8f4f2 100%)!important;color:#142b25!important}
+html[data-theme="light"] .new-home-hero :is(h1,h2,h3,b,strong,small){color:#142b25!important}
+html[data-theme="light"] .new-home-hero h1 em{color:#16845d!important;-webkit-text-fill-color:#16845d!important}
+html[data-theme="light"] .new-home-hero .hero-grid>div>p{color:#52665d!important}
+html[data-theme="light"] .new-home-hero .eyebrow.light{color:#17734f!important}
+html[data-theme="light"] .new-home-hero .btn.outline-light{color:#173d31!important;border-color:#b8d3c5!important;background:rgba(255,255,255,.72)!important}
+html[data-theme="light"] .new-home-hero .home-trust-pills span{color:#405b4e!important;background:rgba(255,255,255,.78)!important;border-color:#d5e5dc!important}
+html[data-theme="light"] .new-home-hero .hero-panel{background:rgba(255,255,255,.94)!important;border-color:#d8e8df!important;box-shadow:0 22px 55px rgba(25,75,52,.10)!important}
+html[data-theme="light"] .new-home-hero .home-workflow>div{border-color:#e5eee8!important}
+html[data-theme="light"] .new-home-hero .home-workflow strong{color:#183d30!important}
+html[data-theme="light"] .new-home-hero .home-workflow small{color:#687d72!important}
+html[data-theme="light"] .new-home-hero .aspirant-counter{background:#fff!important;border:1px solid #d6e6dd!important;color:#52665d!important;box-shadow:0 12px 30px rgba(18,75,49,.09)!important}
+html[data-theme="light"] .new-home-hero .aspirant-counter strong{color:#123b31!important;-webkit-text-fill-color:#123b31!important}
+html[data-theme="light"] .new-home-hero .aspirant-counter>span:last-child{color:#52665d!important}
+html[data-theme="light"] .new-home-hero .prediction-honesty{color:#536b60!important}
+html[data-theme="light"] .new-home-hero .download-count{color:#536b60!important}
+html[data-theme="dark"] .new-home-hero .aspirant-counter{background:rgba(255,255,255,.10)!important;border:1px solid rgba(194,230,214,.3)!important;color:#dcebe3!important}
+html[data-theme="dark"] .new-home-hero .aspirant-counter strong{color:#fff!important;-webkit-text-fill-color:#fff!important}
+html[data-theme="dark"] .new-home-hero .aspirant-counter>span:last-child{color:#d1e3d9!important}
+@media(max-width:520px){
+ .aspirant-counter{gap:8px;margin-top:18px;padding:13px 14px;font-size:11px;border-radius:16px}
+ .aspirant-counter strong{font-size:23px}
+ .new-home-hero .hero-grid{padding-block:38px 36px;gap:28px}
+}
