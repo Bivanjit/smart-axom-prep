@@ -88,7 +88,7 @@ function PriorityAnalysis({data}:{data:ReturnType<typeof useAnalytics>}){
  const range=years.filter(y=>y>=Number(from)&&y<=Number(to));
  const s=subjects.find(x=>x.slug===subject);
  const q=rows.filter(r=>range.includes(r.exam_year)&&(!s||r.subject_id===s.id));
- const activeYears=range.filter(y=>q.some(r=>r.exam_year===y)); const subjectReviews=PAPER_REVIEWS.filter(x=>x.year>=Number(from)&&x.year<=Number(to)).flatMap(x=>x.subjects.filter(v=>v.name.toLowerCase()===subject).map(v=>({year:x.year,...v,source:x.source,sourceLabel:x.sourceLabel})));
+ const activeYears=range.filter(y=>q.some(r=>r.exam_year===y));
  const map=new Map<string,{chapter:Chapter;total:number;easy:number;moderate:number;hard:number;years:Set<number>;counts:Map<number,number>;weighted:number;lastSeen:number}>();
  q.forEach(r=>{
   const c=chapters.find(x=>x.id===r.chapter_id);if(!c)return;
