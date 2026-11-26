@@ -86,3 +86,18 @@ html[data-theme="dark"] .v2-page .intel-back{background:#1c2939;color:#f09aa1;bo
 html[data-theme="dark"] .v2-page .v2-cutoff-list article{border-color:#35475d}
 html[data-theme="dark"] .v2-page .v2-tool-tag{background:#392c36;color:#f2adb3;border-color:#59404c}
 @media(prefers-reduced-motion:reduce){.v2-page .intel-modules>a,.v2-page .intel-module-action{transition:none!important}}
+
+
+/* Intelligence workspace card alignment and readable mobile scale */
+.v2-page .intel-modules>a{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;padding:25px 22px;min-height:285px;border-radius:18px}
+.v2-page .intel-modules>a .v2-tool-tag{display:flex;align-items:center;justify-content:center;align-self:center;min-width:132px;min-height:35px;margin:0 auto 16px;padding:7px 14px;font-size:11px;letter-spacing:.8px}
+.v2-page .intel-modules>a>svg{width:30px;height:30px;margin:3px auto 13px}
+.v2-page .intel-modules>a h2{font-size:19px;line-height:1.3;margin:0 0 9px}
+.v2-page .intel-modules>a p{font-size:14px;line-height:1.6;max-width:36ch;margin:0 auto}
+.v2-page .intel-modules>a .intel-module-action{display:flex;align-items:center;justify-content:center;align-self:center;width:min(100%,190px);min-height:45px;margin:22px auto 0;padding:11px 18px;border-radius:12px;font-size:13px;font-weight:850;letter-spacing:.1px}
+@media(max-width:760px){.v2-page .intel-modules{grid-template-columns:1fr 1fr;gap:13px}.v2-page .intel-modules>a{min-height:285px;padding:19px 13px}.v2-page .intel-modules>a .v2-tool-tag{width:100%;max-width:160px;min-width:0;min-height:36px;font-size:10px}.v2-page .intel-modules>a h2{font-size:16px;line-height:1.32}.v2-page .intel-modules>a p{font-size:12px;line-height:1.55}.v2-page .intel-modules>a .intel-module-action{width:100%;max-width:160px;min-height:43px;margin-top:auto;font-size:12px;padding:10px 9px}}
+@media(max-width:390px){.v2-page .intel-modules{grid-template-columns:1fr}.v2-page .intel-modules>a{min-height:240px;padding:22px 18px}.v2-page .intel-modules>a h2{font-size:18px}.v2-page .intel-modules>a p{font-size:13px}}
+html[data-theme="dark"] .v2-page .intel-modules>a .v2-tool-tag{background:#27364a;color:#d7e4f0;border-color:#41546b}
+html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n+1) .v2-tool-tag{background:#432b36;color:#ffc0c3;border-color:#65404a}
+html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n+2) .v2-tool-tag{background:#1e3b35;color:#a8e0c7;border-color:#315b4e}
+html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n) .v2-tool-tag{background:#1e354b;color:#add7f4;border-color:#36546f}
