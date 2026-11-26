@@ -1,7 +1,8 @@
 import {useEffect,useMemo,useState} from "react";
 import {Link,useLocation} from "react-router-dom";
 import {supabase} from "./lib/supabase";
-import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,Info,LoaderCircle,ShieldCheck,TrendingUp,GraduationCap,Calculator,Activity,Search} from "lucide-react";\nimport AnalysisEngine from "./AnalysisEngine";
+import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,Info,LoaderCircle,ShieldCheck,TrendingUp,GraduationCap,Calculator,Activity,Search} from "lucide-react";
+import AnalysisEngine from "./AnalysisEngine";
 import "./cee-analytics.css";
 
 type Row={id:string;dataset_version_id:string;exam_year:number;subject_id:string;chapter_id:string;question_count:number;classified_easy:number;classified_moderate:number;classified_hard:number;verified:boolean;source_url:string|null};
