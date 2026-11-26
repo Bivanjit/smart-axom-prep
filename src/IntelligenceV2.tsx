@@ -38,10 +38,10 @@ function interpolateCurve(points:CutoffCurvePoint[],input:number,mode:"marks"|"r
 function Rank(){
  const {rows:cutoffs,loading,error}=useRows("admission_cutoffs","admission_year,category_id,closing_rank,closing_marks,verification_status");
  const {rows:categories}=useRows("admission_categories","id,code,name");
- const [mode,setMode]=useState<"marks"|"rank">("marks"),[input,setInput]=useState("180"),[year,setYear]=useState("2024"),[generated,setGenerated]=useState(false);
+ const [mode,setMode]=useState<"marks"|"rank">("marks"),[input,setInput]=useState("180"),[generated,setGenerated]=useState(false);
  const valid=cutoffs.filter(x=>x.verification_status==="verified"&&Number(x.closing_rank)>0&&Number(x.closing_marks)>0&&categories.find(c=>c.id===x.category_id)?.code==="UR");
  const available=[...new Set(valid.map(x=>String(x.admission_year)))].sort((a,b)=>Number(b)-Number(a));
- const latest=available[0]||"",active=available.includes(year)?year:latest;
+ const latest=available[0]||"",active=latest;
  const points=valid.filter(x=>String(x.admission_year)===active).map(x=>({rank:Number(x.closing_rank),marks:Number(x.closing_marks)}));
  const value=Number(input),result=input.trim()&&Number.isFinite(value)&&value>0?interpolateCurve(points,value,mode):null;
  const inputValid=mode==="marks"?value>0&&value<=480:value>0&&value<=10000;
@@ -51,9 +51,8 @@ function Rank(){
   <div className="rank-direction-switch"><button type="button" className={mode==="marks"?"active":""} onClick={()=>{setMode("marks");setInput("180");setGenerated(false)}}><span>Marks → Rank</span><small>What rank could my marks get?</small></button><button type="button" className={mode==="rank"?"active":""} onClick={()=>{setMode("rank");setInput("1500");setGenerated(false)}}><span>Rank → Marks</span><small>What marks may be needed?</small></button></div>
   <div className="v2-grid-2">
    <label className="v2-field"><span>{mode==="marks"?"Expected marks / 480":"Expected CEE merit rank"}</span><input type="number" min="1" max={mode==="marks"?"480":"10000"} value={input} onChange={e=>{setInput(e.target.value);setGenerated(false)}} placeholder={mode==="marks"?"e.g. 180":"e.g. 1500"}/></label>
-   <Select label="Historical cutoff year" value={active} onChange={v=>{setYear(v);setGenerated(false)}}>{available.map(y=><option key={y} value={y}>{y} · verified cutoff data</option>)}</Select>
+   <div className="v2-fixed-field"><span>Latest verified year</span><strong>{latest||"No verified cutoff records"}</strong></div>
   </div>
-  <div className="v2-fixed-field"><span>Latest verified official data year</span><strong>{latest||"No verified cutoff records"}</strong></div>
   <div className="intel-note"><Info/>This model uses verified Unreserved/General closing-rank and closing-marks pairs from DTE Assam counselling records. These are college/branch seat cutoffs, not a complete ASTU candidate merit list. Results are broad historical estimates, not guaranteed individual score-to-rank conversions. Check official ASTU results and DTE counselling notices.</div>
   <AnalysisEngine title={mode==="marks"?"Marks-to-rank estimate":"Rank-to-marks estimate"} subtitle={mode==="marks"?"Comparing expected marks with verified historical cutoff pairs.":"Finding the historical marks range associated with similar closing ranks."} steps={mode==="marks"?["Validating expected marks","Filtering verified general-category cutoff pairs","Comparing marks against closing-rank records","Calculating an indicative rank range"]:["Validating expected merit rank","Loading verified closing-rank records","Comparing historical marks at similar ranks","Calculating an indicative marks range"]} durationMs={1900+Math.min(1500,points.length*10)} mode="calculate" buttonLabel={mode==="marks"?"Calculate rank from marks":"Estimate marks from rank"} disabled={!inputValid||loading||points.length<2} onComplete={()=>setGenerated(true)}/>
  </section>
