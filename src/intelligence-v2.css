@@ -101,3 +101,68 @@ html[data-theme="dark"] .v2-page .intel-modules>a .v2-tool-tag{background:#27364
 html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n+1) .v2-tool-tag{background:#432b36;color:#ffc0c3;border-color:#65404a}
 html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n+2) .v2-tool-tag{background:#1e3b35;color:#a8e0c7;border-color:#315b4e}
 html[data-theme="dark"] .v2-page .intel-modules>a:nth-child(3n) .v2-tool-tag{background:#1e354b;color:#add7f4;border-color:#36546f}
+
+
+/* Mobile native-select reliability and readable option menus */
+.v2-page .v2-field{position:relative;min-width:0}
+.v2-page .v2-field select{
+  display:block;width:100%;min-height:48px;appearance:auto;-webkit-appearance:menulist;
+  pointer-events:auto;touch-action:manipulation;position:relative;z-index:2;
+  cursor:pointer;opacity:1;
+}
+.v2-page .v2-field select option{background:#fff;color:#17243a}
+html[data-theme="dark"] .v2-page .v2-field select{color-scheme:dark}
+html[data-theme="dark"] .v2-page .v2-field select option{background:#142131;color:#eef4fa}
+html[data-theme="light"] .v2-page .v2-field select{color-scheme:light}
+html[data-theme="light"] .v2-page .v2-field select option{background:#fff;color:#17243a}
+
+/* Complete contrast tokens for the prediction and intelligence workspace */
+html[data-theme="light"] .v2-page,
+html[data-theme="light"] .v2-page .intel-panel,
+html[data-theme="light"] .v2-page .predictor-parameters{color:#17243a}
+html[data-theme="light"] .v2-page h1,
+html[data-theme="light"] .v2-page h2,
+html[data-theme="light"] .v2-page h3,
+html[data-theme="light"] .v2-page .v2-filter-heading b,
+html[data-theme="light"] .v2-page .v2-fixed-field strong,
+html[data-theme="light"] .v2-page .v2-cutoff-list b{color:#14243b!important;opacity:1!important;-webkit-text-fill-color:#14243b}
+html[data-theme="light"] .v2-page p,
+html[data-theme="light"] .v2-page small,
+html[data-theme="light"] .v2-page .v2-field,
+html[data-theme="light"] .v2-page .v2-fixed-field,
+html[data-theme="light"] .v2-page .v2-cutoff-list small{color:#53647a!important;opacity:1!important}
+html[data-theme="light"] .v2-page .intel-panel,
+html[data-theme="light"] .v2-page .trend-list-panel,
+html[data-theme="light"] .v2-page .trend-card,
+html[data-theme="light"] .v2-page .intel-stat,
+html[data-theme="light"] .v2-page .v2-cutoff-list article,
+html[data-theme="light"] .v2-page .v2-field select,
+html[data-theme="light"] .v2-page .v2-field input{background:#fff!important;color:#17243a!important;border-color:#d5e0ea!important}
+html[data-theme="light"] .v2-page .intel-hero{background:linear-gradient(120deg,#fff,#f0f4ff)!important}
+html[data-theme="light"] .v2-page .intel-hero h1{color:#14243b!important}
+html[data-theme="dark"] .v2-page,
+html[data-theme="dark"] .v2-page .intel-panel,
+html[data-theme="dark"] .v2-page .predictor-parameters{color:#e7edf5}
+html[data-theme="dark"] .v2-page h1,
+html[data-theme="dark"] .v2-page h2,
+html[data-theme="dark"] .v2-page h3,
+html[data-theme="dark"] .v2-page .v2-filter-heading b,
+html[data-theme="dark"] .v2-page .v2-fixed-field strong,
+html[data-theme="dark"] .v2-page .v2-cutoff-list b{color:#f0f5fb!important;opacity:1!important;-webkit-text-fill-color:#f0f5fb}
+html[data-theme="dark"] .v2-page p,
+html[data-theme="dark"] .v2-page small,
+html[data-theme="dark"] .v2-page .v2-field,
+html[data-theme="dark"] .v2-page .v2-fixed-field,
+html[data-theme="dark"] .v2-page .v2-cutoff-list small{color:#bdc9d8!important;opacity:1!important}
+html[data-theme="dark"] .v2-page .intel-panel,
+html[data-theme="dark"] .v2-page .trend-list-panel,
+html[data-theme="dark"] .v2-page .trend-card,
+html[data-theme="dark"] .v2-page .intel-stat,
+html[data-theme="dark"] .v2-page .v2-cutoff-list article,
+html[data-theme="dark"] .v2-page .v2-fixed-field{background:#1b2838!important;color:#e7edf5!important;border-color:#3a4b60!important}
+html[data-theme="dark"] .v2-page .intel-hero{background:linear-gradient(120deg,#172536,#1c2b3d)!important}
+html[data-theme="dark"] .v2-page .intel-hero h1{color:#f0f5fb!important}
+html[data-theme="dark"] .v2-page .v2-field select,
+html[data-theme="dark"] .v2-page .v2-field input{background:#142131!important;color:#eef4fa!important;border-color:#465b72!important}
+html[data-theme="dark"] .v2-page .v2-mode-tabs button{background:#1b2838;color:#dce6f0;border-color:#465b72}
+html[data-theme="dark"] .v2-page .v2-mode-tabs button.active{background:#315b91;color:#fff;border-color:#315b91}
