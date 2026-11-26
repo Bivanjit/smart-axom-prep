@@ -1,5 +1,5 @@
 import {useEffect,useRef,useState} from "react";
-import {Activity,ArrowRight,CheckCircle2,Database,LoaderCircle,ScanSearch,ShieldCheck,Sparkles,Target} from "lucide-react";
+import {Activity,ArrowRight,CheckCircle2,LoaderCircle,ScanSearch,Sparkles,Target} from "lucide-react";
 import "./analysis-engine.css";
 
 type Props={title:string;subtitle:string;steps:string[];durationMs?:number;buttonLabel:string;mode?:"analyse"|"predict"|"calculate"|"match";onComplete:()=>void;disabled?:boolean};
