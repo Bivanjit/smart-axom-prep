@@ -1,11 +1,11 @@
-import {useEffect,useState} from "react";
+import {useEffect,useRef,useState} from "react";
 import {Activity,ArrowRight,CheckCircle2,Database,LoaderCircle,ScanSearch,ShieldCheck,Sparkles,Target} from "lucide-react";
 import "./analysis-engine.css";
 
 type Props={title:string;subtitle:string;steps:string[];durationMs?:number;buttonLabel:string;mode?:"analyse"|"predict"|"calculate"|"match";onComplete:()=>void;disabled?:boolean};
 export default function AnalysisEngine({title,subtitle,steps,durationMs=1900,buttonLabel,mode="analyse",onComplete,disabled=false}:Props){
- const [running,setRunning]=useState(false),[progress,setProgress]=useState(0),[phase,setPhase]=useState(0);
- useEffect(()=>{if(!running)return;const started=Date.now();const tick=window.setInterval(()=>{const p=Math.min(100,((Date.now()-started)/durationMs)*100);setProgress(p);setPhase(Math.min(steps.length-1,Math.floor((p/100)*steps.length)));if(p>=100){window.clearInterval(tick);setRunning(false);onComplete();}},45);return()=>window.clearInterval(tick)},[running,durationMs,steps.length,onComplete]);
+ const [running,setRunning]=useState(false),[progress,setProgress]=useState(0),[phase,setPhase]=useState(0);\n const completeRef=useRef(onComplete);completeRef.current=onComplete;
+ useEffect(()=>{if(!running)return;const started=Date.now();const tick=window.setInterval(()=>{const p=Math.min(100,((Date.now()-started)/durationMs)*100);setProgress(p);setPhase(Math.min(steps.length-1,Math.floor((p/100)*steps.length)));if(p>=100){window.clearInterval(tick);setRunning(false);completeRef.current();}},45);return()=>window.clearInterval(tick)},[running,durationMs,steps.length]);
  const Icon=mode==="predict"?Sparkles:mode==="calculate"?Target:mode==="match"?ScanSearch:Activity;
  const verb=mode==="predict"?"Generating":mode==="calculate"?"Calculating":mode==="match"?"Matching":"Analysing";
  return <section className={"analysis-engine "+(running?"is-running":"")} aria-live="polite">
