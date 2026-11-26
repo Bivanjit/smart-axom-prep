@@ -50,3 +50,39 @@
 .v2-fixed-field{display:grid;align-content:start;gap:7px;min-height:44px;padding:1px 0;color:#536c5e;font-size:9px;font-weight:850;letter-spacing:.7px;text-transform:uppercase}
 .v2-fixed-field strong{display:flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid #dce8e0;border-radius:8px;background:linear-gradient(100deg,#f4faf6,#f0f9fc);color:#176b4a;font-size:12px;font-weight:750;letter-spacing:0;text-transform:none}
 .v2-page .v2-tool-tag:nth-child(odd){background:#fff2e5;color:#a75e1c}
+
+
+/* Shared bright intelligence system: paper-white canvas with red, green and blue accents */
+.v2-page.intel-page{background:#f8fafc;color:#172b43}
+.v2-page .intel-hero{background:linear-gradient(120deg,#fff 0%,#fff8f7 48%,#f3f8fc 100%);border-color:#e5eaf0;box-shadow:0 10px 30px rgba(23,45,72,.045)}
+.v2-page .intel-eyebrow{color:#c43e4d}
+.v2-page .intel-back{color:#b93647;border-color:#f0d8dc;background:#fff}
+.v2-page .intel-panel,.v2-page .intel-stat,.v2-page .intel-empty{background:#fff;border-color:#e3e9f0;box-shadow:0 7px 24px rgba(22,42,66,.035)}
+.v2-page .intel-panel h2,.v2-page .intel-modules h2{color:#1b304a}
+.v2-page .intel-stat strong,.v2-page .intel-big-rank{color:#347fae}
+.v2-page .intel-tabs button.active,.v2-page .v2-mode-tabs button.active{background:linear-gradient(105deg,#c93449,#e05a4d);border-color:#c93449}
+.v2-page .intel-module-action,.v2-page .predictor-submit{background:linear-gradient(105deg,#c93449,#e05a4d);box-shadow:0 7px 18px rgba(201,52,73,.17)}
+.v2-page .intel-modules>a{background:#fff;border-color:#e3e9f0;transition:transform .25s,box-shadow .25s,border-color .25s}
+.v2-page .intel-modules>a:nth-child(3n+2) .intel-module-action{background:linear-gradient(105deg,#167c60,#29977b)}
+.v2-page .intel-modules>a:nth-child(3n) .intel-module-action{background:linear-gradient(105deg,#347eaf,#4a9bc8)}
+.v2-page .intel-modules>a:hover{border-color:#c5d6e5;box-shadow:0 15px 32px rgba(26,48,78,.11);transform:translateY(-4px)}
+.v2-page .intel-note{background:#f2f8fc;border-color:#dceaf4;border-left-color:#438fbd;color:#526b80}
+.v2-page .intel-note svg{color:#398dcc}
+.v2-page .v2-tool-tag{background:#fff0ef;color:#b83d4a;border:1px solid #f4dddd}
+.v2-page .v2-tool-tag:nth-child(2n){background:#edf7f2;color:#267957;border-color:#d8ece1}
+.v2-page .v2-field select:focus,.v2-page .v2-field input:focus{border-color:#6aabd2;box-shadow:0 0 0 3px rgba(57,141,204,.13)}
+.v2-page .v2-verified{color:#18845e!important}
+.v2-page .v2-pending{color:#b77927!important}
+.v2-page .predictor-submit:hover:not(:disabled){box-shadow:0 0 0 4px rgba(201,52,73,.12),0 12px 24px rgba(201,52,73,.2)}
+/* Dark palette for all intelligence panels */
+html[data-theme="dark"] .v2-page.intel-page{background:#101722;color:#e5edf6}
+html[data-theme="dark"] .v2-page .intel-hero,html[data-theme="dark"] .v2-page .intel-panel,html[data-theme="dark"] .v2-page .intel-stat,html[data-theme="dark"] .v2-page .intel-empty,html[data-theme="dark"] .v2-page .intel-modules>a{background:#1b2838;border-color:#34465c;color:#e5edf6}
+html[data-theme="dark"] .v2-page .intel-hero h1,html[data-theme="dark"] .v2-page .intel-panel h2,html[data-theme="dark"] .v2-page .intel-modules h2,html[data-theme="dark"] .v2-page .intel-empty>b{color:#f0f5fb}
+html[data-theme="dark"] .v2-page .intel-hero p,html[data-theme="dark"] .v2-page .intel-modules p,html[data-theme="dark"] .v2-page .intel-stat span,html[data-theme="dark"] .v2-page .intel-empty p{color:#b2c0d0}
+html[data-theme="dark"] .v2-page .v2-field,html[data-theme="dark"] .v2-page .v2-fixed-field{color:#bdcad8}
+html[data-theme="dark"] .v2-page .v2-field select,html[data-theme="dark"] .v2-page .v2-field input,html[data-theme="dark"] .v2-page .v2-fixed-field strong{background:#142131;color:#e5edf6;border-color:#40536a}
+html[data-theme="dark"] .v2-page .intel-note{background:#1c3041;border-color:#36536a;color:#c5d7e6}
+html[data-theme="dark"] .v2-page .intel-back{background:#1c2939;color:#f09aa1;border-color:#51404b}
+html[data-theme="dark"] .v2-page .v2-cutoff-list article{border-color:#35475d}
+html[data-theme="dark"] .v2-page .v2-tool-tag{background:#392c36;color:#f2adb3;border-color:#59404c}
+@media(prefers-reduced-motion:reduce){.v2-page .intel-modules>a,.v2-page .intel-module-action{transition:none!important}}
