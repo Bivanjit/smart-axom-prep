@@ -879,3 +879,113 @@ html[data-theme="dark"] .subject-card>b,html[data-theme="dark"] .link{color:#8dc
 html[data-theme="dark"] .eyebrow{color:#f0a46b!important}
 html[data-theme="dark"] .page,html[data-theme="dark"] .section{background:transparent}
 html[data-theme="dark"] .home-subject-section{background:#101722!important}
+
+
+/* Homepage, app showcase, installation and practice sections: explicit accessible contrast */
+html[data-theme="light"] .section-head h2,
+html[data-theme="light"] .home-intelligence-card h3,
+html[data-theme="light"] .home-blueprint h2,
+html[data-theme="light"] .home-blueprint h3,
+html[data-theme="light"] .app-section-intro h2,
+html[data-theme="light"] .app-install-inner h2,
+html[data-theme="light"] .app-gallery-section h2,
+html[data-theme="light"] .app-details-section h2,
+html[data-theme="light"] .app-release-card h3,
+html[data-theme="light"] .app-feature-grid h3,
+html[data-theme="light"] .test-roadmap-item h3,
+html[data-theme="light"] .chapter-copy b,
+html[data-theme="light"] .guide-grid h3,
+html[data-theme="light"] .page-title h1,
+html[data-theme="light"] .page h1,
+html[data-theme="light"] .narrow h2{
+ color:#14243b!important;opacity:1!important;-webkit-text-fill-color:#14243b!important;
+}
+html[data-theme="light"] .home-intelligence-card p,
+html[data-theme="light"] .home-blueprint p,
+html[data-theme="light"] .app-section-intro p,
+html[data-theme="light"] .app-install-inner p,
+html[data-theme="light"] .app-gallery-section p,
+html[data-theme="light"] .app-details-section p,
+html[data-theme="light"] .app-release-card p,
+html[data-theme="light"] .test-roadmap-item p,
+html[data-theme="light"] .chapter-copy small,
+html[data-theme="light"] .page-title p,
+html[data-theme="light"] .guide-grid p,
+html[data-theme="light"] .feature p{
+ color:#53647a!important;opacity:1!important;
+}
+html[data-theme="light"] .home-intelligence-card,
+html[data-theme="light"] .home-blueprint,
+html[data-theme="light"] .app-feature-grid article,
+html[data-theme="light"] .app-gallery-shot,
+html[data-theme="light"] .app-install-inner,
+html[data-theme="light"] .app-release-card,
+html[data-theme="light"] .test-roadmap-item,
+html[data-theme="light"] .guide-grid section,
+html[data-theme="light"] .chapter-details{
+ background:#fff!important;color:#17243a!important;border-color:#d8e2eb!important;
+}
+html[data-theme="light"] .app-install-inner b,
+html[data-theme="light"] .app-install-inner strong,
+html[data-theme="light"] .test-roadmap-item b{color:#14243b!important;opacity:1!important}
+html[data-theme="light"] .home-intelligence-card .home-tool-cta{color:#147b58!important}
+html[data-theme="light"] .eyebrow.light{color:#d48a45!important}
+html[data-theme="dark"] .home-intelligence-card,
+html[data-theme="dark"] .home-blueprint,
+html[data-theme="dark"] .app-feature-grid article,
+html[data-theme="dark"] .app-gallery-shot,
+html[data-theme="dark"] .app-install-inner,
+html[data-theme="dark"] .app-release-card,
+html[data-theme="dark"] .test-roadmap-item,
+html[data-theme="dark"] .guide-grid section,
+html[data-theme="dark"] .chapter-details,
+html[data-theme="dark"] .practice-mode-banner,
+html[data-theme="dark"] .notice,
+html[data-theme="dark"] .faq,
+html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .contact-aside,
+html[data-theme="dark"] .legal-section,
+html[data-theme="dark"] .exam-paper,
+html[data-theme="dark"] .exam-aside,
+html[data-theme="dark"] .price-row{
+ background:#1b2838!important;color:#e7edf5!important;border-color:#3a4b60!important;
+}
+html[data-theme="dark"] .section-head h2,
+html[data-theme="dark"] .home-intelligence-card h3,
+html[data-theme="dark"] .home-blueprint h2,
+html[data-theme="dark"] .home-blueprint h3,
+html[data-theme="dark"] .app-section-intro h2,
+html[data-theme="dark"] .app-install-inner h2,
+html[data-theme="dark"] .app-gallery-section h2,
+html[data-theme="dark"] .app-details-section h2,
+html[data-theme="dark"] .app-release-card h3,
+html[data-theme="dark"] .app-feature-grid h3,
+html[data-theme="dark"] .test-roadmap-item h3,
+html[data-theme="dark"] .chapter-copy b,
+html[data-theme="dark"] .guide-grid h3,
+html[data-theme="dark"] .page-title h1,
+html[data-theme="dark"] .page h1,
+html[data-theme="dark"] .narrow h2,
+html[data-theme="dark"] .app-install-inner b,
+html[data-theme="dark"] .app-install-inner strong,
+html[data-theme="dark"] .test-roadmap-item b{
+ color:#f0f5fb!important;opacity:1!important;-webkit-text-fill-color:#f0f5fb!important;
+}
+html[data-theme="dark"] .home-intelligence-card p,
+html[data-theme="dark"] .home-blueprint p,
+html[data-theme="dark"] .app-section-intro p,
+html[data-theme="dark"] .app-install-inner p,
+html[data-theme="dark"] .app-gallery-section p,
+html[data-theme="dark"] .app-details-section p,
+html[data-theme="dark"] .app-release-card p,
+html[data-theme="dark"] .test-roadmap-item p,
+html[data-theme="dark"] .chapter-copy small,
+html[data-theme="dark"] .page-title p,
+html[data-theme="dark"] .guide-grid p,
+html[data-theme="dark"] .feature p{
+ color:#bdc9d8!important;opacity:1!important;
+}
+html[data-theme="dark"] .home-intelligence-card .home-tool-cta{color:#83d6b4!important}
+html[data-theme="dark"] .app-install-inner,
+html[data-theme="dark"] .app-install-inner article{background:#1b2838!important}
+html[data-theme="dark"] .app-install-inner .step-number{color:#75d8b2!important}
