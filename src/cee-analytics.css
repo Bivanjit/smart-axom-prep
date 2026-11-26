@@ -473,3 +473,28 @@ html[data-theme="light"] .exam-paper .marking-grid span b{
   .cea-page .cea-priority-main>b{font-size:13px!important}
   .cea-page .cea-priority-main>small{font-size:9px!important}
 }
+
+/* Professional filters and compact year-range labels */
+.cea-page .cea-panel,.cea-page .cea-section-head,.cea-page .cea-section-head>div{min-width:0}
+.cea-page .cea-section-head{flex-wrap:wrap;align-items:flex-start}
+.cea-page .cea-pill{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:center;line-height:1.35}
+.cea-page .cea-filter-row{grid-template-columns:repeat(auto-fit,minmax(155px,1fr));align-items:end}
+.cea-page .cea-filter-row label,.cea-page .cea-control{font:750 10px/1.3 Inter,system-ui,sans-serif;letter-spacing:.55px;color:#526b5e;text-transform:none}
+.cea-page .cea-filter-row select,.cea-page .cea-control select{
+ appearance:none;-webkit-appearance:none;width:100%;min-width:0;height:48px;padding:0 42px 0 14px;
+ border:1px solid #cbd9d0;border-radius:10px;
+ background-color:#fff;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233e6854' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;background-position:right 14px center;
+ color:#1c3026;font:600 13px Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none;
+ box-shadow:0 2px 5px rgba(20,54,36,.035);cursor:pointer
+}
+.cea-page .cea-filter-row select:focus,.cea-page .cea-control select:focus{outline:none;border-color:#398766;box-shadow:0 0 0 3px rgba(57,135,102,.13)}
+.cea-page .cea-filter-row select option,.cea-page .cea-control select option{background:#fff;color:#1c3026;font:500 13px Inter,system-ui,sans-serif}
+.cea-page .cea-filter-row input,.cea-page .cea-control input{height:48px;border:1px solid #cbd9d0;border-radius:10px;background:#fff;color:#1c3026;font:500 13px Inter,system-ui,sans-serif;padding:0 14px}
+.cea-page .cea-year-diff{grid-template-columns:48px minmax(0,1fr) minmax(64px,auto);min-width:0}
+@media(max-width:520px){.cea-page .cea-filter-row{grid-template-columns:repeat(2,minmax(0,1fr))}.cea-page .cea-year-diff{grid-template-columns:38px minmax(0,1fr);gap:8px}.cea-page .cea-year-diff>span{grid-column:2;text-align:left}.cea-page .cea-section-head{gap:8px}}
+html[data-theme="dark"] .cea-page .cea-filter-row label,html[data-theme="dark"] .cea-page .cea-control{color:#bdd0c5}
+html[data-theme="dark"] .cea-page .cea-filter-row select,html[data-theme="dark"] .cea-page .cea-control select{background-color:#17283a;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8dfc8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");border-color:#496477;color:#f0f6f2;color-scheme:dark}
+html[data-theme="dark"] .cea-page .cea-filter-row select option,html[data-theme="dark"] .cea-page .cea-control select option{background:#17283a;color:#f0f6f2}
+html[data-theme="dark"] .cea-page .cea-filter-row input,html[data-theme="dark"] .cea-page .cea-control input{background:#17283a;border-color:#496477;color:#f0f6f2}
