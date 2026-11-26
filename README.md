@@ -1,6 +1,7 @@
 ## SmartPrep Axom
 
 Public-facing website for Assam CEE 2027 preparation.
+website link - https://smartprep-axom.pages.dev/
 
 ### Stack
 React, TypeScript, Vite, React Router and Lucide icons.
