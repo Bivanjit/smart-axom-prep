@@ -1407,3 +1407,52 @@ html[data-theme="dark"] .home-app-deep-dive .home-app-art :is(b,small){
   -webkit-text-fill-color:#eaf4fb!important;
   opacity:1!important;
 }
+
+
+/* Contrast protection for every section added in the app showcase + feature guide. */
+html[data-theme="light"] .app-features-hero :is(h1,h2,h3,p,b,strong,small),
+html[data-theme="dark"] .app-features-hero :is(h1,h2,h3,p,b,strong,small),
+html[data-theme="light"] .app-features-cta :is(h1,h2,h3,p,b,strong,small),
+html[data-theme="dark"] .app-features-cta :is(h1,h2,h3,p,b,strong,small){
+  color:#f4f8fc!important;
+  -webkit-text-fill-color:#f4f8fc!important;
+  opacity:1!important;
+}
+html[data-theme="light"] .app-features-hero h1 em,
+html[data-theme="dark"] .app-features-hero h1 em{
+  color:#8de0bd!important;
+  -webkit-text-fill-color:#8de0bd!important;
+}
+html[data-theme="light"] .app-features-hero .eyebrow,
+html[data-theme="dark"] .app-features-hero .eyebrow,
+html[data-theme="light"] .app-features-cta .eyebrow,
+html[data-theme="dark"] .app-features-cta .eyebrow{
+  color:#b7e5fa!important;
+  -webkit-text-fill-color:#b7e5fa!important;
+}
+html[data-theme="light"] .app-features-content .app-features-intro h2,
+html[data-theme="light"] .app-features-content .app-feature-group-head h2{
+  color:#142b43!important;
+  -webkit-text-fill-color:#142b43!important;
+}
+html[data-theme="light"] .app-features-content .app-features-intro p,
+html[data-theme="light"] .app-features-content .app-feature-group-head p{
+  color:#607286!important;
+  -webkit-text-fill-color:#607286!important;
+}
+html[data-theme="light"] .app-features-content .app-feature-detail-grid h3{
+  color:#142b43!important;
+  -webkit-text-fill-color:#142b43!important;
+}
+html[data-theme="light"] .app-features-content .app-feature-detail-grid p{
+  color:#607286!important;
+  -webkit-text-fill-color:#607286!important;
+}
+html[data-theme="light"] .app-features-content .app-feature-honesty :is(b,p){
+  color:#1b4d3a!important;
+  -webkit-text-fill-color:#1b4d3a!important;
+}
+html[data-theme="light"] .app-features-content .app-feature-honesty p{
+  color:#587267!important;
+  -webkit-text-fill-color:#587267!important;
+}
