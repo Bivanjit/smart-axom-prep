@@ -1256,3 +1256,18 @@ html[data-theme="dark"] .review-card .review-card-top b,
 html[data-theme="dark"] .review-card b,
 html[data-theme="dark"] .app-reviews .review-card-top b{color:#f2f6fb!important;-webkit-text-fill-color:#f2f6fb!important}
 html[data-theme="light"] .review-card .review-card-top b{color:#174b35!important}
+
+
+/* Test-series marking tiles: fix the individual tile backgrounds as well as the grid. */
+html[data-theme="dark"] .exam-paper .marking-grid span{
+ background:#294159!important;border:1px solid #4c6880!important;color:#eaf2f9!important;
+}
+html[data-theme="dark"] .exam-paper .marking-grid span b{
+ color:#bcebd5!important;-webkit-text-fill-color:#bcebd5!important;
+}
+html[data-theme="light"] .exam-paper .marking-grid span{
+ background:#edf4f7!important;border:1px solid #d5e2e9!important;color:#41596b!important;
+}
+html[data-theme="light"] .exam-paper .marking-grid span b{
+ color:#176b50!important;-webkit-text-fill-color:#176b50!important;
+}
