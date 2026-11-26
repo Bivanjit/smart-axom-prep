@@ -414,3 +414,62 @@ html[data-theme="light"] .exam-paper .marking-grid span{
 html[data-theme="light"] .exam-paper .marking-grid span b{
  color:#176b50!important;-webkit-text-fill-color:#176b50!important;
 }
+
+
+/* Mobile layout correction: the priority card has three children (rank, details, share).
+   Keep all three in explicit columns so the detail column never collapses to 56px. */
+.cea-page .cea-priority-row{
+  display:grid!important;
+  grid-template-columns:32px minmax(0,1fr) 76px!important;
+  align-items:start!important;
+  gap:12px!important;
+  min-width:0;
+}
+.cea-page .cea-priority-row>.cea-rank{
+  grid-column:1;
+  grid-row:1;
+  margin-top:2px;
+}
+.cea-page .cea-priority-row>.cea-priority-main{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+  width:100%;
+}
+.cea-page .cea-priority-row>strong{
+  grid-column:3;
+  grid-row:1;
+  min-width:0!important;
+  width:100%;
+  align-self:start;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.cea-page .cea-priority-main>b{
+  overflow-wrap:anywhere;
+}
+.cea-page .cea-year-pills{
+  display:flex;
+  flex-wrap:wrap;
+  min-width:0;
+}
+@media(max-width:520px){
+  .cea-page .cea-priority-row{
+    grid-template-columns:28px minmax(0,1fr) 62px!important;
+    gap:8px!important;
+    padding:13px 9px 13px 12px!important;
+  }
+  .cea-page .cea-priority-row>.cea-rank{
+    width:26px;height:26px;flex-basis:26px;font-size:10px;
+  }
+  .cea-page .cea-priority-row>strong{
+    min-height:50px!important;
+    padding:6px 3px!important;
+    font-size:18px!important;
+  }
+  .cea-page .cea-priority-row>strong small{
+    font-size:8px!important;
+  }
+  .cea-page .cea-priority-main>b{font-size:13px!important}
+  .cea-page .cea-priority-main>small{font-size:9px!important}
+}
