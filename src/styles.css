@@ -1317,7 +1317,7 @@ html[data-theme="dark"] .new-home-hero .aspirant-counter>span:last-child{color:#
 
 
 /* Compact hero visitor counter with explicit contrast in both themes. */
-.new-home-hero .hero-heading-row{display:flex;align-items:flex-start;gap:14px;min-width:0;margin:0 0 16px}
+.new-home-hero .hero-heading-row{display:flex;align-items:center;gap:14px;min-width:0;margin:0 0 16px}
 .new-home-hero .hero-heading-row h1{flex:1 1 auto;min-width:0;margin:0}
 .new-home-hero .aspirant-counter-wrap{position:relative;flex:0 0 auto;align-self:center;z-index:2}
 .new-home-hero .aspirant-counter{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:auto;max-width:118px;min-height:36px;margin:0;padding:7px 10px;border:1px solid #d5e5dc;border-radius:12px;background:#fff;color:#315a49;box-shadow:0 5px 16px rgba(18,75,49,.08);font:700 10px/1.2 Inter,sans-serif;cursor:pointer;white-space:nowrap}
@@ -1331,5 +1331,5 @@ html[data-theme="dark"] .new-home-hero .aspirant-counter strong{color:#fff!impor
 html[data-theme="dark"] .new-home-hero .aspirant-counter>span:last-of-type{color:#d1e3d9!important}
 html[data-theme="dark"] .new-home-hero .aspirant-counter>svg{color:#9ed9bc}
 html[data-theme="dark"] .aspirant-counter-popover{background:#1c2d3f;border-color:#435b70;color:#dce7f1}
-@media(max-width:760px){.new-home-hero .hero-heading-row{gap:8px}.new-home-hero .hero-heading-row h1{font-size:clamp(32px,8.8vw,48px);letter-spacing:-1.6px}.new-home-hero .aspirant-counter{min-height:33px;padding:6px 8px;gap:5px;font-size:9px}.new-home-hero .aspirant-counter strong{font-size:11px}}
+@media(max-width:760px){.new-home-hero .hero-heading-row{gap:10px;align-items:center}.new-home-hero .hero-heading-row h1{font-size:clamp(32px,8.8vw,48px);letter-spacing:-1.6px;line-height:1.06}.new-home-hero .aspirant-counter{min-height:33px;padding:6px 8px;gap:5px;font-size:9px}.new-home-hero .aspirant-counter strong{font-size:11px}}
 @media(max-width:390px){.new-home-hero .hero-heading-row{align-items:flex-start}.new-home-hero .hero-heading-row h1{font-size:clamp(29px,8.1vw,36px);letter-spacing:-1.4px}.new-home-hero .aspirant-counter{max-width:90px;white-space:normal;flex-wrap:wrap}}
