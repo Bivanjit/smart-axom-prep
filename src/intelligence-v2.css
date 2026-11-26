@@ -256,3 +256,9 @@ html[data-theme="light"] .home-workflow>div strong{color:#14243b!important;opaci
 html[data-theme="dark"] .home-workflow>div strong{color:#f2f6fb!important;opacity:1!important}
 html[data-theme="light"] .home-workflow>div small{color:#52647a!important;opacity:1!important}
 html[data-theme="dark"] .home-workflow>div small{color:#c1cede!important;opacity:1!important}
+
+
+/* Keep year chips inside their cards on narrow screens instead of forcing horizontal overflow. */
+.v2-page .v2-year-strip{display:flex;flex-wrap:wrap;overflow:visible;min-width:0;max-width:100%;gap:6px}
+.v2-page .v2-year-strip span{white-space:normal;overflow-wrap:anywhere;max-width:100%;min-width:0}
+@media(max-width:520px){.v2-page .v2-year-strip{gap:5px}.v2-page .v2-year-strip span{padding:6px 8px;font-size:9px}}
