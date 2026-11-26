@@ -144,3 +144,25 @@
 .cea-qb-pagination button:disabled{opacity:.4}
 .cea-qb-pagination span{font-size:12px;font-weight:800;color:#486252}
 @media(max-width:700px){.cea-qb-filters{grid-template-columns:1fr 1fr}.cea-qb-filters .cea-control:first-child{grid-column:1/-1}.cea-qb-item{padding:12px}.cea-qb-pagination button{padding:9px 10px}}
+
+
+/* Analytics pages: explicit colour tokens for both themes */
+html[data-theme="light"] .cea-page{color:#17243a}
+html[data-theme="light"] .cea-page h1,html[data-theme="light"] .cea-page h2,html[data-theme="light"] .cea-page h3{color:#14243b}
+html[data-theme="light"] .cea-panel,html[data-theme="light"] .cea-state,html[data-theme="light"] .cea-review-card{background:#fff;color:#17243a;border-color:#dce4ed}
+html[data-theme="light"] .cea-page p,html[data-theme="light"] .cea-muted,html[data-theme="light"] .cea-page small{color:#58697e}
+html[data-theme="light"] .cea-control input,html[data-theme="light"] .cea-control select,html[data-theme="light"] .cea-page input,html[data-theme="light"] .cea-page select{background:#fff;color:#17243a;border-color:#cbd5e1}
+html[data-theme="light"] .cea-table th{background:#f1f5f9;color:#26364c}
+html[data-theme="light"] .cea-table td{color:#34465d;border-color:#e2e8f0}
+html[data-theme="dark"] .cea-page{color:#e7edf5}
+html[data-theme="dark"] .cea-page h1,html[data-theme="dark"] .cea-page h2,html[data-theme="dark"] .cea-page h3{color:#f0f5fb}
+html[data-theme="dark"] .cea-panel,html[data-theme="dark"] .cea-state,html[data-theme="dark"] .cea-review-card,
+html[data-theme="dark"] .cea-control,html[data-theme="dark"] .cea-notice{background:#1b2838!important;color:#e7edf5!important;border-color:#3a4b60!important}
+html[data-theme="dark"] .cea-page p,html[data-theme="dark"] .cea-muted,html[data-theme="dark"] .cea-page small,
+html[data-theme="dark"] .cea-review-card p{color:#bdc9d8!important}
+html[data-theme="dark"] .cea-control input,html[data-theme="dark"] .cea-control select,
+html[data-theme="dark"] .cea-page input,html[data-theme="dark"] .cea-page select{background:#142131!important;color:#eef4fa!important;border-color:#465b72!important}
+html[data-theme="dark"] .cea-table th{background:#26384d!important;color:#eef4fa!important}
+html[data-theme="dark"] .cea-table td{background:#1b2838!important;color:#dce6f0!important;border-color:#3a4b60!important}
+html[data-theme="dark"] .cea-pill,html[data-theme="dark"] .cea-year-pills span{background:#26384d!important;color:#dce8f4!important;border-color:#465b72!important}
+html[data-theme="dark"] .cea-summary-metrics .cea-metric,html[data-theme="dark"] .cea-summary-metrics article{background:#1b2838!important;color:#eef4fa!important;border-color:#3a4b60!important}
