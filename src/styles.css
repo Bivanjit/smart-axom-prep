@@ -796,3 +796,86 @@ html[data-theme="dark"] .nav-intel-submenu{background:#172536!important;border:1
 html[data-theme="dark"] .nav-intel-submenu a{background:#223247!important;border:1px solid #3a5068!important;color:#dce8f3!important}
 html[data-theme="dark"] .nav-intel-submenu a:hover,html[data-theme="dark"] .nav-intel-submenu a.active{background:#2c465d!important;color:#a9e0c8!important;border-color:#55728b!important}
 html[data-theme="dark"] .nav-links.open>a,html[data-theme="dark"] .nav-intel-main>a,html[data-theme="dark"] .nav-intel-submenu a{opacity:1!important;text-shadow:none!important}
+
+
+/* SmartPrep global theme contrast pass — all public sections */
+:root{
+  color-scheme:light;
+  --sp-text:#17243a;
+  --sp-heading:#10213b;
+  --sp-muted:#53647a;
+  --sp-surface:#ffffff;
+  --sp-surface-soft:#f4f7fb;
+  --sp-border:#d8e1ec;
+}
+html[data-theme="light"] body,html[data-theme="light"] #root{background:#f7f9fc!important;color:var(--sp-text)!important}
+html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h3,html[data-theme="light"] h4,
+html[data-theme="light"] .page-title h1,html[data-theme="light"] .section h2,html[data-theme="light"] .section h3,
+html[data-theme="light"] .subject-card h3,html[data-theme="light"] .feature b,html[data-theme="light"] .home-intelligence-card h3,
+html[data-theme="light"] .chapter-copy b,html[data-theme="light"] .plan h2{color:#14243b!important}
+html[data-theme="light"] p,html[data-theme="light"] small,html[data-theme="light"] label,
+html[data-theme="light"] .muted,html[data-theme="light"] .page-title p,html[data-theme="light"] .section-head p,
+html[data-theme="light"] .subject-card p,html[data-theme="light"] .home-intelligence-card p,
+html[data-theme="light"] .chapter-copy small,html[data-theme="light"] .feature p{color:#58697e!important}
+html[data-theme="light"] .subject-card,html[data-theme="light"] .info-card,html[data-theme="light"] .plan,
+html[data-theme="light"] .exam-paper,html[data-theme="light"] .test-roadmap-item,html[data-theme="light"] .guide-grid section,
+html[data-theme="light"] .app-box,html[data-theme="light"] .practice-mode-banner,
+html[data-theme="light"] .home-blueprint,html[data-theme="light"] .syllabus-item{background:#fff!important;color:#17243a!important;border-color:#dce4ed!important}
+html[data-theme="light"] input,html[data-theme="light"] select,html[data-theme="light"] textarea{
+  background:#fff!important;color:#17243a!important;border-color:#cbd5e1!important;
+}
+html[data-theme="light"] input::placeholder,html[data-theme="light"] textarea::placeholder{color:#718096!important;opacity:1!important}
+html[data-theme="light"] .home-intelligence-card>span:first-child{opacity:1!important}
+html[data-theme="light"] .home-intelligence-card h3,html[data-theme="light"] .home-intelligence-card p{opacity:1!important}
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] body,html[data-theme="dark"] #root{background:#101722!important;color:#e7edf5!important}
+html[data-theme="dark"] h1,html[data-theme="dark"] h2,html[data-theme="dark"] h3,html[data-theme="dark"] h4,
+html[data-theme="dark"] .page-title h1,html[data-theme="dark"] .section h2,html[data-theme="dark"] .section h3,
+html[data-theme="dark"] .subject-card h3,html[data-theme="dark"] .feature b,html[data-theme="dark"] .home-intelligence-card h3,
+html[data-theme="dark"] .chapter-copy b,html[data-theme="dark"] .plan h2,html[data-theme="dark"] .narrow>h2{color:#f0f5fb!important}
+html[data-theme="dark"] p,html[data-theme="dark"] small,html[data-theme="dark"] label,
+html[data-theme="dark"] .muted,html[data-theme="dark"] .page-title p,html[data-theme="dark"] .section-head p,
+html[data-theme="dark"] .subject-card p,html[data-theme="dark"] .home-intelligence-card p,
+html[data-theme="dark"] .chapter-copy small,html[data-theme="dark"] .feature p,
+html[data-theme="dark"] .narrow>p{color:#bdc9d8!important}
+html[data-theme="dark"] .subject-card,html[data-theme="dark"] .info-card,html[data-theme="dark"] .plan,
+html[data-theme="dark"] .exam-paper,html[data-theme="dark"] .test-roadmap-item,html[data-theme="dark"] .guide-grid section,
+html[data-theme="dark"] .app-box,html[data-theme="dark"] .practice-mode-banner,
+html[data-theme="dark"] .home-blueprint,html[data-theme="dark"] .syllabus-item,
+html[data-theme="dark"] .syllabus-catalogue,html[data-theme="dark"] .chapter-details,
+html[data-theme="dark"] .price-row,html[data-theme="dark"] .faq,
+html[data-theme="dark"] .faq button,html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .contact-aside,html[data-theme="dark"] .review-card,
+html[data-theme="dark"] .community-card{
+  background:#1b2838!important;color:#e7edf5!important;border-color:#3a4b60!important;
+}
+html[data-theme="dark"] .notice,html[data-theme="dark"] .legal-callout{background:#223247!important;color:#dce6f0!important;border-color:#5b9bd5!important}
+html[data-theme="dark"] input,html[data-theme="dark"] select,html[data-theme="dark"] textarea{
+  background:#142131!important;color:#eef4fa!important;border-color:#465b72!important;
+}
+html[data-theme="dark"] input::placeholder,html[data-theme="dark"] textarea::placeholder{color:#9aabc0!important;opacity:1!important}
+html[data-theme="dark"] .syllabus-item summary:hover,html[data-theme="dark"] .faq button:hover{background:#26384d!important}
+html[data-theme="dark"] .home-blueprint b,html[data-theme="dark"] .exam-metrics strong,
+html[data-theme="dark"] .paper-subject strong{color:#f0f5fb!important}
+html[data-theme="dark"] .exam-metrics{background:#3a4b60!important;border-color:#3a4b60!important}
+html[data-theme="dark"] .exam-metrics>div{background:#1b2838!important}
+html[data-theme="dark"] .segmented{background:#1c2a3b!important}
+html[data-theme="dark"] .segmented button{color:#c5d1df!important}
+html[data-theme="dark"] .segmented button.selected{background:#2f5f91!important;color:#fff!important}
+html[data-theme="dark"] .paper-total,html[data-theme="dark"] .exam-aside{background:#13243a!important}
+html[data-theme="dark"] .plan li,html[data-theme="dark"] .legal-section p{color:#bdc9d8!important}
+html[data-theme="dark"] .plan strong,html[data-theme="dark"] .price-row h2{color:#f5f8fc!important}
+html[data-theme="dark"] .price-row h2 small{color:#bdc9d8!important}
+html[data-theme="dark"] table,html[data-theme="dark"] th,html[data-theme="dark"] td{color:#e1eaf3!important;border-color:#3a4b60!important}
+html[data-theme="dark"] th{background:#26384d!important}
+html[data-theme="dark"] .chapter{background:#1b2838!important}
+html[data-theme="dark"] .chapter b{color:#eef4fa!important}
+html[data-theme="dark"] .chapter span,html[data-theme="dark"] .chapter small{color:#bdc9d8!important}
+html[data-theme="dark"] .footer{background:#0c1420!important}
+html[data-theme="dark"] .home-intelligence-card>span:first-child{opacity:1!important}
+html[data-theme="dark"] .home-intelligence-card h3,html[data-theme="dark"] .home-intelligence-card p{opacity:1!important}
+html[data-theme="dark"] .home-intelligence-card .home-tool-cta{color:#fff!important}
+html[data-theme="dark"] .subject-card>b,html[data-theme="dark"] .link{color:#8dc8ff!important}
+html[data-theme="dark"] .eyebrow{color:#f0a46b!important}
+html[data-theme="dark"] .page,html[data-theme="dark"] .section{background:transparent}
+html[data-theme="dark"] .home-subject-section{background:#101722!important}
