@@ -4,3 +4,26 @@
 .cea-reveal-btn:hover{filter:brightness(1.13);transform:translateY(-1px)}
 .cea-prediction-bar{height:5px;border-radius:99px;background:#263a56;overflow:hidden;margin:2px 0}
 .cea-prediction-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#5d83dc,#5cb7a5)}
+
+.cea-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.cea-review-card{min-width:0;padding:14px;border:1px solid #2a4163;border-radius:11px;background:#0e1b2e}
+.cea-review-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+.cea-review-head>b{font-size:17px;color:#edf3ff}
+.cea-review-status{font-size:8px;font-weight:850;letter-spacing:.5px;text-transform:uppercase;padding:5px 7px;border-radius:99px;background:#253750;color:#b7c8e2}
+.cea-review-status.reported{background:#1e3c37;color:#a8e1ce}
+.cea-review-status.dataset{background:#203c65;color:#b7d2ff}
+.cea-review-status.partial{background:#463a25;color:#efd19a}
+.cea-review-card>strong{display:block;font-size:14px;color:#e7efff;margin-bottom:8px}
+.cea-review-card>p{font-size:10px;line-height:1.6;color:#91a5c2;margin:10px 0}
+.cea-review-card>a,.cea-review-mini-grid a{display:inline-flex;align-items:center;gap:5px;color:#9ebcff;font-size:10px;font-weight:800;text-decoration:none}
+.cea-review-subjects{display:grid;gap:7px}
+.cea-review-subjects>div{display:grid;grid-template-columns:minmax(80px,.8fr) minmax(0,1fr);gap:3px 8px;padding-top:7px;border-top:1px solid #263a56}
+.cea-review-subjects b{font-size:10px;color:#dce8fb}
+.cea-review-subjects span{font-size:10px;color:#c5d8ff;text-align:right}
+.cea-review-subjects small{grid-column:1/-1;font-size:9px;line-height:1.45;color:#8197b8}
+.cea-review-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.cea-review-mini-grid article{display:grid;gap:6px;padding:12px;border:1px solid #2a4163;border-radius:9px;background:#0e1b2e;min-width:0}
+.cea-review-mini-grid b{font-size:12px;color:#9fbfff}
+.cea-review-mini-grid strong{font-size:11px;color:#e8f0ff;line-height:1.4}
+.cea-review-mini-grid small{font-size:9px;color:#879cb9;line-height:1.4}
+@media(max-width:600px){.cea-review-grid,.cea-review-mini-grid{grid-template-columns:1fr}}
