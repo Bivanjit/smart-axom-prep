@@ -1271,3 +1271,10 @@ html[data-theme="light"] .exam-paper .marking-grid span{
 html[data-theme="light"] .exam-paper .marking-grid span b{
  color:#176b50!important;-webkit-text-fill-color:#176b50!important;
 }
+
+/* Community proof: live aspirant milestone */
+.aspirant-counter{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px;padding:12px 15px;border:1px solid rgba(151,195,235,.28);border-radius:7px;background:rgba(255,255,255,.07);color:#dce9f8;font-size:11px;line-height:1.5;max-width:560px}
+.aspirant-counter strong{font:800 20px/1 Manrope,Inter,sans-serif;letter-spacing:-.4px;color:#fff;white-space:nowrap}
+.aspirant-counter>span:last-child{color:#d1deed}
+.aspirant-counter-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#50d6a0;box-shadow:0 0 0 4px rgba(80,214,160,.12)}
+@media(max-width:520px){.aspirant-counter{gap:7px;padding:11px 12px;font-size:10px}.aspirant-counter strong{font-size:19px}}
