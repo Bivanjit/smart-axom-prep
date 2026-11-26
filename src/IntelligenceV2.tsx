@@ -4,7 +4,8 @@ import {supabase} from "./lib/supabase";
 import {Activity,ArrowLeft,BookOpen,Calculator,ChartNoAxesCombined,Home,Info,LoaderCircle,Search,ShieldCheck,Target,Sparkles,SlidersHorizontal,GraduationCap} from "lucide-react";
 import "./intelligence-v2.css";
 import CEEAnalytics from "./CEEAnalytics";
-import AnalysisEngine from "./AnalysisEngine";\nimport SmartSelect from "./SmartSelect";
+import AnalysisEngine from "./AnalysisEngine";
+import SmartSelect from "./SmartSelect";
 
 type R=Record<string,any>;
 const OFFICIAL_BRANCHES:Record<string,string[]>={
