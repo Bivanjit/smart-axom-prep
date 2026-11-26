@@ -989,3 +989,178 @@ html[data-theme="dark"] .home-intelligence-card .home-tool-cta{color:#83d6b4!imp
 html[data-theme="dark"] .app-install-inner,
 html[data-theme="dark"] .app-install-inner article{background:#1b2838!important}
 html[data-theme="dark"] .app-install-inner .step-number{color:#75d8b2!important}
+
+
+/* === SmartPrep Axom unified accessible theme layer ===
+   Theme is selected once on <html data-theme>. Keep dark marketing panels
+   (hero, banner, footer, app-download hero) intentionally dark in both modes. */
+html[data-theme="light"]{
+ --site-bg:#f5f7fb;--site-surface:#ffffff;--site-surface-2:#eef3f8;
+ --site-ink:#14243b;--site-muted:#52647a;--site-border:#d9e2ec;
+ --site-control:#ffffff;--site-control-ink:#17263d;--site-accent:#1769d2;
+ --site-accent-soft:#eaf2ff;--site-green:#147653;
+ color-scheme:light;
+}
+html[data-theme="dark"]{
+ --site-bg:#0d1522;--site-surface:#182538;--site-surface-2:#202f43;
+ --site-ink:#f0f4fa;--site-muted:#bdc9d8;--site-border:#394b61;
+ --site-control:#111f31;--site-control-ink:#eef4fa;--site-accent:#8bbcff;
+ --site-accent-soft:#233b59;--site-green:#83d7b4;
+ color-scheme:dark;
+}
+html[data-theme="light"] body,html[data-theme="dark"] body{
+ background:var(--site-bg)!important;color:var(--site-ink);
+}
+html[data-theme="light"] .header,html[data-theme="dark"] .header{
+ background:var(--site-surface)!important;border-color:var(--site-border)!important;
+}
+html[data-theme="light"] .brand,html[data-theme="light"] .menu-btn,
+html[data-theme="light"] .nav-links a{color:var(--site-ink)!important}
+html[data-theme="dark"] .brand,html[data-theme="dark"] .menu-btn,
+html[data-theme="dark"] .nav-links a{color:var(--site-ink)!important}
+html[data-theme="light"] .brand b{color:#2785d8!important}
+html[data-theme="dark"] .brand b{color:#70b9f0!important}
+html[data-theme="light"] .nav-links,html[data-theme="light"] .nav-links.open{
+ background:#fff!important;border-color:var(--site-border)!important
+}
+html[data-theme="dark"] .nav-links,html[data-theme="dark"] .nav-links.open{
+ background:#182538!important;border-color:var(--site-border)!important
+}
+html[data-theme="light"] .nav-intel-main>a,html[data-theme="light"] .nav-intel-main>button{
+ background:#e8f4ed!important;color:#176b4d!important;border-color:#cde5d7!important
+}
+html[data-theme="dark"] .nav-intel-main>a,html[data-theme="dark"] .nav-intel-main>button{
+ background:#203d35!important;color:#a9e2c8!important;border-color:#365e50!important
+}
+
+/* Shared content surfaces */
+html[data-theme="light"] :is(.page,.section,.app-download-page,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue){
+ color:var(--site-ink);
+}
+html[data-theme="dark"] :is(.page,.section,.app-download-page,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue){
+ color:var(--site-ink);
+ background:transparent;
+}
+html[data-theme="light"] :is(.page,.section,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.practice-mode-banner,.contact-card,.contact-aside,.faq,.legal-section,.guide-grid section,.pyq-card,.home-intelligence-card,.home-blueprint,.subject-card,.info-card,.plan,.app-feature-grid article,.app-gallery-shot,.app-release-card,.app-install-inner li,.exam-paper,.test-roadmap-item,.syllabus-item,.chapter-details,.review-card,.review-form,.review-empty,.community-soon){
+ color:var(--site-ink);
+}
+html[data-theme="dark"] :is(.contact-card,.contact-aside,.faq,.legal-section,.guide-grid section,.pyq-card,.home-intelligence-card,.home-blueprint,.subject-card,.info-card,.plan,.app-feature-grid article,.app-gallery-shot,.app-release-card,.app-install-inner li,.exam-paper,.test-roadmap-item,.syllabus-item,.chapter-details,.review-card,.review-form,.review-empty,.community-soon){
+ background:var(--site-surface)!important;color:var(--site-ink)!important;border-color:var(--site-border)!important;
+ box-shadow:none;
+}
+html[data-theme="dark"] .section.soft,html[data-theme="dark"] .app-gallery-section,
+html[data-theme="dark"] .app-install-section{background:#111d2c!important}
+html[data-theme="light"] .app-gallery-section{background:linear-gradient(180deg,#f8faff,#f1f5fb)!important}
+html[data-theme="light"] .app-install-section{background:linear-gradient(120deg,#edf8f3,#f2f6ff)!important}
+html[data-theme="light"] .home-subject-section{background:#f5f7fb!important}
+html[data-theme="dark"] .home-subject-section{background:#0d1522!important}
+
+/* Typography: explicitly restore readable foregrounds (including text with old opacity rules) */
+html[data-theme="light"] :is(.page,.section,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue,.v2-page,.intel-page) :is(h1,h2,h3,h4,b,strong,.chapter-copy b,.home-intel-copy h2){
+ color:var(--site-ink)!important;opacity:1!important;-webkit-text-fill-color:var(--site-ink)!important;text-shadow:none!important;
+}
+html[data-theme="dark"] :is(.page,.section,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue,.v2-page,.intel-page) :is(h1,h2,h3,h4,b,strong,.chapter-copy b,.home-intel-copy h2){
+ color:var(--site-ink)!important;opacity:1!important;-webkit-text-fill-color:var(--site-ink)!important;text-shadow:none!important;
+}
+html[data-theme="light"] :is(.page,.section,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue,.v2-page,.intel-page) :is(p,small,label,.muted,.tiny,.chapter-copy small,.feature p,.page-title p,.section-head p){
+ color:var(--site-muted)!important;opacity:1!important;
+}
+html[data-theme="dark"] :is(.page,.section,.app-details-section,.app-gallery-section,.app-install-section,.app-release-card,.home-intelligence-section,.home-subject-section,.home-blueprint,.practice-mode-banner,.contact-layout,.faq-list,.legal-section,.guide-grid,.pyq-intro,.pyq-grid,.pricing-grid,.exam-layout,.test-roadmap,.syllabus-catalogue,.v2-page,.intel-page) :is(p,small,label,.muted,.tiny,.chapter-copy small,.feature p,.page-title p,.section-head p){
+ color:var(--site-muted)!important;opacity:1!important;
+}
+
+/* Card, panel and form controls */
+html[data-theme="light"] :is(.home-intelligence-card,.home-blueprint,.app-feature-grid article,.app-gallery-shot,.app-install-inner li,.app-release-card,.test-roadmap-item,.guide-grid section,.chapter-details,.contact-card,.contact-aside,.faq,.review-card,.review-form,.review-empty,.community-soon,.info-card,.subject-card,.plan,.pyq-card,.exam-paper){
+ background:var(--site-surface)!important;color:var(--site-ink)!important;border-color:var(--site-border)!important;
+}
+html[data-theme="dark"] :is(.home-intelligence-card,.home-blueprint,.app-feature-grid article,.app-gallery-shot,.app-install-inner li,.app-release-card,.test-roadmap-item,.guide-grid section,.chapter-details,.contact-card,.contact-aside,.faq,.review-card,.review-form,.review-empty,.community-soon,.info-card,.subject-card,.plan,.pyq-card,.exam-paper){
+ background:var(--site-surface)!important;color:var(--site-ink)!important;border-color:var(--site-border)!important;
+}
+html[data-theme="light"] :is(input,select,textarea,.syllabus-toolbar input,.review-form input,.review-form textarea){
+ background:var(--site-control)!important;color:var(--site-control-ink)!important;border-color:var(--site-border)!important;
+}
+html[data-theme="dark"] :is(input,select,textarea,.syllabus-toolbar input,.review-form input,.review-form textarea){
+ background:var(--site-control)!important;color:var(--site-control-ink)!important;border-color:var(--site-border)!important;color-scheme:dark;
+}
+html[data-theme="light"] :is(input,textarea)::placeholder{color:#7b8798!important;opacity:1}
+html[data-theme="dark"] :is(input,textarea)::placeholder{color:#9baec4!important;opacity:1}
+html[data-theme="light"] .eyebrow{color:#b66b32!important;opacity:1!important}
+html[data-theme="dark"] .eyebrow{color:#f0ad79!important;opacity:1!important}
+html[data-theme="light"] .eyebrow.light{color:#ffe0bd!important}
+html[data-theme="dark"] .eyebrow.light{color:#ffe0bd!important}
+html[data-theme="light"] .link,html[data-theme="light"] .home-tool-cta{color:#1769b4!important}
+html[data-theme="dark"] .link,html[data-theme="dark"] .home-tool-cta{color:#8fc8ff!important}
+html[data-theme="light"] .subject-card>b{color:#1769b4!important}
+html[data-theme="dark"] .subject-card>b{color:#8fc8ff!important}
+html[data-theme="light"] .app-install-inner li:before{color:#147653!important}
+html[data-theme="dark"] .app-install-inner li:before{color:#83d7b4!important}
+html[data-theme="light"] .app-install-inner li b{color:#14243b!important;opacity:1!important}
+html[data-theme="dark"] .app-install-inner li b{color:#f0f4fa!important;opacity:1!important}
+html[data-theme="light"] .app-install-inner li span{color:#52647a!important}
+html[data-theme="dark"] .app-install-inner li span{color:#bdc9d8!important}
+html[data-theme="light"] .segmented{background:#eaf0f7!important}
+html[data-theme="dark"] .segmented{background:#202f43!important}
+html[data-theme="light"] .segmented button{color:#52647a!important}
+html[data-theme="dark"] .segmented button{color:#bdc9d8!important}
+html[data-theme="light"] .segmented button.selected{background:#173f75!important;color:#fff!important}
+html[data-theme="dark"] .segmented button.selected{background:#315b91!important;color:#fff!important}
+html[data-theme="light"] .notice,html[data-theme="light"] .legal-callout{background:#edf4fc!important;color:#263c58!important;border-color:#4287ca!important}
+html[data-theme="dark"] .notice,html[data-theme="dark"] .legal-callout{background:#203149!important;color:#e0eaf5!important;border-color:#69a7db!important}
+html[data-theme="light"] .notice p,html[data-theme="light"] .legal-callout{color:#52647a!important}
+html[data-theme="dark"] .notice p,html[data-theme="dark"] .legal-callout{color:#c5d3e2!important}
+html[data-theme="light"] .footer{background:#081a35!important;color:#fff!important}
+html[data-theme="dark"] .footer{background:#080f1a!important;color:#f0f4fa!important}
+html[data-theme="light"] .footer :is(h4,b,strong,a){color:#fff!important}
+html[data-theme="dark"] .footer :is(h4,b,strong,a){color:#fff!important}
+html[data-theme="light"] .hero :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="dark"] .hero :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="light"] .banner :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="dark"] .banner :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="light"] .app-download-hero :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="dark"] .app-download-hero :is(h1,h2,h3,p,b,strong,small){color:#fff}
+html[data-theme="light"] .home-intel-copy h2{color:#14243b!important}
+html[data-theme="dark"] .home-intel-copy h2{color:#f0f4fa!important}
+html[data-theme="light"] .intel-page .intel-hero h1,html[data-theme="light"] .v2-page .intel-hero h1{color:#14243b!important}
+html[data-theme="dark"] .intel-page .intel-hero h1,html[data-theme="dark"] .v2-page .intel-hero h1{color:#f0f4fa!important}
+html[data-theme="light"] .intel-page .intel-hero p,html[data-theme="light"] .v2-page .intel-hero p{color:#52647a!important}
+html[data-theme="dark"] .intel-page .intel-hero p,html[data-theme="dark"] .v2-page .intel-hero p{color:#bdc9d8!important}
+html[data-theme="light"] .intel-page .intel-panel,html[data-theme="light"] .v2-page .intel-panel,
+html[data-theme="light"] .intel-page .intel-stat,html[data-theme="light"] .v2-page .intel-stat,
+html[data-theme="light"] .intel-page .trend-list-panel,html[data-theme="light"] .v2-page .trend-list-panel,
+html[data-theme="light"] .intel-page .trend-card,html[data-theme="light"] .v2-page .trend-card{
+ background:#fff!important;color:#14243b!important;border-color:#d9e2ec!important;
+}
+html[data-theme="dark"] .intel-page .intel-panel,html[data-theme="dark"] .v2-page .intel-panel,
+html[data-theme="dark"] .intel-page .intel-stat,html[data-theme="dark"] .v2-page .intel-stat,
+html[data-theme="dark"] .intel-page .trend-list-panel,html[data-theme="dark"] .v2-page .trend-list-panel,
+html[data-theme="dark"] .intel-page .trend-card,html[data-theme="dark"] .v2-page .trend-card{
+ background:#182538!important;color:#f0f4fa!important;border-color:#394b61!important;
+}
+html[data-theme="light"] .intel-page :is(.intel-panel,.trend-list-panel,.trend-card) :is(h1,h2,h3,b,strong){color:#14243b!important;opacity:1!important}
+html[data-theme="dark"] .intel-page :is(.intel-panel,.trend-list-panel,.trend-card) :is(h1,h2,h3,b,strong){color:#f0f4fa!important;opacity:1!important}
+html[data-theme="light"] .intel-page :is(.intel-panel,.trend-list-panel,.trend-card) :is(p,small,span,label){color:#52647a!important;opacity:1!important}
+html[data-theme="dark"] .intel-page :is(.intel-panel,.trend-list-panel,.trend-card) :is(p,small,span,label){color:#bdc9d8!important;opacity:1!important}
+html[data-theme="light"] .intel-page .v2-field select,html[data-theme="light"] .intel-page .v2-field input{background:#fff!important;color:#17263d!important;border-color:#d9e2ec!important}
+html[data-theme="dark"] .intel-page .v2-field select,html[data-theme="dark"] .intel-page .v2-field input{background:#111f31!important;color:#eef4fa!important;border-color:#465b72!important;color-scheme:dark}
+html[data-theme="light"] .intel-page .v2-field select option{background:#fff;color:#17263d}
+html[data-theme="dark"] .intel-page .v2-field select option{background:#111f31;color:#eef4fa}
+html[data-theme="light"] .intel-page .v2-fixed-field{background:#edf7f5!important;color:#263f50!important;border-color:#d5e6e4!important}
+html[data-theme="dark"] .intel-page .v2-fixed-field{background:#203149!important;color:#e0eaf5!important;border-color:#465b72!important}
+html[data-theme="light"] .intel-page .v2-fixed-field strong{color:#14243b!important}
+html[data-theme="dark"] .intel-page .v2-fixed-field strong{color:#f0f4fa!important}
+html[data-theme="light"] .intel-page .v2-cutoff-list article{background:#fff!important;border-color:#d9e2ec!important}
+html[data-theme="dark"] .intel-page .v2-cutoff-list article{background:#1b2b40!important;border-color:#394b61!important}
+html[data-theme="light"] .intel-page .v2-cutoff-list b{color:#14243b!important}
+html[data-theme="dark"] .intel-page .v2-cutoff-list b{color:#f0f4fa!important}
+html[data-theme="light"] .intel-page .v2-cutoff-list small{color:#52647a!important}
+html[data-theme="dark"] .intel-page .v2-cutoff-list small{color:#bdc9d8!important}
+html[data-theme="light"] .intel-page .v2-cutoff-list strong{color:#1769b4!important}
+html[data-theme="dark"] .intel-page .v2-cutoff-list strong{color:#8fc8ff!important}
+html[data-theme="light"] .intel-page .intel-note{background:#edf5fc!important;color:#38516b!important}
+html[data-theme="dark"] .intel-page .intel-note{background:#203149!important;color:#d2deea!important}
+html[data-theme="light"] .intel-page .intel-note p,html[data-theme="light"] .intel-page .intel-note span{color:#38516b!important}
+html[data-theme="dark"] .intel-page .intel-note p,html[data-theme="dark"] .intel-page .intel-note span{color:#d2deea!important}
+html[data-theme="light"] .intel-page .v2-mode-tabs button{background:#fff!important;color:#40536a!important;border-color:#d9e2ec!important}
+html[data-theme="dark"] .intel-page .v2-mode-tabs button{background:#203149!important;color:#d2deea!important;border-color:#465b72!important}
+html[data-theme="light"] .intel-page .v2-mode-tabs button.active{background:#1769b4!important;color:#fff!important}
+html[data-theme="dark"] .intel-page .v2-mode-tabs button.active{background:#315b91!important;color:#fff!important}
