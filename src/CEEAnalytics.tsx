@@ -28,7 +28,7 @@ const pct=(n:number)=>n.toFixed(1)+"%";
 const hasQuestionText=(x:QuestionRecord)=>!!x.question_excerpt?.trim()&&!x.question_excerpt.trim().startsWith("[IMAGE SOURCE RECORD]");
 
 function useAnalytics(){
- const [rows,setRows]=useState<Row[]>([]),[subjects,setSubjects]=useState<Subject[]>([]),[chapters,setChapters]=useState<Chapter[]>([]),[dataset,setDataset]=useState<Dataset|null>(null),[questionSlots,setQuestionSlots]=useState(0),[loading,setLoading]=useState(true),[error,setError]="";
+ const [rows,setRows]=useState<Row[]>([]),[subjects,setSubjects]=useState<Subject[]>([]),[chapters,setChapters]=useState<Chapter[]>([]),[dataset,setDataset]=useState<Dataset|null>(null),[questionSlots,setQuestionSlots]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState("");
  useEffect(()=>{let live=true;const load=async()=>{
   if(!supabase){setError("Database connection is unavailable.");setLoading(false);return;}
   setLoading(true);setError("");
