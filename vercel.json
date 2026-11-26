@@ -9,6 +9,12 @@
           "value": "smart-axom-prep.vercel.app"
         }
       ],
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-forwarded-host"
+        }
+      ],
       "destination": "https://smartprep-axom.pages.dev/$1",
       "permanent": true
     }
