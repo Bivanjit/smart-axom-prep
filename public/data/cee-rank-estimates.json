@@ -10,11 +10,11 @@
     {
       "marksMin": 50,
       "marksMax": 54,
-      "rankMin": 6401,
+      "rankMin": 6500,
       "rankMax": 6500,
       "marksLabel": "50–54 marks",
-      "rankLabel": "6,401–6,500",
-      "note": "Short lower-edge extension, capped at the requested rank limit."
+      "rankLabel": "6,500 (maximum displayed rank)",
+      "note": "Short lower-edge extension below the published 55–70 marks band; the predictor clamps this to the requested maximum rank of 6,500."
     },
     {
       "marksMin": 55,
