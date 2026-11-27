@@ -21,16 +21,16 @@ export default function TargetCard(){
  ctx.fillStyle="#8df2d8";ctx.font="800 15px Inter,Arial,sans-serif";ctx.fillText("MY TARGET · MY JOURNEY",76,250);
  ctx.fillStyle="#fff";ctx.font="800 76px Inter,Arial,sans-serif";ctx.fillText("One goal.",76,345);ctx.fillStyle="#6de0c2";ctx.fillText("One engineering seat.",76,430);
  ctx.fillStyle="#c3d1e1";ctx.font="400 23px Inter,Arial,sans-serif";ctx.fillText("A focused plan for my Assam CEE 2027 preparation.",78,478);
- rounded(ctx,66,545,948,390,28);ctx.fillStyle="rgba(255,255,255,.97)";ctx.fill();ctx.strokeStyle="rgba(255,255,255,.5)";ctx.stroke();
- ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("STUDENT",104,600);ctx.fillText("TARGET COLLEGE",575,600);
+ rounded(ctx,66,545,948,390,28);ctx.fillStyle="rgba(255,255,255,.97)";ctx.fill();ctx.strokeStyle="rgba(255,255,255,.5)";ctx.stroke();const panelAccent=ctx.createLinearGradient(66,545,66,935);panelAccent.addColorStop(0,"#4be0b7");panelAccent.addColorStop(1,"#54b8ff");rounded(ctx,66,545,8,390,4);ctx.fillStyle=panelAccent;ctx.fill();ctx.fillStyle="#e8f7f3";rounded(ctx,880,555,104,28,14);ctx.fill();ctx.fillStyle="#167b68";ctx.font="800 11px Inter,Arial,sans-serif";ctx.textAlign="center";ctx.fillText("CEE GOAL",932,574);ctx.textAlign="left";
+ ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("01  /  STUDENT",104,600);ctx.fillText("02  /  TARGET COLLEGE",575,600);
  fitText(ctx,data.name.trim()||"Your name",104,653,410,40,data.name.trim()?"#122d43":"#9aabba",600,"Georgia,Times New Roman,serif");
  fitText(ctx,data.college.trim()||"Your dream college",575,653,390,36,data.college.trim()?"#122d43":"#9aabba",600,"Georgia,Times New Roman,serif");
  ctx.strokeStyle="#dce5e9";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(104,685);ctx.lineTo(976,685);ctx.stroke();
- ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("PREFERRED BRANCH",104,735);ctx.fillText("TARGET MARKS",575,735);
+ ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("03  /  PREFERRED BRANCH",104,735);ctx.fillText("04  /  TARGET MARKS",575,735);
  fitText(ctx,data.branch.trim()||"Choose your branch",104,790,410,36,data.branch.trim()?"#122d43":"#9aabba",600,"Georgia,Times New Roman,serif");
  fitText(ctx,data.target?data.target+" / 480":"— / 480",575,790,390,34,"#122d43",800);
  ctx.strokeStyle="#dce5e9";ctx.beginPath();ctx.moveTo(104,820);ctx.lineTo(976,820);ctx.stroke();
- ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("CURRENT MOCK SCORE",104,865);ctx.fillText("TARGET PROGRESS",575,865);
+ ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("05  /  CURRENT MOCK SCORE",104,865);ctx.fillText("06  /  TARGET PROGRESS",575,865);
  fitText(ctx,data.mock?data.mock+" / 480":"— / 480",104,908,390,29,"#122d43",800);
  fitText(ctx,data.target&&data.mock?Math.round(progress)+"%":"Set your marks",575,908,390,29,"#087c67",800);
  rounded(ctx,76,985,928,20,10);ctx.fillStyle="rgba(255,255,255,.15)";ctx.fill();if(progress>0){rounded(ctx,76,985,928*progress/100,20,10);ctx.fillStyle="#4be0b7";ctx.fill()}
