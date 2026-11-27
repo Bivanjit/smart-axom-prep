@@ -54,21 +54,20 @@ function Rank(){
   const source=sources.find(s=>s.id===x.source_document_id),category=categories.find(c=>c.id===x.category_id),year=Number(x.admission_year);
   const expectedQuota=(year===2023&&x.quota_code==="all_seats")||(year===2024&&x.quota_code==="excluding_5_percent");
   const marks=Number(x.closing_marks),rank=Number(x.closing_rank);
-  if(!expectedQuota||!([2023,2024].includes(year))||x.verification_status!=="verified"||source?.verification_status!=="verified"||source?.source_authority!=="DTE Assam"||source?.document_type!=="cutoff"||category?.code!=="UR"||!Number.isFinite(rank)||rank<=0||!Number.isFinite(marks)||marks<0)return [];
+  if(!expectedQuota||!([2023,2024].includes(year))||x.verification_status!=="verified"||source?.verification_status!=="verified"||source?.source_authority!=="DTE Assam"||source?.document_type!=="cutoff"||category?.code!=="UR"||x.closing_marks==null||x.closing_marks===""||!Number.isFinite(rank)||rank<=0||!Number.isFinite(marks)||marks<=0)return [];
   return [{rank,marks,year,college:institutions.find(i=>i.id===x.institution_id)?.name||"Engineering college",branch:branches.find(b=>b.id===x.branch_id)?.name||"Branch",round:rounds.find(r=>r.id===x.counselling_round_id)?.round_name||"Counselling round"}];
  });
- const value=Number(input),inputValid=mode==="marks"?Number.isFinite(value)&&value>0&&value<=480:Number.isFinite(value)&&value>0&&value<=27000;
+ const value=Number(input),inputValid=mode==="marks"?Number.isFinite(value)&&value>0&&value<=480:Number.isFinite(value)&&value>0&&value<=8000;
  const band=input.trim()&&inputValid&&estimateData?findForecastBand(estimateData.bands,value,mode):null;
  const loading=cutoffLoading||categoryLoading||sourceLoading||!estimateData;
  const nearbyByYear=[2023,2024].map(year=>({year,records:verified.filter(x=>x.year===year).sort((a,b)=>Math.abs((mode==="marks"?a.marks:a.rank)-value)-Math.abs((mode==="marks"?b.marks:b.rank)-value)).slice(0,4)})).filter(x=>x.records.length);
  const primaryOutput=mode==="marks"?band?.rankLabel:band?.marksLabel;
- const latestReferenceYear=verified.reduce((latest,x)=>Math.max(latest,x.year),0);
- return <Shell title="Assam CEE marks ↔ rank predictor" desc="Get an indicative marks or merit-rank band using published CEE estimates, with verified DTE Assam counselling cutoffs shown separately as historical reference points.">
+  return <Shell title="Assam CEE marks ↔ rank predictor" desc="Get an indicative marks or merit-rank band using published CEE estimates, with verified DTE Assam counselling cutoffs shown separately as historical reference points.">
   <section className="intel-panel predictor-parameters">
    <div className="v2-filter-heading"><Calculator/><div><b>Choose your prediction direction</b><small>Use your expected marks or target merit rank</small></div></div>
    <div className="rank-direction-switch"><button type="button" className={mode==="marks"?"active":""} onClick={()=>{setMode("marks");setInput("200");setGenerated(false)}}><span>Marks → Rank</span><small>What rank band could my marks fall in?</small></button><button type="button" className={mode==="rank"?"active":""} onClick={()=>{setMode("rank");setInput("400");setGenerated(false)}}><span>Rank → Marks</span><small>What marks band matches my target rank?</small></button></div>
    <div className="v2-grid-2">
-    <label className="v2-field"><span>{mode==="marks"?"Expected marks (out of 480)":"Expected CEE merit rank"}</span><input type="number" min="1" max={mode==="marks"?"480":"27000"} value={input} onChange={e=>{setInput(e.target.value);setGenerated(false)}} placeholder={mode==="marks"?"e.g. 200":"e.g. 400"}/></label>
+    <label className="v2-field"><span>{mode==="marks"?"Expected marks (out of 480)":"Expected CEE merit rank"}</span><input type="number" min="1" max={mode==="marks"?"480":"8000"} value={input} onChange={e=>{setInput(e.target.value);setGenerated(false)}} placeholder={mode==="marks"?"e.g. 200":"e.g. 400"}/></label>
     <p className="rank-latest-year">Latest verified year</p>
    </div>
    <AnalysisEngine title={mode==="marks"?"Marks-to-rank estimate":"Rank-to-marks estimate"} subtitle={mode==="marks"?"Matching your marks to the published 2026 expected rank bands.":"Matching your target rank to the published 2026 expected marks bands."} steps={mode==="marks"?["Checking your expected marks","Reading published CEE forecast bands","Cross-checking nearby DTE cutoff anchors","Preparing your indicative rank range"]:["Checking your target merit rank","Reading published CEE forecast bands","Cross-checking nearby DTE cutoff anchors","Preparing your indicative marks range"]} durationMs={2100+Math.min(1100,verified.length*2)} mode="calculate" buttonLabel={mode==="marks"?"Calculate rank from marks":"Calculate marks from rank"} disabled={!inputValid||loading||!estimateData?.bands?.length} onComplete={()=>setGenerated(true)}/>
