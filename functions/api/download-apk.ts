@@ -1,10 +1,3 @@
-type GithubRelease = {
-  tag_name?: string;
-  draft?: boolean;
-  prerelease?: boolean;
-  assets?: Array<{ name: string; state?: string; browser_download_url?: string }>;
-};
-
 const TAG_PATTERN = /^v[0-9]+\.[0-9]+\.[0-9]+(?:-[A-Za-z0-9.-]+)?$/;
 
 export const onRequest = async ({ request }: { request: Request }) => {
