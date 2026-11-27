@@ -1677,3 +1677,24 @@ html[data-theme="dark"] .about-page .about-hero .btn.outline {
   color: #f0f7ff !important;
   -webkit-text-fill-color: #f0f7ff !important;
 }
+
+
+/* About page dark panels must keep readable foregrounds in light theme too. */
+html[data-theme="light"] .about-page .about-story :is(h1,h2,h3,h4,b,strong) {
+  color: #f7fbff !important;
+  -webkit-text-fill-color: #f7fbff !important;
+  opacity: 1 !important;
+}
+html[data-theme="light"] .about-page .about-story :is(p,small,li,span) {
+  color: #dce9f8 !important;
+  -webkit-text-fill-color: #dce9f8 !important;
+  opacity: 1 !important;
+}
+html[data-theme="light"] .about-page .about-story .about-step a {
+  color: #9bd2ff !important;
+  -webkit-text-fill-color: #9bd2ff !important;
+}
+html[data-theme="light"] .about-page .about-story .about-step > span {
+  color: #b9ddff !important;
+  -webkit-text-fill-color: #b9ddff !important;
+}
