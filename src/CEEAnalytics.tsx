@@ -9,7 +9,8 @@ import "./cee-analytics.css";
 type Row={id:string;dataset_version_id:string;exam_year:number;subject:string;chapter:string;question_count:number;weightage_percent_subject:number|null;weightage_percent_overall:number|null;question_numbers:string|null;difficulty_label:string|null;notes:string|null};
 type Aggregate={subject:string;chapter:string;total_questions_9yr:number;avg_questions_per_year:number;avg_subject_weightage_pct:number;avg_overall_weightage_pct:number;min_questions:number;max_questions:number;years_appeared:number;priority_tier:string};
 type Dataset={id:string;version:string;label:string;source_description:string|null;created_at:string};
-// Keep year options aligned with the nine source-paper years.\nconst YEAR_OPTIONS=Array.from({length:9},(_,i)=>2018+i);
+// Keep year options aligned with the nine source-paper years.
+const YEAR_OPTIONS=Array.from({length:9},(_,i)=>2018+i);
 const fmt=(n:number)=>Number(n||0).toLocaleString("en-IN");
 const pct=(n:number)=>n.toFixed(1)+"%";
 const hasQuestionText=(x:QuestionRecord)=>!!x.question_excerpt?.trim()&&!x.question_excerpt.trim().startsWith("[IMAGE SOURCE RECORD]");
