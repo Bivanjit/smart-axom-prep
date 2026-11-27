@@ -7,8 +7,7 @@ export default function SmartSelect({label,value,onChange,options,placeholder="S
  const [open,setOpen]=useState(false),[query,setQuery]=useState("");
  const root=useRef<HTMLDivElement>(null),trigger=useRef<HTMLButtonElement>(null);
  const selected=options.find(x=>x.value===value);
- const yearOnlyOptions=options.length>0&&options.every(x=>x.value==="all"||/^20\d{2}$/.test(x.value));
- const showSearch=searchable??(!yearOnlyOptions&&options.length>7);
+ const showSearch=searchable??false;
  const filtered=useMemo(()=>{const q=query.trim().toLowerCase();return q?options.filter(x=>(x.label+" "+(x.description||"")).toLowerCase().includes(q)):options},[options,query]);
  useEffect(()=>{if(!open)return;const outside=(event:PointerEvent)=>{if(!root.current?.contains(event.target as Node))setOpen(false)};const key=(event:KeyboardEvent)=>{if(event.key==="Escape"){setOpen(false);trigger.current?.focus()}};document.addEventListener("pointerdown",outside);document.addEventListener("keydown",key);return()=>{document.removeEventListener("pointerdown",outside);document.removeEventListener("keydown",key)}},[open]);
  const choose=(next:string)=>{onChange(next);setOpen(false);setQuery("");trigger.current?.focus()};
