@@ -171,3 +171,9 @@ html[data-theme="dark"] .cx-page .cx-search-options button:hover{background:#263
 .cx-question h3 .katex-display,.cx-options .katex-display{display:block;max-width:100%;margin:.3em 0;overflow-x:auto;overflow-y:hidden}
 .math-text sup,.math-text sub{font-size:.72em;line-height:0}
 @media(max-width:560px){.cx-options{grid-template-columns:minmax(0,1fr)}.cx-options button{min-height:58px;padding:12px}.cx-question{padding:16px}.cx-question-meta{flex-wrap:wrap}}
+
+
+/* The option badge styles must never leak onto the MathText span. */
+.cx-options button>.math-text{display:inline!important;position:static!important;width:auto!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;place-items:initial!important;flex:1 1 0!important;line-height:1.6!important}
+.cx-options button>span:first-child:not(.math-text){display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;min-height:26px;padding:0;border-radius:8px;background:var(--soft,#f2f4f7);font-size:11px;font-weight:800}
+.cx-options button>.math-text .katex{display:inline;font-size:1em}
