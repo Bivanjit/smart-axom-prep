@@ -66,10 +66,7 @@ begin
     where a.key !~* '^[0-9a-f-]{36}$'
        or jsonb_typeof(a.value) <> 'number'
        or a.value::text not in ('0','1','2','3')
-       or not exists (
-         select 1 from public.website_daily_challenge_questions q
-         where q.id::text = a.key and q.challenge_id = p_challenge_id
-       )
+       or a.key not in (select q.id::text from public.website_daily_challenge_questions q where q.challenge_id = p_challenge_id)
   ) then
     raise exception 'One or more submitted answers are invalid';
   end if;
