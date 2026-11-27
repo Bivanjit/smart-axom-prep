@@ -1,7 +1,7 @@
 import {useEffect,useMemo,useState} from "react";
 import {Link,useLocation} from "react-router-dom";
 import {supabase} from "./lib/supabase";
-import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,Info,LoaderCircle,ShieldCheck,TrendingUp,GraduationCap,Calculator,Activity} from "lucide-react";
+import {ArrowLeft,ArrowRight,BookOpen,ChartNoAxesCombined,Info,LoaderCircle,ShieldCheck,TrendingUp,GraduationCap,Calculator,Activity,Search} from "lucide-react";
 import AnalysisEngine from "./AnalysisEngine";
 import SmartSelect from "./SmartSelect";
 import "./cee-analytics.css";
@@ -11,7 +11,7 @@ type Aggregate={subject:string;chapter:string;total_questions_9yr:number;avg_que
 type Dataset={id:string;version:string;label:string;source_description:string|null;created_at:string};
 const YEAR_OPTIONS=Array.from({length:9},(_,i)=>2018+i);
 const fmt=(n:number)=>Number(n||0).toLocaleString("en-IN");
-const pct=(n:number)=>n.toFixed(1)+"%";
+const pct=(n:number)=>n.toFixed(1)+"%";\nconst hasQuestionText=(x:QuestionRecord)=>!!x.question_excerpt?.trim()&&!x.question_excerpt.trim().startsWith("[IMAGE SOURCE RECORD]");
 const slug=(s:string)=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
 function useAnalytics(){
