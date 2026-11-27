@@ -284,3 +284,8 @@ html[data-theme="dark"] .cx-sim-result-metrics small,html[data-theme="dark"] .cx
 html[data-theme="dark"] .cx-sim-result-foot{border-color:#394966}
 @media(max-width:560px){.cx-trend-backdrop{padding:12px;align-items:end}.cx-trend-modal{max-height:86vh;padding:17px;border-radius:20px 20px 16px 16px}.cx-trend-modal-summary>div{padding:9px}.cx-trend-modal-summary b{font-size:16px}.cx-sim-result-card{padding:14px}.cx-sim-result-metrics b{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.cx-analysis-loading,.cx-analysis-pulse,.cx-analysis-loading>i em,.cx-analysis-results,.cx-trend-backdrop,.cx-trend-modal,.cx-trend-chart-track i,.cx-sim-result-card{animation:none!important}}
+
+/* Trend analysis dialog: keep the report card above the dimming layer on mobile and desktop. */
+.cx-trend-backdrop{position:fixed!important;inset:0!important;z-index:2147483647!important;display:grid!important;place-items:center!important;visibility:visible!important;opacity:1}
+.cx-trend-modal{display:block!important;position:relative!important;z-index:2147483647!important;visibility:visible!important;opacity:1!important;max-height:min(84dvh,780px)!important;overflow-y:auto!important;overscroll-behavior:contain}
+@media(max-width:560px){.cx-trend-backdrop{align-items:center!important;padding:12px!important}.cx-trend-modal{width:100%!important;max-height:84dvh!important;border-radius:18px!important}}
