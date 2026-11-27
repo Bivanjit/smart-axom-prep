@@ -111,7 +111,7 @@ begin
   if auth.uid() is null or not public.is_smartprep_admin() then
     raise exception 'Administrator access required';
   end if;
-  if p_date is null or p_duration_seconds not between 60 and 3600
+  if p_date is null or p_duration_seconds is null or p_duration_seconds not between 60 and 3600
      or jsonb_typeof(p_questions) <> 'array' or jsonb_array_length(p_questions) <> 10 then
     raise exception 'Provide a date, valid duration and exactly 10 questions';
   end if;
@@ -129,8 +129,11 @@ begin
        or nullif(trim(v_q->>'prompt'),'') is null
        or jsonb_typeof(v_q->'options') <> 'array'
        or jsonb_array_length(v_q->'options') <> 4
-       or (v_q->>'correct_option_index') !~ '^[0-3]$'
-       or exists (select 1 from jsonb_array_elements(v_q->'options') o where jsonb_typeof(o) <> 'string' or trim(o#>>'{}') = '') then
+       or (v_q->>'correct_option_index') not in ('0','1','2','3')
+       or exists (
+         select 1 from jsonb_array_elements(v_q->'options') as opt(value)
+         where jsonb_typeof(opt.value) <> 'string' or trim(opt.value #>> '{}') = ''
+       ) then
       raise exception 'Question % is invalid', v_pos;
     end if;
     insert into public.website_daily_challenge_questions(
@@ -145,7 +148,6 @@ begin
   return v_id;
 end;
 $$;
-
 revoke all on function public.get_website_daily_challenge(date) from public;
 revoke all on function public.submit_website_daily_challenge(uuid,jsonb) from public;
 revoke all on function public.publish_website_daily_challenge(date,text,text,int,jsonb) from public;
