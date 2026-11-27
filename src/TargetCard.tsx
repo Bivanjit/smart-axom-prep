@@ -6,7 +6,6 @@ type CardData={name:string;college:string;branch:string;mock:string;target:strin
 const initial:CardData={name:"",college:"",branch:"",mock:"",target:""};
 function rounded(ctx:CanvasRenderingContext2D,x:number,y:number,w:number,h:number,r:number){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
 function fitText(ctx:CanvasRenderingContext2D,value:string,x:number,y:number,max:number,size:number,color:string,weight=700){let s=size;ctx.font=weight+" "+s+"px Inter,Arial,sans-serif";while(ctx.measureText(value).width>max&&s>18){s--;ctx.font=weight+" "+s+"px Inter,Arial,sans-serif"}ctx.fillStyle=color;ctx.fillText(value,x,y)}
-function wrap(ctx:CanvasRenderingContext2D,value:string,x:number,y:number,max:number,size:number,lineHeight:number,color:string,weight=700,maxLines=2){ctx.font=weight+" "+size+"px Inter,Arial,sans-serif";ctx.fillStyle=color;const words=(value||"").trim().split(/\s+/).filter(Boolean);let line="",lines=0;for(const word of words){const test=line?line+" "+word:word;if(ctx.measureText(test).width>max&&line){ctx.fillText(line,x,y+lines*lineHeight);lines++;line=word;if(lines>=maxLines)return y+lines*lineHeight} else line=test}if(line)ctx.fillText(line,x,y+lines*lineHeight);return y+(lines+1)*lineHeight}
 export default function TargetCard(){
  const canvasRef=useRef<HTMLCanvasElement>(null),logoRef=useRef<HTMLImageElement|null>(null);
  const [data,setData]=useState<CardData>(initial),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[notice,setNotice]=useState("");
