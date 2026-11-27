@@ -13,7 +13,6 @@ const YEAR_OPTIONS=Array.from({length:9},(_,i)=>2018+i);
 const fmt=(n:number)=>Number(n||0).toLocaleString("en-IN");
 const pct=(n:number)=>n.toFixed(1)+"%";
 const hasQuestionText=(x:QuestionRecord)=>!!x.question_excerpt?.trim()&&!x.question_excerpt.trim().startsWith("[IMAGE SOURCE RECORD]");
-const slug=(s:string)=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
 function useAnalytics(){
  const [rows,setRows]=useState<Row[]>([]),[aggregates,setAggregates]=useState<Aggregate[]>([]),[dataset,setDataset]=useState<Dataset|null>(null),[questionSlots,setQuestionSlots]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState("");
