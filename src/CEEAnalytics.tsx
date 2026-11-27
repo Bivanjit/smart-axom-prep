@@ -124,7 +124,7 @@ function DifficultyAnalysis({data}:{data:ReturnType<typeof useAnalytics>}){
    <section className="cea-panel">
     <div className="cea-section-head"><div><span className="cea-kicker">YEAR-BY-YEAR</span><h2>{subject==="all"?"Subject difficulty comparison":"Difficulty trend · "+subject}</h2></div><span className="cea-pill">{from}–{to}</span></div>
     <div style={{display:"flex",gap:16,flexWrap:"wrap",marginBottom:18}}>
-     {(subject==="all"?data.subjects:[subject]).map((name,i)=><span key={name} style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:13,fontWeight:650}}><i style={{display:"inline-block",width:10,height:10,borderRadius:3,background:["#278c6b","#d39a35","#557fc1"][data.subjects.indexOf(name)]||"#64748b"}}/>{name}</span>)}
+     {(subject==="all"?data.subjects:[subject]).map(name=><span key={name} style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:13,fontWeight:650}}><i style={{display:"inline-block",width:10,height:10,borderRadius:3,background:["#278c6b","#d39a35","#557fc1"][data.subjects.indexOf(name)]||"#64748b"}}/>{name}</span>)}
     </div>
     <div style={{display:"grid",gridTemplateColumns:"repeat("+Math.max(1,byYear.length)+",minmax(52px,1fr))",gap:10,alignItems:"end",minHeight:220,overflowX:"auto"}}>
      {byYear.map(y=><div key={y.year} style={{minWidth:48,textAlign:"center"}}>
