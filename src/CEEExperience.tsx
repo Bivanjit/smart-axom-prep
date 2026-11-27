@@ -12,7 +12,7 @@ function PageHead({eyebrow,title,desc}:{eyebrow:string;title:string;desc:string}
 function Panel({children}:{children:React.ReactNode}){return <section className="cx-panel">{children}</section>}
 function Notice({children}:{children:React.ReactNode}){return <div className="cx-notice"><Info size={17}/><p>{children}</p></div>}
 function Loading(){return <div className="cx-loading"><LoaderCircle/> Loading SmartPrep data…</div>}
-function Hub(){const cards=[{to:"/daily-10",icon:CalendarCheck,title:"Daily 10",desc:"A fresh 10-question challenge every day: 4 Physics, 4 Chemistry and 2 Mathematics.",tag:"DAILY CHALLENGE",featured:true},{to:"/my-college-path",icon:GraduationCap,title:"Preference Simulator",desc:"Build a ranked college–branch list and compare it with verified historical closing ranks.",tag:"ELIGIBILITY SIMULATOR",featured:true},{to:"/chapter-intelligence",icon:ChartNoAxesCombined,title:"PYQ Trends & Analysis",desc:"Chapter frequency, average questions, weightage, difficulty and year-wise trends.",tag:"CEE INTELLIGENCE"},{to:"/admission-navigator",icon:Compass,title:"Admission Navigator",desc:"A practical counselling checklist with document guidance and official source links.",tag:"ADMISSION GUIDE"},{to:"/my-cee-journey",icon:Trophy,title:"My CEE Journey",desc:"Plan goals, record study sessions, track weekly effort and keep revision notes.",tag:"STUDY PLANNER"},{to:"/my-target-card",icon:Target,title:"My CEE Target Card",desc:"Create a personal CEE target card to download and share.",tag:"SHARE YOUR GOAL"}];return <main className="cx-page"><PageHead eyebrow="SMARTPREP AXOM · CEE 2027" title="Your CEE workspace." desc="A focused command centre for daily practice, college planning, PYQ intelligence and admission readiness."/><div className="cx-hub-intro"><div><span>YOUR PREPARATION, ORGANISED</span><h2>Plan. Practise. Track. Get admission-ready.</h2><p>Choose a tool below and pick up exactly where your preparation needs attention.</p></div><div className="cx-hub-pills"><span>PCM practice</span><span>Historical CEE data</span><span>Admission planning</span></div></div><div className="cx-grid">{cards.map((c,i)=><Link className={"cx-card"+(c.featured?" cx-card-featured":"")} to={c.to} key={c.to}><span className="cx-card-icon"><c.icon size={21}/></span><small>{c.tag}</small><h2>{c.title}</h2><p>{c.desc}</p><b>{i===0?"Attempt today's set":i===1?"Simulate preferences":"Explore tool"} <ArrowRight size={15}/></b></Link>)}</div></main>}
+function Hub(){const cards=[{to:"/daily-10",icon:CalendarCheck,title:"Daily 10",desc:"A fresh 10-question challenge every day: 4 Physics, 4 Chemistry and 2 Mathematics.",tag:"DAILY CHALLENGE",featured:true},{to:"/my-college-path",icon:GraduationCap,title:"Preference Simulator",desc:"Build a ranked college–branch list and compare it with verified historical closing ranks.",tag:"ELIGIBILITY SIMULATOR",featured:true},{to:"/chapter-intelligence",icon:ChartNoAxesCombined,title:"PYQ Trends & Analysis",desc:"Chapter frequency, average questions, weightage, difficulty and year-wise trends.",tag:"CEE INTELLIGENCE"},{to:"/admission-navigator",icon:Compass,title:"Admission Navigator",desc:"A practical counselling checklist with document guidance and official source links.",tag:"ADMISSION GUIDE"},{to:"/my-cee-journey",icon:Trophy,title:"My CEE Journey",desc:"Plan goals, record study sessions, track weekly effort and keep revision notes.",tag:"STUDY PLANNER"},{to:"/my-target-card",icon:Target,title:"My CEE Target Card",desc:"Create a personal CEE target card to download and share.",tag:"SHARE YOUR GOAL"}];return <main className="cx-page"><PageHead eyebrow="SMARTPREP AXOM · CEE 2027" title="Your CEE workspace." desc="A focused command centre for daily practice, college planning, PYQ intelligence and admission readiness."/><div className="cx-hub-intro"><div><span>YOUR PREPARATION, ORGANISED</span><h2>Plan. Practise. Track. Get admission-ready.</h2><p>Your CEE preparation, admission research and revision tools are organised here. Start with a daily challenge, inspect chapter trends or build a complete college preference list.</p></div><div className="cx-hub-pills"><span>PCM practice</span><span>Historical CEE data</span><span>Admission planning</span></div></div><div className="cx-grid">{cards.map((c,i)=><Link className={"cx-card"+(c.featured?" cx-card-featured":"")} to={c.to} key={c.to}><span className="cx-card-icon"><c.icon size={21}/></span><small>{c.tag}</small><h2>{c.title}</h2><p>{c.desc}</p><b>{i===0?"Attempt today's set":i===1?"Simulate preferences":"Explore tool"} <ArrowRight size={15}/></b></Link>)}</div></main>}
 function Daily10(){const [challenge,setChallenge]=useState<AnyRow|null>(null),[questions,setQuestions]=useState<AnyRow[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState(""),[answers,setAnswers]=useState<Record<string,number>>({}),[result,setResult]=useState<AnyRow|null>(null),[started,setStarted]=useState(false),[seconds,setSeconds]=useState(600),[submitting,setSubmitting]=useState(false);
 useEffect(()=>{let live=true;async function load(){if(!supabase){setError("The challenge database is not connected.");setLoading(false);return;}try{const {data,error}=await supabase.rpc("get_website_daily_challenge");if(error)throw error;if(!data)throw new Error("Today's question set is being prepared. Please try again shortly.");const qs=Array.isArray(data.questions)?data.questions:[];if(qs.length!==10||qs.filter((q:AnyRow)=>q.subject==='Physics').length!==4||qs.filter((q:AnyRow)=>q.subject==='Chemistry').length!==4||qs.filter((q:AnyRow)=>q.subject==='Mathematics').length!==2)throw new Error("Today's question set is being prepared. Please try again shortly.");if(live){setChallenge(data);setQuestions(qs);setSeconds(data.duration_seconds||600);}}catch(e){if(live)setError(e instanceof Error?e.message:"Could not load today's challenge.");}finally{if(live)setLoading(false);}}void load();return()=>{live=false}},[]);
 useEffect(()=>{if(!started||result||seconds<=0)return;const id=window.setInterval(()=>setSeconds(s=>Math.max(0,s-1)),1000);return()=>window.clearInterval(id)},[started,result,seconds]);
@@ -34,8 +34,6 @@ function MyCollegePath(){
  const [categories,setCategories]=useState<AnyRow[]>([]);
  const [college,setCollege]=useState("");
  const [branch,setBranch]=useState("");
- const [scopeCollege,setScopeCollege]=useState("all");
- const [scopeBranch,setScopeBranch]=useState("all");
  const [prefs,setPrefs]=useState<Pref[]>([]);
  const [loading,setLoading]=useState(true);
  const [simulated,setSimulated]=useState(false);
@@ -69,17 +67,13 @@ function MyCollegePath(){
   const ids=new Set(rows.filter(x=>x.institution_id===college).map(x=>x.branch_id));
   return branches.filter(x=>ids.has(x.id));
  },[rows,branches,college]);
- const scopeBranches=useMemo(()=>{
-  const ids=new Set(rows.filter(x=>scopeCollege==="all"||x.institution_id===scopeCollege).map(x=>x.branch_id));
-  return branches.filter(x=>ids.has(x.id));
- },[rows,branches,scopeCollege]);
  const add=()=>{
-  const i=institutions.find(x=>x.id===college),b=branches.find(x=>x.id===branch);
-  if(!i||!b||prefs.some(p=>p.institution_id===college&&p.branch_id===branch))return;
-  setPrefs(v=>[...v,{id:Date.now(),institution_id:college,branch_id:branch,college:i.name,branch:b.name}]);
-  setCollege("");
-  setBranch("");
-  setSimulated(false);
+  if(!college||!branch)return;
+  const pairs=rows.filter(x=>x.quota_code===quota&&Number(x.admission_year)===latestVerifiedYear).filter(x=>(college==="all"||x.institution_id===college)&&(branch==="all"||x.branch_id===branch));
+  const unique=new Map<string,Pref>();
+  for(const row of pairs){const i=institutions.find(x=>x.id===row.institution_id),b=branches.find(x=>x.id===row.branch_id);if(i&&b){const key=i.id+"::"+b.id;if(!prefs.some(p=>p.institution_id===i.id&&p.branch_id===b.id))unique.set(key,{id:Date.now()+unique.size,institution_id:i.id,branch_id:b.id,college:i.name,branch:b.name});}}
+  if(unique.size)setPrefs(v=>[...v,...unique.values()]);
+  setCollege("");setBranch("");setSimulated(false);
  };
  const move=(i:number,d:number)=>setPrefs(v=>{
   const n=[...v],j=i+d;
@@ -98,8 +92,7 @@ function MyCollegePath(){
    Number(x.closing_rank)>0&&
    (prefs.length
     ?prefs.some(p=>p.institution_id===x.institution_id&&p.branch_id===x.branch_id)
-    :(scopeCollege==="all"||x.institution_id===scopeCollege)&&
-     (scopeBranch==="all"||x.branch_id===scopeBranch))
+    :true)
   );
   const byChoice=new Map<string,AnyRow>();
   for(const row of base){
@@ -114,20 +107,18 @@ function MyCollegePath(){
    const cutoff=Number(row.closing_rank);
    return {id:row.id,institution_id:row.institution_id,branch_id:row.branch_id,college:institution?.name||row.institution?.name||"College",branch:branchInfo?.name||row.branch?.name||"Branch",cutoff,marks:row.closing_marks,round:row.round?.round_name||"Historical round",eligible:r<=cutoff,year:row.admission_year};
   }).sort((a,b)=>Number(b.eligible)-Number(a.eligible)||a.cutoff-b.cutoff||a.college.localeCompare(b.college));
- },[rank,rows,selectedCategoryId,quota,latestVerifiedYear,prefs,scopeCollege,scopeBranch,institutions,branches]);
+ },[rank,rows,selectedCategoryId,quota,latestVerifiedYear,prefs,institutions,branches]);
  const eligibleCount=results.filter(x=>x.eligible).length;
  const runSimulation=()=>{setSimulating(true);setSimulated(false);window.setTimeout(()=>{setSimulated(true);setSimulating(false)},350)};
  const resetSimulation=()=>setSimulated(false);
  return <main className="cx-page">
   <PageHead eyebrow="ASSAM CEE · COLLEGE PREDICTOR" title="Find your possible college options." desc="Compare your rank with verified historical closing ranks and explore every available college and branch combination."/>
   <Panel>
-   <div className="cx-sim-heading"><span className="cx-card-icon"><SlidersHorizontal size={20}/></span><div><h2>Simulation parameters</h2><p>Choose your rank, category, quota and the colleges or branches you want to explore.</p></div></div>
+   <div className="cx-sim-heading"><span className="cx-card-icon"><SlidersHorizontal size={20}/></span><div><h2>Simulation parameters</h2><p>Choose your rank, category and seat basis. The simulator checks every college and branch in the verified dataset; build a preference list below to narrow the results.</p></div></div>
    <div className="cx-form-grid">
     <label>Your CEE rank<input type="number" min="1" value={rank} onChange={e=>{setRank(e.target.value);resetSimulation()}} placeholder="Enter your rank"/></label>
     <label>Social category<select value={category} onChange={e=>{setCategory(e.target.value);resetSimulation()}}>{categories.map(x=><option key={x.code} value={x.code}>{x.name}</option>)}</select></label>
     <label>Seat / quota basis<select value={quota} onChange={e=>{setQuota(e.target.value);resetSimulation()}}><option value="excluding_5_percent">Regular seats (excluding 5% quota)</option><option value="5_percent_reservation">5% government quota</option><option value="all_seats">All seats (historical records)</option></select></label>
-    <label>College<select value={scopeCollege} onChange={e=>{setScopeCollege(e.target.value);setScopeBranch("all");resetSimulation()}}><option value="all">All colleges</option>{institutions.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
-    <label>Branch<select value={scopeBranch} onChange={e=>{setScopeBranch(e.target.value);resetSimulation()}}><option value="all">All branches</option>{scopeBranches.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
    </div>
    <button className="cx-button cx-sim-button" disabled={!rank||Number(rank)<1||loading||simulating} onClick={runSimulation}>{simulating?<><LoaderCircle className="cx-sim-spinner" size={18}/> Checking historical cutoffs…</>:<>Find my college options <ArrowRight size={16}/></>}</button>
    {loading&&<Loading/>}
@@ -136,18 +127,18 @@ function MyCollegePath(){
   <Panel>
    <div className="cx-sim-heading"><span className="cx-card-icon"><ListOrdered size={20}/></span><div><h2>Build a preference list</h2><p>Add individual college and branch choices if you want to compare a custom order.</p></div></div>
    <div className="cx-form-grid">
-    <label>Institution<select value={college} onChange={e=>{setCollege(e.target.value);setBranch("")}}><option value="">Choose a college</option>{institutions.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
-    <label>Branch<select value={branch} onChange={e=>setBranch(e.target.value)} disabled={!college}><option value="">Choose a branch</option>{availableBranches.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
+    <label>Institution<select value={college} onChange={e=>{setCollege(e.target.value);setBranch("all")}}><option value="">Choose a college</option><option value="all">All colleges</option>{institutions.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
+    <label>Branch<select value={branch} onChange={e=>setBranch(e.target.value)} disabled={!college}><option value="">Choose a branch</option><option value="all">All branches</option>{(college==="all"?branches:availableBranches).map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
    </div>
    <button className="cx-button" onClick={add} disabled={!college||!branch}><Plus size={16}/> Add preference</button>
    {prefs.length>0&&<div className="cx-preference-toolbar"><b>Your structured list <span>{prefs.length} choices</span></b><button onClick={()=>{setPrefs([]);resetSimulation()}}><Trash2 size={14}/> Clear all</button></div>}
    {prefs.length>0&&<div className="cx-preferences">{prefs.map((p,i)=><article key={p.id}><span>{i+1}</span><div><b>{p.college}</b><small>{p.branch}</small></div><div className="cx-row-actions"><button onClick={()=>move(i,-1)} disabled={i===0} aria-label="Move up">↑</button><button onClick={()=>move(i,1)} disabled={i===prefs.length-1} aria-label="Move down">↓</button><button onClick={()=>{setPrefs(v=>v.filter(x=>x.id!==p.id));resetSimulation()}} aria-label="Remove">×</button></div></article>)}</div>}
-   {prefs.length>0&&<p className="cx-footnote">When a preference list is present, results are limited to those selected college and branch combinations. Clear the list to explore the dropdown filters above.</p>}
+   {prefs.length>0&&<p className="cx-footnote">When a preference list is present, results are limited to those selected college and branch combinations. Use All colleges + All branches to add every available combination from the latest verified admission dataset.</p>}
   </Panel>
   {simulated&&<Panel>
    <div className="cx-simulation-results">
     <div className="cx-simulation-summary"><div><span>HISTORICAL MATCHES</span><b>{eligibleCount} / {results.length}</b></div><p>{results.length?eligibleCount?"Your rank is within the recorded closing rank for "+eligibleCount+" selected options.":"No selected option is within the recorded closing rank for this category and quota.":"No verified cutoff records match the selected filters in the latest published year."}</p></div>
-    {results.length>0?<div className="cx-simulation-list">{results.map((r,i)=><article key={r.id}><span className="cx-rank-index">{i+1}</span><div><b>{r.college}</b><small>{r.branch}</small><small>Closing rank: <strong>{r.cutoff}</strong>{r.marks!==null&&r.marks!==undefined?" · "+r.marks+" marks":""} · {r.round} · {r.year}</small></div><span className={"cx-eligibility "+(r.eligible?"yes":"no")}>{r.eligible?"Within historical cutoff":"Outside historical cutoff"}</span></article>)}</div>:<Notice>There are no verified records for this combination in {latestVerifiedYear||"the latest published year"}. Try All colleges, All branches, or another quota basis.</Notice>}
+    {results.length>0?<div className="cx-simulation-list">{results.map((r,i)=><article key={r.id}><span className="cx-rank-index">{i+1}</span><div><b>{r.college}</b><small>{r.branch}</small><small>Closing rank: <strong>{r.cutoff}</strong>{r.marks!==null&&r.marks!==undefined?" · "+r.marks+" marks":""} · {r.round} · {r.year}</small></div><span className={"cx-eligibility "+(r.eligible?"yes":"no")}>{r.eligible?"Within historical cutoff":"Outside historical cutoff"}</span></article>)}</div>:<Notice>There are no verified records for this combination in {latestVerifiedYear||"the latest published year"}. Try a different category or quota basis, or clear your preference list to compare all available options.</Notice>}
     <p className="cx-footnote">Historical comparison only, not a seat guarantee. Current-year counselling, seat matrix, category rules and official notices take priority.</p>
    </div>
   </Panel>}
