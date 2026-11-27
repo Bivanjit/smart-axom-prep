@@ -36,8 +36,9 @@ type CEEForecastBand={marksMin:number;marksMax:number;rankMin:number;rankMax:num
 type CEEForecastSource={name:string;url:string;publishedOrUpdated:string;sourceType:string;supports:string};
 type CEEForecastData={model:string;marksMinimum:number;marksMaximum:number;rankMinimum:number;rankMaximum:number;description:string;method:string;bands:CEEForecastBand[];sources:CEEForecastSource[];officialReference:{title:string;url:string;note:string}};
 type VerifiedCutoffAnchor={rank:number;marks:number;year:number;college:string;branch:string;round:string;quota:string};
-const rankCurve=[{marks:50,rank:6500},{marks:62.5,rank:5750},{marks:78,rank:4250},{marks:93.5,rank:3000},{marks:109.5,rank:2150},{marks:129.5,rank:1500},{marks:150,rank:1000},{marks:173,rank:600},{marks:208,rank:400},{marks:250,rank:200},{marks:295.5,rank:150},{marks:320,rank:100},{marks:480,rank:1}];
+const rankCurve=[{marks:55,rank:6500},{marks:62.5,rank:5750},{marks:78,rank:4250},{marks:93.5,rank:3000},{marks:109.5,rank:2150},{marks:129.5,rank:1500},{marks:150,rank:1000},{marks:173,rank:600},{marks:208,rank:400},{marks:250,rank:200},{marks:295.5,rank:150},{marks:320,rank:100},{marks:480,rank:1}];
 function interpolateRankFromMarks(marks:number){
+ if(marks<=55)return 6500;
  for(let i=1;i<rankCurve.length;i++){const a=rankCurve[i-1],b=rankCurve[i];if(marks<=b.marks){const t=(marks-a.marks)/(b.marks-a.marks);return Math.max(1,Math.min(6500,Math.round(a.rank+t*(b.rank-a.rank))))}}
  return 1;
 }
