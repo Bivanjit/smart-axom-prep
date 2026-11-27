@@ -229,8 +229,8 @@ html[data-theme=dark] .practice-app-callout p{color:#c1cde0}
 @keyframes cx-analysis-in{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cx-analysis-pulse{0%,100%{transform:scale(.96);box-shadow:0 0 0 0 rgba(190,29,40,.12)}50%{transform:scale(1.04);box-shadow:0 0 0 10px rgba(190,29,40,0)}}
 @keyframes cx-analysis-sweep{from{transform:translateX(0)}to{transform:translateX(185%)}}
-.cx-trend-backdrop{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:20px;background:rgba(12,18,30,.62);backdrop-filter:blur(7px);animation:cx-modal-backdrop .2s ease both}
-.cx-trend-modal{width:min(560px,100%);max-height:min(82vh,780px);overflow:auto;padding:20px;border:1px solid #e0e5ef;border-radius:22px;background:#fff;color:#1d2b42;box-shadow:0 28px 90px rgba(0,0,0,.28);animation:cx-modal-in .28s cubic-bezier(.2,.8,.25,1) both}
+.cx-trend-backdrop{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;padding:20px;background:rgba(7,16,34,.84);backdrop-filter:none;-webkit-backdrop-filter:none;isolation:isolate;animation:cx-modal-backdrop .2s ease both}
+.cx-trend-modal{position:relative;z-index:1;width:min(560px,100%);max-height:min(82vh,780px);overflow:auto;padding:20px;border:1px solid #e0e5ef;border-radius:22px;background:#fff;color:#1d2b42;box-shadow:0 28px 90px rgba(0,0,0,.28);animation:cx-modal-in .28s cubic-bezier(.2,.8,.25,1) both}
 .cx-trend-modal>header{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
 .cx-trend-modal>header>div>span{display:flex;align-items:center;gap:6px;color:#a52b35;font-size:9px;font-weight:850;letter-spacing:.09em}
 .cx-trend-modal>header h2{margin:9px 0 0;font-size:21px;line-height:1.3}
