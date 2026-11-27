@@ -303,3 +303,84 @@ html[data-theme="dark"] .rank-result-panel>p{color:#c2cfdd}
 @media(prefers-reduced-motion:reduce){.v2-page{animation:none}}
 
 .rank-latest-year{grid-column:1/-1;margin:0;padding:0;color:#64748b;font-size:12px;font-weight:600;letter-spacing:0;text-transform:none}.rank-latest-year strong{color:#176b4a;font-weight:800}
+
+
+/* SmartPrep Axom college predictor — responsive, year-comparison result cards */
+.v2-page .college-predictor-panel{padding:clamp(16px,3.5vw,28px);overflow:hidden;background:linear-gradient(145deg,#fff 0%,#f3faf6 100%);border:1px solid #d8e9df}
+.college-predictor-heading{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.college-predictor-icon,.college-ready-icon{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;border-radius:16px;background:linear-gradient(145deg,#dff5e9,#c9ebd9);color:#147b55}
+.college-predictor-icon svg,.college-ready-icon svg{width:25px;height:25px}
+.college-predictor-heading h2{margin:4px 0 5px;font:800 clamp(20px,3vw,26px) Manrope;color:#17382a}
+.college-predictor-heading p{margin:0;color:#61776a;font-size:13px;line-height:1.5}
+.college-metric-switch{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:18px 0;padding:5px;border:1px solid #dcebe1;border-radius:14px;background:#edf6f0}
+.college-metric-switch button{display:grid;gap:4px;text-align:left;padding:13px 15px;border:1px solid transparent;border-radius:10px;background:transparent;color:#557062;cursor:pointer;transition:.2s}
+.college-metric-switch button span{font-size:14px;font-weight:850}
+.college-metric-switch button small{font-size:10px;color:#71877a}
+.college-metric-switch button.active{background:#fff;border-color:#b9dfc8;color:#116b49;box-shadow:0 5px 16px #174c3010}
+.college-metric-switch button.active small{color:#4c8065}
+.college-input-card{padding:17px;border:1px solid #dce9e0;border-radius:15px;background:#fff}
+.college-score-field{display:grid;gap:9px}
+.college-score-field>span{font-size:10px;font-weight:900;letter-spacing:1px;color:#557363}
+.college-score-field>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px}
+.college-score-field input{width:100%;min-width:0;height:58px;padding:0 15px;border:1.5px solid #cfe2d5;border-radius:12px;background:#fbfefc;color:#183a2b;font:800 23px Manrope;outline:0}
+.college-score-field input:focus{border-color:#15966a;box-shadow:0 0 0 4px #15966a16}
+.college-score-field>div small{max-width:105px;color:#789083;font-size:10px;line-height:1.45}
+.college-filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:17px}
+.college-filter-grid .v2-field{font-size:10px}
+.college-filter-grid .v2-field select{min-height:48px;border-radius:10px;font-size:12px}
+.college-predictor-panel .predictor-submit{width:100%;min-height:54px;margin-top:18px;border-radius:12px;font-size:14px}
+.college-predictor-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:15px;color:#688174;font-size:10px;font-weight:700}
+.college-predictor-foot span{display:flex;align-items:center;gap:6px}
+.college-predictor-foot svg{width:14px;height:14px;color:#18845c}
+.college-results-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:17px 0}
+.college-results-summary>div{display:grid;gap:5px;padding:15px;border:1px solid #dce9e0;border-radius:13px;background:#fff}
+.college-results-summary span{font-size:9px;font-weight:900;letter-spacing:.8px;color:#6b8174}
+.college-results-summary strong{font:850 25px Manrope;color:#167b55}
+.college-results-summary small{font-size:10px;line-height:1.4;color:#7b8d83}
+.college-results-section{margin:18px 0}
+.college-results-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:0 0 14px}
+.college-results-title h2{margin:5px 0;font:850 22px Manrope;color:#17382a}
+.college-results-title p{margin:0;color:#6d8175;font-size:12px}
+.college-result-count{flex:none;padding:7px 10px;border-radius:99px;background:#e8f6ed;color:#176e4c;font-size:10px;font-weight:850}
+.college-result-list{display:grid;gap:11px}
+.college-result-card{overflow:hidden;border:1px solid #dce9e0;border-radius:15px;background:#fff;box-shadow:0 4px 15px #143a2407;animation:v2fade .28s ease both}
+.college-result-card.is-match{border-left:4px solid #19875d}
+.college-result-card.is-near{border-left:4px solid #d6a03d}
+.college-result-toggle{display:grid;grid-template-columns:36px minmax(0,1fr) 28px;align-items:center;gap:12px;width:100%;padding:15px;text-align:left;border:0;background:transparent;cursor:pointer}
+.college-result-rank{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#edf7f0;color:#277b56;font:850 12px Manrope}
+.college-result-main{display:grid;gap:4px;min-width:0}
+.college-result-main>b{color:#18382b;font:800 14px Manrope}
+.college-result-main>small{color:#718579;font-size:11px}
+.college-result-main>em{width:max-content;max-width:100%;padding:4px 8px;border-radius:99px;font-size:9px;font-style:normal;font-weight:850}
+.college-result-main>.status-match{background:#e6f6ed;color:#13764e}
+.college-result-main>.status-near{background:#fff4df;color:#986b1c}
+.college-result-action{display:grid;place-items:center;width:27px;height:27px;border:1px solid #dbe9df;border-radius:50%;color:#227b54;font-size:19px;font-weight:600}
+.college-year-comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;padding:0 13px 14px}
+.college-year-card{min-width:0;padding:11px;border:1px solid #e2eee6;border-radius:11px;background:#f8fcf9}
+.college-year-card h3{margin:0 0 9px;color:#176d4a;font:850 15px Manrope}
+.college-round-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;padding:9px 0;border-top:1px solid #e6efe8}
+.college-round-row>span{color:#61796b;font-size:9px;font-weight:750}
+.college-round-row>div{display:grid;gap:3px;text-align:right}
+.college-round-row b{color:#193b2c;font:850 12px Manrope}
+.college-round-row small{color:#84958b;font-size:8px}
+.college-no-year{margin:0;padding:10px 0;color:#8a9a90;font-size:10px}
+.college-ready-panel{display:grid;justify-items:center;gap:12px;padding:30px 20px;text-align:center;background:linear-gradient(145deg,#fff,#f3faf6)}
+.college-ready-icon{width:58px;height:58px;border-radius:18px}
+.college-ready-panel h2{margin:0;color:#193a2b;font:850 21px Manrope}
+.college-ready-panel>p{max-width:440px;margin:0;color:#6b8174;font-size:12px;line-height:1.65}
+.college-ready-steps{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:5px 0}
+.college-ready-steps span{padding:8px 10px;border:1px solid #dcebe1;border-radius:99px;background:#fff;color:#4c7560;font-size:9px;font-weight:850}
+.smartprep-source{margin:12px 2px 20px;text-align:center;color:#819287;font-size:10px;font-weight:750;letter-spacing:.2px}
+html[data-theme="dark"] .v2-page .college-predictor-panel,html[data-theme="dark"] .v2-page .college-ready-panel{background:linear-gradient(145deg,#172a22,#13231c);border-color:#294638}
+html[data-theme="dark"] .college-predictor-heading h2,html[data-theme="dark"] .college-result-main>b,html[data-theme="dark"] .college-round-row b,html[data-theme="dark"] .college-ready-panel h2{color:#e4f2e9}
+html[data-theme="dark"] .college-predictor-heading p,html[data-theme="dark"] .college-ready-panel>p{color:#a4b9aa}
+html[data-theme="dark"] .college-input-card,html[data-theme="dark"] .college-result-card,html[data-theme="dark"] .college-results-summary>div{background:#192b22;border-color:#2d4939}
+html[data-theme="dark"] .college-metric-switch{background:#14251c;border-color:#2d4939}
+html[data-theme="dark"] .college-metric-switch button.active{background:#203b2c;border-color:#3d7555;color:#bfe8ce}
+html[data-theme="dark"] .college-score-field input{background:#122219;border-color:#355543;color:#e4f2e9}
+html[data-theme="dark"] .college-year-card{background:#14251c;border-color:#2d4939}
+html[data-theme="dark"] .college-results-title h2{color:#e4f2e9}
+html[data-theme="dark"] .college-result-action{border-color:#355543;color:#9cdbb4}
+html[data-theme="dark"] .college-predictor-foot,html[data-theme="dark"] .smartprep-source{color:#91a99a}
+@media(max-width:620px){.college-results-summary{grid-template-columns:1fr 1fr}.college-results-summary>div:last-child{grid-column:1/-1}.college-results-title{align-items:flex-start}.college-results-title h2{font-size:19px}.college-filter-grid{gap:11px}}
+@media(max-width:420px){.college-metric-switch button{padding:11px 10px}.college-metric-switch button span{font-size:12px}.college-metric-switch button small{font-size:9px}.college-score-field>div{grid-template-columns:1fr}.college-score-field>div small{max-width:none}.college-results-summary{grid-template-columns:1fr 1fr}.college-result-toggle{gap:9px;padding:12px}.college-year-comparison{grid-template-columns:1fr}.college-round-row{grid-template-columns:minmax(0,1fr) auto auto}}
