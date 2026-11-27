@@ -136,3 +136,21 @@ html[data-theme="dark"] .cx-page .cx-search-options button:hover{background:#263
 .cx-question .katex-display,.cx-options .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}
 .math-text{min-width:0;max-width:100%;overflow-wrap:anywhere}
 @media(max-width:560px){.cx-options{grid-template-columns:1fr}.cx-options button{min-height:58px;padding:13px;gap:12px}.cx-question{padding:16px}.cx-question-meta{flex-wrap:wrap}}
+
+
+/* Shared CEE route spacing: keep every subsection close to its own back link. */
+.cx-page{padding-top:18px}
+.cx-head{margin-top:0}
+.cx-head>.cx-back{margin-bottom:0}
+.cx-head>span{margin-top:12px}
+@media(max-width:560px){.cx-page{padding:14px 14px 54px}.cx-head>span{margin-top:10px}}
+/* Math content must wrap naturally without fixed-height clipping. */
+.cx-question{height:auto;min-height:0;overflow:visible}
+.cx-question h3{height:auto;min-height:0;overflow:visible;overflow-wrap:anywhere}
+.cx-options{grid-auto-rows:auto;align-items:stretch}
+.cx-options button{height:auto;min-height:58px;max-height:none;align-items:center;white-space:normal;overflow:visible;line-height:1.55}
+.cx-options button>.math-text{display:block;flex:1;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.cx-question .math-text,.cx-explanation .math-text{display:inline;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.cx-question .katex-display,.cx-options .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden}
+.cx-options .katex,.cx-question .katex,.cx-explanation .katex{white-space:normal}
+@media(max-width:560px){.cx-options{grid-template-columns:1fr}.cx-options button{min-height:58px;padding:13px}}
