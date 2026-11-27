@@ -1,73 +1,20 @@
 {
-  "model": "assam-cee-2026-public-forecast-bands",
-  "modelYear": 2026,
+  "model": "assam-cee-2023-2024-calibrated-reference",
+  "marksMinimum": 50,
   "marksMaximum": 480,
-  "description": "Broad published 2026 expected marks/rank bands. These are forecast bands, not an official candidate-level merit list.",
-  "method": "Prefer overlapping 2026 expected ranges published by Careers360 and Shiksha. Do not turn bands into fabricated point-by-point ranks. Official DTE Assam college/branch cutoffs are displayed separately as historical calibration anchors.",
+  "rankMinimum": 1,
+  "rankMaximum": 6500,
+  "description": "Indicative Assam CEE marks/rank reference, using the user-supplied Careers360 table and verified DTE Assam Unreserved college/branch counselling cutoff records from 2023 and 2024.",
+  "method": "The displayed broad bands are taken from the supplied reference screenshots. A monotonic piecewise-linear curve through band midpoints provides a nearest point estimate in both directions. Verified DTE Assam cutoff pairs from 2023 and both 2024 quota groups are shown as separate historical calibration checks; they are not misrepresented as a complete candidate-level merit list.",
   "bands": [
     {
-      "marksMin": 229,
-      "marksMax": 480,
-      "rankMin": 1,
-      "rankMax": 300,
-      "marksLabel": "229+ marks",
-      "rankLabel": "1–300"
-    },
-    {
-      "marksMin": 188,
-      "marksMax": 228,
-      "rankMin": 301,
-      "rankMax": 500,
-      "marksLabel": "188–228 marks",
-      "rankLabel": "301–500"
-    },
-    {
-      "marksMin": 159,
-      "marksMax": 187,
-      "rankMin": 501,
-      "rankMax": 700,
-      "marksLabel": "159–187 marks",
-      "rankLabel": "501–700"
-    },
-    {
-      "marksMin": 142,
-      "marksMax": 158,
-      "rankMin": 801,
-      "rankMax": 1200,
-      "marksLabel": "142–158 marks",
-      "rankLabel": "801–1,200"
-    },
-    {
-      "marksMin": 118,
-      "marksMax": 141,
-      "rankMin": 1201,
-      "rankMax": 1800,
-      "marksLabel": "118–141 marks",
-      "rankLabel": "1,201–1,800"
-    },
-    {
-      "marksMin": 102,
-      "marksMax": 117,
-      "rankMin": 1801,
-      "rankMax": 2500,
-      "marksLabel": "102–117 marks",
-      "rankLabel": "1,801–2,500"
-    },
-    {
-      "marksMin": 86,
-      "marksMax": 101,
-      "rankMin": 2501,
-      "rankMax": 3500,
-      "marksLabel": "86–101 marks",
-      "rankLabel": "2,501–3,500"
-    },
-    {
-      "marksMin": 71,
-      "marksMax": 85,
-      "rankMin": 3501,
-      "rankMax": 5000,
-      "marksLabel": "71–85 marks",
-      "rankLabel": "3,501–5,000"
+      "marksMin": 50,
+      "marksMax": 54,
+      "rankMin": 6401,
+      "rankMax": 6500,
+      "marksLabel": "50–54 marks",
+      "rankLabel": "6,401–6,500",
+      "note": "Short lower-edge extension, capped at the requested rank limit."
     },
     {
       "marksMin": 55,
@@ -78,44 +25,230 @@
       "rankLabel": "5,001–6,500"
     },
     {
-      "marksMin": 18,
-      "marksMax": 54,
-      "rankMin": 6501,
-      "rankMax": 8000,
-      "marksLabel": "18–54 marks",
-      "rankLabel": "6,501–8,000"
+      "marksMin": 71,
+      "marksMax": 85,
+      "rankMin": 3501,
+      "rankMax": 5000,
+      "marksLabel": "71–85 marks",
+      "rankLabel": "3,501–5,000"
+    },
+    {
+      "marksMin": 86,
+      "marksMax": 101,
+      "rankMin": 2501,
+      "rankMax": 3500,
+      "marksLabel": "86–101 marks",
+      "rankLabel": "2,501–3,500"
+    },
+    {
+      "marksMin": 102,
+      "marksMax": 117,
+      "rankMin": 1801,
+      "rankMax": 2500,
+      "marksLabel": "102–117 marks",
+      "rankLabel": "1,801–2,500"
+    },
+    {
+      "marksMin": 118,
+      "marksMax": 141,
+      "rankMin": 1201,
+      "rankMax": 1800,
+      "marksLabel": "118–141 marks",
+      "rankLabel": "1,201–1,800"
+    },
+    {
+      "marksMin": 142,
+      "marksMax": 158,
+      "rankMin": 801,
+      "rankMax": 1200,
+      "marksLabel": "142–158 marks",
+      "rankLabel": "801–1,200"
+    },
+    {
+      "marksMin": 159,
+      "marksMax": 187,
+      "rankMin": 501,
+      "rankMax": 700,
+      "marksLabel": "159–187 marks",
+      "rankLabel": "501–700"
+    },
+    {
+      "marksMin": 188,
+      "marksMax": 228,
+      "rankMin": 301,
+      "rankMax": 500,
+      "marksLabel": "188–228 marks",
+      "rankLabel": "301–500"
+    },
+    {
+      "marksMin": 229,
+      "marksMax": 271,
+      "rankMin": 100,
+      "rankMax": 300,
+      "marksLabel": "229–271 marks",
+      "rankLabel": "100–300"
+    },
+    {
+      "marksMin": 272,
+      "marksMax": 319,
+      "rankMin": 1,
+      "rankMax": 200,
+      "marksLabel": "272–319 marks",
+      "rankLabel": "1–200",
+      "note": "Interpolated gap between the supplied reference rows."
+    },
+    {
+      "marksMin": 320,
+      "marksMax": 480,
+      "rankMin": 1,
+      "rankMax": 200,
+      "marksLabel": "320–480+ marks",
+      "rankLabel": "1–200"
     }
   ],
   "sources": [
     {
-      "name": "Careers360 — Assam CEE Marks vs Rank 2026",
+      "name": "Careers360 — Assam CEE marks vs rank (user-supplied screenshot)",
       "url": "https://engineering.careers360.com/articles/assam-cee-marks-vs-rank-2026",
-      "publishedOrUpdated": "2026-06-26",
-      "sourceType": "third-party expected estimate",
-      "supports": "188–228 marks → rank 301–500; 159–187 → 501–700; lower bands"
+      "publishedOrUpdated": "Screenshot supplied in this conversation",
+      "sourceType": "third-party expected estimate table",
+      "supports": "55–70 → 5,001–6,500; 71–85 → 3,501–5,000; 86–101 → 2,501–3,500; 102–117 → 1,801–2,500; 118–141 → 1,201–1,800; 142–158 → 801–1,200; 159–187 → 501–700; 188–228 → 301–500; 229–271 → 100–300; 320+ → 1–200."
     },
     {
-      "name": "Shiksha — Assam CEE 2026 expected marks vs ranks",
-      "url": "https://www.shiksha.com/engineering/assam-cee-exam",
-      "publishedOrUpdated": "2026 season page",
-      "sourceType": "third-party expected estimate",
-      "supports": "188–228 marks → rank 301–500; 159–187 → 501–700; 142–158 → 801–1,200"
+      "name": "Google search overview — Assam CEE marks vs rank (user-supplied screenshot)",
+      "url": "https://www.google.com/search?q=Assam+CEE+marks+vs+rank",
+      "publishedOrUpdated": "Screenshot supplied in this conversation",
+      "sourceType": "search overview; secondary reference",
+      "supports": "Displays the same broad published estimate bands."
     }
   ],
-  "conflictingEstimates": [
-    {
-      "name": "CollegeDunia — Assam CEE 2026: 200 Marks Expected Rank",
-      "url": "https://collegedunia.com/articles/e-308-assam-cee-2026-200-marks-expected-rank-and-college-chances",
-      "marksMin": 180,
-      "marksMax": 219,
-      "rankMin": 2501,
-      "rankMax": 4000,
-      "note": "Conflicts sharply with Careers360/Shiksha and with the nearby verified DTE Assam cutoff anchors. Shown as a disagreement, not blended into the primary band."
-    }
-  ],
+  "historicalCalibration": {
+    "authority": "DTE Assam",
+    "category": "UR",
+    "verifiedRecords": 156,
+    "years": [
+      {
+        "year": 2023,
+        "quota": "all_seats",
+        "records": 70,
+        "marksBuckets": [
+          {
+            "marksRange": "40–59",
+            "count": 18,
+            "averageClosingRank": 3764,
+            "rankRange": "3,043–4,884"
+          },
+          {
+            "marksRange": "60–79",
+            "count": 19,
+            "averageClosingRank": 2330,
+            "rankRange": "1,817–2,878"
+          },
+          {
+            "marksRange": "80–99",
+            "count": 11,
+            "averageClosingRank": 1438,
+            "rankRange": "1,068–1,723"
+          },
+          {
+            "marksRange": "100–119",
+            "count": 9,
+            "averageClosingRank": 823,
+            "rankRange": "667–1,013"
+          },
+          {
+            "marksRange": "120–139",
+            "count": 6,
+            "averageClosingRank": 523,
+            "rankRange": "412–640"
+          },
+          {
+            "marksRange": "140–159",
+            "count": 5,
+            "averageClosingRank": 374,
+            "rankRange": "341–395"
+          },
+          {
+            "marksRange": "180–199",
+            "count": 1,
+            "averageClosingRank": 109,
+            "rankRange": "109"
+          },
+          {
+            "marksRange": "200–219",
+            "count": 1,
+            "averageClosingRank": 86,
+            "rankRange": "86"
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "quota": "excluding_5_percent + 5_percent_reservation",
+        "records": 86,
+        "marksBuckets": [
+          {
+            "marksRange": "60–79",
+            "count": 3,
+            "averageClosingRank": 3755,
+            "rankRange": "3,591–3,862"
+          },
+          {
+            "marksRange": "80–99",
+            "count": 16,
+            "averageClosingRank": 2864,
+            "rankRange": "2,527–3,323"
+          },
+          {
+            "marksRange": "100–119",
+            "count": 26,
+            "averageClosingRank": 1927,
+            "rankRange": "1,662–2,339"
+          },
+          {
+            "marksRange": "120–139",
+            "count": 15,
+            "averageClosingRank": 1390,
+            "rankRange": "1,266–1,602"
+          },
+          {
+            "marksRange": "140–159",
+            "count": 11,
+            "averageClosingRank": 971,
+            "rankRange": "817–1,112"
+          },
+          {
+            "marksRange": "160–179",
+            "count": 5,
+            "averageClosingRank": 714,
+            "rankRange": "562–779"
+          },
+          {
+            "marksRange": "180–199",
+            "count": 4,
+            "averageClosingRank": 534,
+            "rankRange": "507–548"
+          },
+          {
+            "marksRange": "200–219",
+            "count": 4,
+            "averageClosingRank": 309,
+            "rankRange": "267–337"
+          },
+          {
+            "marksRange": "240–259",
+            "count": 2,
+            "averageClosingRank": 120,
+            "rankRange": "96–144"
+          }
+        ]
+      }
+    ],
+    "caveat": "These DTE records are college/branch closing cutoffs, not a complete candidate-level marks-to-merit-rank dataset. Different years and quota groups have different score distributions."
+  },
   "officialReference": {
     "title": "ASTU CEE Rank Cards",
     "url": "https://astu.ac.in/?page_id=40479",
-    "note": "ASTU provides individual candidate rank cards. A public full candidate-level marks-to-rank dataset was not found; official DTE cutoff pairs are college/branch counselling thresholds, not a complete merit list."
+    "note": "Official individual candidate rank cards; no complete public candidate-level marks/rank dataset was established."
   }
 }
