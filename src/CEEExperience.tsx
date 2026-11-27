@@ -64,7 +64,7 @@ function MyCollegePath(){
   void load();
   return()=>{live=false};
  },[]);
- const latestVerifiedYear=useMemo(()=>Math.max(0,...rows.map(x=>Number(x.admission_year)||0)),[rows]);
+ const latestVerifiedYear=useMemo(()=>Math.max(0,...rows.filter(x=>x.quota_code===quota).map(x=>Number(x.admission_year)||0)),[rows,quota]);
  const availableBranches=useMemo(()=>{
   const ids=new Set(rows.filter(x=>x.institution_id===college).map(x=>x.branch_id));
   return branches.filter(x=>ids.has(x.id));
@@ -125,7 +125,7 @@ function MyCollegePath(){
    <div className="cx-form-grid">
     <label>Your CEE rank<input type="number" min="1" value={rank} onChange={e=>{setRank(e.target.value);resetSimulation()}} placeholder="Enter your rank"/></label>
     <label>Social category<select value={category} onChange={e=>{setCategory(e.target.value);resetSimulation()}}>{categories.map(x=><option key={x.code} value={x.code}>{x.name}</option>)}</select></label>
-    <label>Seat / quota basis<select value={quota} onChange={e=>{setQuota(e.target.value);resetSimulation()}}><option value="excluding_5_percent">Regular seats (excluding 5% quota)</option><option value="5_percent_reservation">5% government quota</option><option value="all_seats">All seats (historical 2023 records)</option></select></label>
+    <label>Seat / quota basis<select value={quota} onChange={e=>{setQuota(e.target.value);resetSimulation()}}><option value="excluding_5_percent">Regular seats (excluding 5% quota)</option><option value="5_percent_reservation">5% government quota</option><option value="all_seats">All seats (historical records)</option></select></label>
     <label>College<select value={scopeCollege} onChange={e=>{setScopeCollege(e.target.value);setScopeBranch("all");resetSimulation()}}><option value="all">All colleges</option>{institutions.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
     <label>Branch<select value={scopeBranch} onChange={e=>{setScopeBranch(e.target.value);resetSimulation()}}><option value="all">All branches</option>{scopeBranches.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label>
    </div>
