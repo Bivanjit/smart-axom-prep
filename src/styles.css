@@ -235,7 +235,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .download-count{display:flex;align-items:center;gap:6px;color:#b8cbe4;font-size:10px;margin-top:10px}.download-count span{color:#91a6c2;font-size:9px}
 
 
-/* SmartPrep Axom Admin V2 — responsive control-room system */
+/* SmartPrep Axom Admin V2 - responsive control-room system */
 .admin-shell{
   --ax-ink:#17243b;--ax-muted:#718096;--ax-line:#e5eaf2;--ax-paper:#f6f7fb;
   --ax-indigo:#5146d8;--ax-indigo-dark:#332c9c;--ax-green:#16866a;--ax-amber:#d99a27;
@@ -353,7 +353,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){.question-bank-filters{grid-template-columns:minmax(0,1fr)!important}.admin-bulk-toolbar{position:static!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.admin-bulk-toolbar>label,.admin-bulk-toolbar>.tiny{grid-column:1/-1}.admin-bulk-toolbar button,.admin-bulk-toolbar select{width:100%!important;min-width:0;justify-content:center}.admin-bulk-toolbar select{max-width:none!important}.admin-list>article{min-width:0;overflow-wrap:anywhere}.admin-form-head{align-items:flex-start;flex-wrap:wrap}.admin-form-head>div{min-width:0}}
 
 
-/* Premium public-site redesign — SmartPrep Axom */
+/* Premium public-site redesign - SmartPrep Axom */
 :root{--sp-ink:#0a1b3d;--sp-blue:#145cf4;--sp-indigo:#5146d8;--sp-mint:#dff8ef;--sp-paper:#f7f9fd;--sp-line:#e6ebf4}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{background:#fff;color:var(--sp-ink);-webkit-font-smoothing:antialiased}
@@ -591,7 +591,7 @@ input,textarea,select{border-radius:13px!important}
 @media(max-width:420px){.home-intelligence-grid{grid-template-columns:1fr}.home-intelligence-card{min-height:170px}}
 
 
-/* SmartPrep Axom — bright editorial palette, restrained red/green/blue accents */
+/* SmartPrep Axom - bright editorial palette, restrained red/green/blue accents */
 :root{--sp-ink:#14243b;--sp-muted:#64748b;--sp-paper:#ffffff;--sp-soft:#f7f9fc;--sp-line:#e3e8ef;--sp-red:#d83c4c;--sp-red-dark:#b9273a;--sp-green:#18845e;--sp-blue:#398dcc;--sp-blue-soft:#eaf4fc}
 html,body,#root{background:var(--sp-paper);color:var(--sp-ink)}
 body{transition:background .28s ease,color .28s ease}
@@ -721,7 +721,7 @@ html[data-theme="dark"] .home-proof-strip>p{color:#aebdce}
 @media(max-width:720px){.theme-toggle{right:14px;bottom:20px}.new-home-hero .hero-grid{padding-top:30px}}
 
 
-/* Mobile polish pass — balanced typography, centred controls and a true floating theme switch */
+/* Mobile polish pass - balanced typography, centred controls and a true floating theme switch */
 .theme-toggle{position:fixed!important;left:18px!important;right:auto!important;bottom:26px!important;top:auto!important;z-index:1000!important;width:54px!important;height:54px!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:linear-gradient(145deg,#fff 0%,#f4f7fb 100%)!important;color:#263f5b!important;border:1px solid #d9e3ec!important;box-shadow:0 10px 28px rgba(18,38,62,.22)!important}
 .theme-toggle:hover{transform:translateY(-3px) scale(1.04)!important}
 .new-home-hero .actions{align-items:stretch}
@@ -798,7 +798,7 @@ html[data-theme="dark"] .nav-intel-submenu a:hover,html[data-theme="dark"] .nav-
 html[data-theme="dark"] .nav-links.open>a,html[data-theme="dark"] .nav-intel-main>a,html[data-theme="dark"] .nav-intel-submenu a{opacity:1!important;text-shadow:none!important}
 
 
-/* SmartPrep global theme contrast pass — all public sections */
+/* SmartPrep global theme contrast pass - all public sections */
 :root{
   color-scheme:light;
   --sp-text:#17243a;
@@ -1475,7 +1475,7 @@ html[data-theme=dark] .nav-links.open .nav-intel-submenu a{background:#1a2639;bo
 .nav-links.open a,.nav-links.open button{transition:background .18s ease,transform .18s ease,border-color .18s ease}
 
 
-/* Priority navigation drawer — contained scroll, backdrop and reduced-motion support */
+/* Priority navigation drawer - contained scroll, backdrop and reduced-motion support */
 .desktop-nav{display:flex;align-items:center;gap:8px}.desktop-nav a{padding:10px 13px;border-radius:999px;font-size:12px;font-weight:750;color:#475569;text-decoration:none;transition:background .18s ease,color .18s ease,transform .18s ease}.desktop-nav a:hover,.desktop-nav a.active{background:#eef2ff;color:#4338ca}.menu-btn{display:none;background:transparent;border:1px solid #e2e8f0;border-radius:12px;width:42px;height:42px;align-items:center;justify-content:center;cursor:pointer;transition:background .18s ease,transform .18s ease}.menu-btn:active{transform:scale(.94)}
 .drawer-backdrop{position:fixed;inset:0;z-index:1000;border:0;background:rgba(10,16,32,.42);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);animation:drawerFade .18s ease both}.mobile-drawer{position:fixed;z-index:1001;inset:0 0 0 auto;width:min(440px,92vw);height:100dvh;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;background:linear-gradient(160deg,rgba(255,255,255,.97),rgba(245,247,255,.98));border-left:1px solid rgba(255,255,255,.75);box-shadow:-24px 0 70px rgba(15,23,42,.2);padding:18px 18px calc(24px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:12px;animation:drawerSlide .24s cubic-bezier(.2,.8,.2,1) both}.drawer-top{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 16px;border-bottom:1px solid #e8eaf3}.drawer-top>button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #e5e7eb;border-radius:14px;background:rgba(255,255,255,.85);color:#1e293b}.drawer-home{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;border:1px solid #e5e7eb;border-radius:16px;background:rgba(255,255,255,.82);color:#1e293b;text-decoration:none;font-weight:800}.drawer-group{padding:10px;border:1px solid rgba(226,232,240,.9);border-radius:18px;background:rgba(255,255,255,.62);box-shadow:0 5px 20px rgba(30,41,59,.045)}.drawer-group-head{display:flex;align-items:center;gap:8px}.drawer-group-head>a{flex:1;display:flex;align-items:center;min-height:48px;padding:0 14px;border-radius:13px;text-decoration:none;font-size:15px;font-weight:850;letter-spacing:-.2px}.drawer-group-head>button{display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(99,102,241,.15);border-radius:13px;background:rgba(255,255,255,.85);color:#4f46e5}.drawer-group-head>button svg{transition:transform .22s ease}.drawer-group.is-expanded .drawer-group-head>button svg{transform:rotate(180deg)}.drawer-intelligence .drawer-group-head>a{background:linear-gradient(110deg,#e9eaff,#f2eaff);color:#4338ca}.drawer-intelligence .drawer-group-head>button{background:#eeedff;color:#5145cd}.drawer-workspace .drawer-group-head>a{background:linear-gradient(110deg,#e7f4ff,#eaf8f7);color:#17617d}.drawer-workspace .drawer-group-head>button{background:#e8f5fa;color:#17617d}.drawer-app .drawer-group-head>a{background:linear-gradient(110deg,#fff0e8,#fff5ed);color:#a64c24}.drawer-app .drawer-group-head>button{background:#fff0e8;color:#a64c24}.drawer-links{display:grid;grid-template-columns:1fr;gap:6px;padding:9px 1px 1px;animation:drawerLinksIn .2s ease both}.drawer-links a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:10px 12px;border:1px solid rgba(226,232,240,.8);border-radius:12px;background:rgba(255,255,255,.9);color:#334155;text-decoration:none;font-size:13px;font-weight:680;transition:background .16s ease,border-color .16s ease,transform .16s ease}.drawer-links a:hover,.drawer-links a.active{background:#f0f2ff;border-color:#d9dcff;color:#4338ca}.drawer-links a:active{transform:scale(.985)}.drawer-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding:12px 2px 0;color:#94a3b8;font-size:10px}.drawer-theme{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;color:#475569;font-size:12px;font-weight:700}.theme-toggle{z-index:20}
 @keyframes drawerFade{from{opacity:0}to{opacity:1}}@keyframes drawerSlide{from{opacity:.7;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}@keyframes drawerLinksIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
