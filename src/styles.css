@@ -1698,3 +1698,26 @@ html[data-theme="light"] .about-page .about-story .about-step > span {
   color: #b9ddff !important;
   -webkit-text-fill-color: #b9ddff !important;
 }
+
+
+/* Mobile navigation brand contrast in dark mode. */
+html[data-theme="dark"] .mobile-drawer .drawer-top {
+  background: linear-gradient(135deg, #17263d, #1d304d) !important;
+  border-bottom-color: #354a68 !important;
+  border-radius: 16px;
+  padding: 10px 12px 16px !important;
+}
+html[data-theme="dark"] .mobile-drawer .drawer-top .brand,
+html[data-theme="dark"] .mobile-drawer .drawer-top .brand span {
+  color: #f3f7ff !important;
+  -webkit-text-fill-color: #f3f7ff !important;
+}
+html[data-theme="dark"] .mobile-drawer .drawer-top .brand b {
+  color: #438bd1 !important;
+  -webkit-text-fill-color: #438bd1 !important;
+}
+html[data-theme="dark"] .mobile-drawer .drawer-top > button {
+  background: #243853 !important;
+  border-color: #405674 !important;
+  color: #f3f7ff !important;
+}
