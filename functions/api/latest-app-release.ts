@@ -39,7 +39,8 @@ export const onRequestGet = async () => {
       },
       {
         headers: {
-          "Cache-Control": "public, max-age=60, s-maxage=60, stale-while-revalidate=300"
+          "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+          "CDN-Cache-Control": "no-store"
         }
       }
     );
