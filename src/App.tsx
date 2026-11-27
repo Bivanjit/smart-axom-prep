@@ -4,6 +4,7 @@ import {supabase} from './lib/supabase';
 import Reviews from "./Reviews";
 import Intelligence from "./Intelligence";
 import AdminIntelligence from "./AdminIntelligence";
+import TargetCard from "./TargetCard";
 import CEEExperience from "./CEEExperience";
 import "./admin-intelligence.css";
 import "./intelligence.css";
