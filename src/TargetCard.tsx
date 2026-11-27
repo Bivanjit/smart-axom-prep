@@ -9,7 +9,7 @@ function fitText(ctx:CanvasRenderingContext2D,value:string,x:number,y:number,max
 export default function TargetCard(){
  const canvasRef=useRef<HTMLCanvasElement>(null),logoRef=useRef<HTMLImageElement|null>(null);
  const [data,setData]=useState<CardData>(initial),[ready,setReady]=useState(false),[busy,setBusy]=useState(false),[notice,setNotice]=useState("");
- useEffect(()=>{const img=new Image();img.src="/favicon.svg";img.onload=()=>{logoRef.current=img;setReady(true)};img.onerror=()=>setReady(true);return()=>{logoRef.current=null}},[]);
+ useEffect(()=>{const img=new Image();img.src="/smartprep-logo.svg";img.onload=()=>{logoRef.current=img;setReady(true)};img.onerror=()=>setReady(true);return()=>{logoRef.current=null}},[]);
  const progress=Number(data.target)>0&&data.mock!==""?Math.max(0,Math.min(100,Number(data.mock)/Number(data.target)*100)):0;
  useEffect(()=>{const canvas=canvasRef.current,ctx=canvas?.getContext("2d");if(!canvas||!ctx)return;ctx.clearRect(0,0,W,H);
  const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#07152f");bg.addColorStop(.58,"#102b4a");bg.addColorStop(1,"#123e43");ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
