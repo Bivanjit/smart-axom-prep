@@ -55,7 +55,7 @@ function staticSeoBody(path,title,description){
  const paragraphs=custom?custom.slice(1):[description,"Explore relevant SmartPrep Axom resources for Assam CEE preparation. Public website tools and information are available without login or signup. Check official ASTU and DTE Assam notices for current examination and admission rules."];
  const links=[["Free PYQ archive","/previous-papers"],["Chapter-wise practice","/practice"],["CEE intelligence","/analytics"],["CEE Chapter Outlook","/cee-outlook"],["Android app and optional low-cost plans","/app"]];
  const faq=faqData[path];
- const faqHtml=faq?'<section aria-labelledby="seo-faq"><h2 id="seo-faq">Frequently asked questions</h2>'+faq.map(function(pair){return '<h3>'+esc(pair[0])+'</h3><p>'+esc(pair[1])+'</p>';}).join('')+'</section>':'';
+ const faqHtml=faq?'<section aria-labelledby="seo-faq"><h2 id="seo-faq">Frequently asked questions</h2>'+faq.map(function(pair){return '<h3>'+esc(pair[0])+'</h3><p>'+esc(pair[1])+'</p>';}).join('')+'</section><script type="application/ld+json">'+JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":faq.map(function(pair){return {"@type":"Question",name:pair[0],acceptedAnswer:{"@type":"Answer",text:pair[1]}};})})+'</script>':'';
  return '<main class="container page" aria-label="'+esc(title)+'"><h1>'+esc(heading)+'</h1>'+paragraphs.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'<nav aria-label="Related SmartPrep Axom resources"><h2>Explore more free resources</h2><ul>'+links.map(function(pair){return '<li><a href="'+pair[1]+'">'+esc(pair[0])+'</a></li>';}).join('')+'</ul></nav>'+faqHtml+'</main>';
 }
 function esc(value){return value.replaceAll("&","&amp;").replaceAll('"',"&quot;").replaceAll("<","&lt;").replaceAll(">","&gt;");}
@@ -74,7 +74,7 @@ for(const [path,title,description] of routes){
  html=setMeta(html,'<meta\\s+property="og:url"[^>]*>',`<meta property="og:url" content="${canonical}" />`);
  html=setMeta(html,'<meta\\s+property="og:title"[^>]*>',`<meta property="og:title" content="${esc(title)}" />`);
  html=setMeta(html,'<meta\\s+property="og:description"[^>]*>',`<meta property="og:description" content="${esc(description)}" />`);
- html=html.replace(/<div id="root">[\\s\\S]*?<\\/div>\\s*<script type="module"/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>\\n    <script type="module"');
+ html=html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>'+"\n"+'    <script type="module"');
  const target=join("dist",path.slice(1),"index.html");
  await mkdir(dirname(target),{recursive:true});
  await writeFile(target,html,"utf8");
