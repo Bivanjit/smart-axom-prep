@@ -384,3 +384,9 @@ html[data-theme="dark"] .college-result-action{border-color:#355543;color:#9cdbb
 html[data-theme="dark"] .college-predictor-foot,html[data-theme="dark"] .smartprep-source{color:#91a99a}
 @media(max-width:620px){.college-results-summary{grid-template-columns:1fr 1fr}.college-results-summary>div:last-child{grid-column:1/-1}.college-results-title{align-items:flex-start}.college-results-title h2{font-size:19px}.college-filter-grid{gap:11px}}
 @media(max-width:420px){.college-metric-switch button{padding:11px 10px}.college-metric-switch button span{font-size:12px}.college-metric-switch button small{font-size:9px}.college-score-field>div{grid-template-columns:1fr}.college-score-field>div small{max-width:none}.college-results-summary{grid-template-columns:1fr 1fr}.college-result-toggle{gap:9px;padding:12px}.college-year-comparison{grid-template-columns:1fr}.college-round-row{grid-template-columns:minmax(0,1fr) auto auto}}
+
+
+.intel-nav .intel-back-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:40px;padding:0 14px;border:1px solid #dce4f0;border-radius:10px;background:#fff;color:#29405e!important;font-size:13px;font-weight:750;text-decoration:none;box-shadow:0 3px 12px rgba(20,45,75,.08);transition:transform .15s,background .15s}
+.intel-nav .intel-back-button:hover{background:#f1f5fb;transform:translateY(-1px)}
+html[data-theme="dark"] .intel-nav .intel-back-button{background:#1b2942;border-color:#3b4c6c;color:#eaf1ff!important}
+html[data-theme="dark"] .intel-nav .intel-back-button:hover{background:#263957}
