@@ -14,14 +14,14 @@ export default function TargetCard(){
   // The supplied artwork contains blank input fields. Keep every label and decorative element untouched.
   const drawFit=(value:string,x:number,y:number,maxWidth:number,size:number,color:string,weight=700,align:CanvasTextAlign="left")=>{if(!value.trim())return;ctx.save();let px=size;ctx.textAlign=align;ctx.textBaseline="middle";ctx.fillStyle=color;ctx.font=weight+" "+px+"px Inter,Arial,sans-serif";while(ctx.measureText(value).width>maxWidth&&px>16){px-=1;ctx.font=weight+" "+px+"px Inter,Arial,sans-serif"}ctx.fillText(value,x,y,maxWidth);ctx.restore()};
   if(logoRef.current){ctx.save();ctx.drawImage(logoRef.current,72,48,96,96);ctx.restore()}
-  drawFit(data.name,104,696,405,31,"#123d2c",700);
-  drawFit(data.college,675,696,375,27,"#123d2c",700);
-  drawFit(data.branch,105,888,470,29,"#123d2c",700);
-  drawFit(data.target,752,888,170,30,"#123d2c",750);
-  drawFit(data.mock,110,1075,260,32,"#123d2c",750);
-  drawFit(data.mock!==""&&data.target!==""?progress+"%":"",744,1075,250,34,"#123d2c",750);
+  drawFit(data.name,104,622,405,31,"#123d2c",700);
+  drawFit(data.college,675,622,375,27,"#123d2c",700);
+  drawFit(data.branch,105,805,470,29,"#123d2c",700);
+  drawFit(data.target,752,805,170,30,"#123d2c",750);
+  drawFit(data.mock,110,975,260,32,"#123d2c",750);
+  drawFit(data.mock!==""&&data.target!==""?progress+"%":"",744,975,250,34,"#123d2c",750);
   // Progress is the only filled element; the original empty track stays intact.
-  const track={x:92,y:1159,w:1046,h:34};
+  const track={x:92,y:1050,w:1046,h:30};
   if(progress>0){ctx.save();ctx.beginPath();ctx.roundRect(track.x,track.y,track.w,track.h,17);ctx.clip();ctx.fillStyle="#0b6846";ctx.fillRect(track.x,track.y,track.w*progress/100,track.h);ctx.restore()}
  },[data,ready,progress]);
  const update=(key:keyof CardData,value:string)=>setData(v=>({...v,[key]:value}));
