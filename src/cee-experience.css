@@ -72,3 +72,67 @@ html[data-theme=dark] .cx-hub-intro{background:linear-gradient(120deg,#1b2942,#1
 @media(max-width:480px){.home-workspace-grid{grid-template-columns:1fr}}
 html[data-theme=dark] .cx-pwd-toggle{background:#172c24;border-color:#315d48}html[data-theme=dark] .cx-pwd-toggle b{color:#bcebd1}html[data-theme=dark] .cx-pwd-toggle small{color:#a7b8ae}html[data-theme=dark] .cx-button-secondary{background:#1d3028!important;color:#bcebd1!important;border-color:#3a624d!important}html[data-theme=dark] .home-workspace-card{background:linear-gradient(145deg,#172b25,#1b2635);border-color:#34483f}
 @media print{.header,.footer,.theme-toggle,.cx-back,.cx-download-actions,.cx-progress,.cx-pwd-toggle{display:none!important}.cx-page{padding:0!important}.cx-panel{box-shadow:none!important;border:0!important}.cx-doc-group{break-inside:avoid}.cx-doc-list{display:block!important}.cx-doc-heading{display:none!important}}
+
+
+/* High-contrast workspace theme: scope every surface and native control to the active theme. */
+.cx-page{padding-top:92px;color:#1c2b42}
+.cx-page .cx-panel{background:#fff;color:#1c2b42;border-color:#e1e6f2}
+.cx-page .cx-form-grid label,.cx-page .cx-toolbar label{color:#4c5d7b}
+.cx-page .cx-form-grid input,.cx-page .cx-form-grid select,.cx-page .cx-form-grid textarea,.cx-page .cx-toolbar select,.cx-page .cx-search input,.cx-page .cx-searchbar input{background:#fff;color:#1c2b42;border-color:#dce3f0}
+.cx-page select option{background:#fff;color:#1c2b42}
+.cx-page .cx-card:nth-child(1) .cx-card-icon{background:#e6efff;color:#4262a7}
+.cx-page .cx-card:nth-child(2) .cx-card-icon{background:#e9e5ff;color:#6653b4}
+.cx-page .cx-card:nth-child(3) .cx-card-icon{background:#e0f3f1;color:#247b78}
+.cx-page .cx-card:nth-child(4) .cx-card-icon{background:#fff0e4;color:#a85d2b}
+.cx-page .cx-card:nth-child(5) .cx-card-icon{background:#fce9f1;color:#a64d79}
+.cx-page .cx-card:nth-child(6) .cx-card-icon{background:#e9edff;color:#5865a8}
+.cx-page .cx-card:nth-child(1)>b{color:#4262a7}.cx-page .cx-card:nth-child(2)>b{color:#6653b4}.cx-page .cx-card:nth-child(3)>b{color:#247b78}.cx-page .cx-card:nth-child(4)>b{color:#a85d2b}.cx-page .cx-card:nth-child(5)>b{color:#a64d79}.cx-page .cx-card:nth-child(6)>b{color:#5865a8}
+.cx-sim-spinner{animation:cxspin .75s linear infinite}
+.cx-sim-progress{height:7px;margin:13px 0 2px;border-radius:99px;overflow:hidden;background:#e8ecf7}
+.cx-sim-progress i{display:block;width:38%;height:100%;border-radius:99px;background:linear-gradient(90deg,#5669b7,#9b79d6);animation:cx-sim-sweep 1s ease-in-out infinite alternate}
+@keyframes cx-sim-sweep{from{transform:translateX(-10%);width:28%}to{transform:translateX(245%);width:48%}}
+.cx-download-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 22px}
+.cx-download-actions .cx-button{min-height:50px;background:linear-gradient(120deg,#526fbd,#8c76d0);box-shadow:0 8px 18px rgba(90,103,183,.18)}
+.cx-download-actions .cx-button-secondary{background:linear-gradient(120deg,#e6efff,#eee8ff);color:#394d83;border:1px solid #d5dcf3;box-shadow:none}
+.cx-hub-intro{margin:0 auto 22px}
+html[data-theme="dark"] .cx-page{--surface:#17243a;--soft:#253550;--text:#f0f4ff;--muted:#bdc8dd;--border:#394966;color:#f0f4ff;background:transparent}
+html[data-theme="dark"] .cx-page .cx-head h1,html[data-theme="dark"] .cx-page .cx-head p,html[data-theme="dark"] .cx-page .cx-head>span,html[data-theme="dark"] .cx-page .cx-back{color:#edf2ff}
+html[data-theme="dark"] .cx-page .cx-panel,html[data-theme="dark"] .cx-page .cx-card,html[data-theme="dark"] .cx-page .cx-question,html[data-theme="dark"] .cx-page .cx-pyq-card{background:#17243a!important;color:#edf2ff!important;border-color:#394966!important}
+html[data-theme="dark"] .cx-page .cx-card p,html[data-theme="dark"] .cx-page .cx-panel p,html[data-theme="dark"] .cx-page .cx-panel small,html[data-theme="dark"] .cx-page .cx-footnote,html[data-theme="dark"] .cx-page .cx-kicker,html[data-theme="dark"] .cx-page .cx-card small{color:#bdc8dd}
+html[data-theme="dark"] .cx-page .cx-form-grid label,html[data-theme="dark"] .cx-page .cx-toolbar label,html[data-theme="dark"] .cx-page .cx-doc-heading,html[data-theme="dark"] .cx-page .cx-section-title{color:#eaf0ff}
+html[data-theme="dark"] .cx-page .cx-form-grid input,html[data-theme="dark"] .cx-page .cx-form-grid select,html[data-theme="dark"] .cx-page .cx-form-grid textarea,html[data-theme="dark"] .cx-page .cx-toolbar select,html[data-theme="dark"] .cx-page .cx-search input,html[data-theme="dark"] .cx-page .cx-searchbar input{background:#101b2d!important;color:#f1f5ff!important;border-color:#435575!important;caret-color:#c6d2ff}
+html[data-theme="dark"] .cx-page .cx-form-grid input::placeholder,html[data-theme="dark"] .cx-page .cx-search input::placeholder,html[data-theme="dark"] .cx-page .cx-searchbar input::placeholder{color:#aab8d1!important;opacity:1}
+html[data-theme="dark"] .cx-page select option{background:#101b2d!important;color:#f1f5ff!important}
+html[data-theme="dark"] .cx-page .cx-preferences article,html[data-theme="dark"] .cx-page .cx-doc-list label,html[data-theme="dark"] .cx-page .cx-session-list article,html[data-theme="dark"] .cx-page .cx-pyq-metrics>div,html[data-theme="dark"] .cx-page .cx-pyq-summary>div{background:#1d2b43!important;color:#edf2ff!important;border-color:#394966!important}
+html[data-theme="dark"] .cx-page .cx-admission-hero,html[data-theme="dark"] .cx-page .cx-simulation-summary,html[data-theme="dark"] .cx-page .cx-result,html[data-theme="dark"] .cx-page .cx-year-trend{background:#22334e!important;color:#edf2ff!important}
+html[data-theme="dark"] .cx-page .cx-admission-hero b,html[data-theme="dark"] .cx-page .cx-admission-hero strong,html[data-theme="dark"] .cx-page .cx-simulation-summary b{color:#d8e3ff}
+html[data-theme="dark"] .cx-page .cx-doc-list label b,html[data-theme="dark"] .cx-page .cx-doc-heading b,html[data-theme="dark"] .cx-page .cx-question h3,html[data-theme="dark"] .cx-page .cx-preferences b{color:#f1f5ff}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(1) .cx-card-icon{background:#263b61;color:#b9d0ff}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(2) .cx-card-icon{background:#38305f;color:#d3c5ff}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(3) .cx-card-icon{background:#204a4b;color:#a8e4dd}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(4) .cx-card-icon{background:#553b2c;color:#ffd0aa}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(5) .cx-card-icon{background:#512c43;color:#ffc3dd}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(6) .cx-card-icon{background:#303b69;color:#cbd1ff}
+html[data-theme="dark"] .cx-page .cx-card:nth-child(n)>b{color:#d4ddff}
+html[data-theme="dark"] .cx-page .cx-download-actions .cx-button-secondary{background:#293858;color:#e4e9ff;border-color:#455782}
+html[data-theme="dark"] .cx-page .cx-pwd-toggle{background:#1c3146;border-color:#395b6b;color:#e8f4ff}
+html[data-theme="dark"] .cx-page .cx-pwd-toggle small{color:#c3d2e5}
+html[data-theme="dark"] .cx-page .cx-search-options{background:#17243a;border-color:#394966}
+html[data-theme="dark"] .cx-page .cx-search-options button{color:#f1f5ff}
+html[data-theme="dark"] .cx-page .cx-search-options button:hover{background:#263a58}
+@media(max-width:560px){.cx-page{padding-top:88px}.cx-download-actions{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cx-sim-spinner,.cx-sim-progress i{animation:none!important}}
+
+
+/* KaTeX-safe responsive exam questions: content determines each card/option height. */
+.cx-question{height:auto;min-height:0;overflow:visible}
+.cx-question h3{min-width:0;overflow-wrap:anywhere;word-break:normal}
+.cx-options{align-items:stretch;grid-auto-rows:auto}
+.cx-options button{height:auto;min-height:62px;max-height:none;min-width:0;align-items:flex-start;overflow:visible;white-space:normal;line-height:1.5}
+.cx-options button>span.math-text,.cx-question h3>.math-text,.cx-explanation .math-text{display:block;flex:1 1 auto;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word}
+.cx-options .katex,.cx-question .katex,.cx-explanation .katex{max-width:100%;white-space:normal}
+.cx-options .katex-html,.cx-question .katex-html,.cx-explanation .katex-html{white-space:normal}
+.cx-options .katex .base,.cx-question .katex .base{white-space:normal}
+.cx-question .katex-display,.cx-options .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:3px 0}
+.math-text{min-width:0;max-width:100%;overflow-wrap:anywhere}
+@media(max-width:560px){.cx-options{grid-template-columns:1fr}.cx-options button{min-height:58px;padding:13px;gap:12px}.cx-question{padding:16px}.cx-question-meta{flex-wrap:wrap}}
