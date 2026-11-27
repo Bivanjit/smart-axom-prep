@@ -1509,3 +1509,16 @@ html[data-theme="dark"] .drawer-links a:hover,html[data-theme="dark"] .drawer-li
 html[data-theme="dark"] .drawer-theme{background:#202f49!important;border-color:#3a4b68!important;color:#edf2ff!important}
 html[data-theme="dark"] .drawer-workspace .drawer-group-head>a{background:linear-gradient(110deg,#243b5d,#29395a)!important;color:#c9dcff!important}
 html[data-theme="dark"] .drawer-workspace .drawer-group-head>button{background:#29395a!important;color:#c9dcff!important}
+
+
+/* Homepage tool CTA contrast: keep labels white on every coloured button. */
+.home-intelligence-card .home-tool-cta,
+.home-intelligence-card b.home-tool-cta,
+.home-intelligence-card .home-tool-cta * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.home-intelligence-card .home-tool-cta {
+  font-weight: 800 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+}
