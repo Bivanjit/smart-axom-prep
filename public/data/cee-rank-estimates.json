@@ -4,8 +4,8 @@
   "marksMaximum": 480,
   "rankMinimum": 1,
   "rankMaximum": 6500,
-  "description": "Indicative Assam CEE marks/rank reference, using the user-supplied Careers360 table and verified DTE Assam Unreserved college/branch counselling cutoff records from 2023 and 2024.",
-  "method": "The displayed broad bands are taken from the supplied reference screenshots. A monotonic piecewise-linear curve through band midpoints provides a nearest point estimate in both directions. Verified DTE Assam cutoff pairs from 2023 and both 2024 quota groups are shown as separate historical calibration checks; they are not misrepresented as a complete candidate-level merit list.",
+  "description": "SmartPrep Axom indicative Assam CEE marks and rank reference, informed by historical admission patterns.",
+  "method": "A monotonic piecewise estimate across broad score and rank ranges. Historical college and branch closing cutoffs are displayed separately for context and are not represented as individual candidate merit ranks.",
   "bands": [
     {
       "marksMin": 50,
@@ -104,22 +104,6 @@
       "rankMax": 200,
       "marksLabel": "320–480+ marks",
       "rankLabel": "1–200"
-    }
-  ],
-  "sources": [
-    {
-      "name": "Careers360 — Assam CEE marks vs rank (user-supplied screenshot)",
-      "url": "https://engineering.careers360.com/articles/assam-cee-marks-vs-rank-2026",
-      "publishedOrUpdated": "Screenshot supplied in this conversation",
-      "sourceType": "third-party expected estimate table",
-      "supports": "55–70 → 5,001–6,500; 71–85 → 3,501–5,000; 86–101 → 2,501–3,500; 102–117 → 1,801–2,500; 118–141 → 1,201–1,800; 142–158 → 801–1,200; 159–187 → 501–700; 188–228 → 301–500; 229–271 → 100–300; 320+ → 1–200."
-    },
-    {
-      "name": "Google search overview — Assam CEE marks vs rank (user-supplied screenshot)",
-      "url": "https://www.google.com/search?q=Assam+CEE+marks+vs+rank",
-      "publishedOrUpdated": "Screenshot supplied in this conversation",
-      "sourceType": "search overview; secondary reference",
-      "supports": "Displays the same broad published estimate bands."
     }
   ],
   "historicalCalibration": {
@@ -246,9 +230,5 @@
     ],
     "caveat": "These DTE records are college/branch closing cutoffs, not a complete candidate-level marks-to-merit-rank dataset. Different years and quota groups have different score distributions."
   },
-  "officialReference": {
-    "title": "ASTU CEE Rank Cards",
-    "url": "https://astu.ac.in/?page_id=40479",
-    "note": "Official individual candidate rank cards; no complete public candidate-level marks/rank dataset was established."
-  }
+  "source": "SmartPrep Axom"
 }
