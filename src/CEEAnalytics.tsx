@@ -86,65 +86,42 @@ function ChapterTrends({data}:{data:ReturnType<typeof useAnalytics>}){
  return <main className="cea-page"><Header title="Chapter-wise PYQ trends" desc="Explore chapter frequency and weightage from the source Assam CEE analysis. Filter by year range, subject and chapter."/><StateView loading={data.loading} error={data.error}><Filters from={from} to={to} setFrom={v=>{setFrom(v);setAnalysed(false)}} setTo={v=>{setTo(v);setAnalysed(false)}}><SubjectSelect value={subject} onChange={v=>{setSubject(v);setAnalysed(false)}} subjects={data.subjects}/><label className="cea-control">Search chapter<input value={search} onChange={e=>{setSearch(e.target.value);setAnalysed(false)}} placeholder="Type a chapter name"/></label></Filters><AnalysisEngine title="Chapter frequency analysis" subtitle="Counting source chapter appearances and comparing year-by-year records." steps={["Loading selected year records","Grouping source chapter names","Calculating frequency and weightage","Preparing chapter comparison"]} durationMs={duration} mode="analyse" buttonLabel="Analyse chapter trends" disabled={!filtered.length} onComplete={()=>setAnalysed(true)}/>{analysed&&<><div className="cea-summary-metrics"><Metric label="Questions represented" value={fmt(total)}/><Metric label="Chapter groups" value={fmt(list.length)}/><Metric label="Years represented" value={active.length+"/"+range.length}/></div><section className="cea-panel"><div className="cea-section-head"><div><span className="cea-kicker">CHAPTER FREQUENCY</span><h2>Selected chapter trends</h2></div><span className="cea-pill">{from}–{to}</span></div><div className="cea-table-wrap"><table className="cea-table"><thead><tr><th>Chapter</th><th>Subject</th>{active.map(y=><th key={y}>{y}</th>)}<th>Total</th></tr></thead><tbody>{list.map(x=><tr key={x.subject+x.chapter}><td><b>{x.chapter}</b></td><td>{x.subject}</td>{active.map(y=><td key={y}>{x.years.get(y)||"–"}</td>)}<td><strong>{x.total}</strong></td></tr>)}</tbody></table></div></section><Coverage rows={data.rows} years={range}/></>}</StateView></main>
 }
 function DifficultyAnalysis({data}:{data:ReturnType<typeof useAnalytics>}){
- const [from,setFrom]=useState("2018"),[to,setTo]=useState("2026"),[subject,setSubject]=useState("all");
+ const [from,setFrom]=useState("2018"),[to,setTo]=useState("2026"),[subject,setSubject]=useState("all"),[analysed,setAnalysed]=useState(false);
  const range=data.years.filter(y=>y>=Number(from)&&y<=Number(to));
  const filtered=data.rows.filter(r=>range.includes(r.exam_year)&&(subject==="all"||r.subject===subject));
- const levels:Record<string,number>={"Easy":1,"Easy-Moderate":2,"Moderate":3,"Moderate-Hard":4,"Hard":5};
- const known=filtered.filter(r=>r.difficulty_label&&levels[r.difficulty_label]!==undefined);
- const total=known.reduce((sum,r)=>sum+r.question_count,0);
- const average=total?known.reduce((sum,r)=>sum+r.question_count*levels[r.difficulty_label!],0)/total:0;
- const byYear=range.map(year=>{
-  const subjects=data.subjects.map(name=>{
-   const rows=known.filter(r=>r.exam_year===year&&r.subject===name);
-   const count=rows.reduce((sum,r)=>sum+r.question_count,0);
-   const score=count?rows.reduce((sum,r)=>sum+r.question_count*levels[r.difficulty_label!],0)/count:0;
-   return {name,count,score};
-  }).filter(x=>x.count>0);
-  return {year,subjects};
- }).filter(x=>x.subjects.length);
- const bySubject=data.subjects.map(name=>{
-  const rows=known.filter(r=>r.subject===name);
-  const count=rows.reduce((sum,r)=>sum+r.question_count,0);
-  const score=count?rows.reduce((sum,r)=>sum+r.question_count*levels[r.difficulty_label!],0)/count:0;
-  const labels=["Easy","Easy-Moderate","Moderate","Moderate-Hard","Hard"].map(label=>({label,count:rows.filter(r=>r.difficulty_label===label).reduce((sum,r)=>sum+r.question_count,0)})).filter(x=>x.count>0);
-  const years=range.map(year=>{const yr=rows.filter(r=>r.exam_year===year),n=yr.reduce((sum,r)=>sum+r.question_count,0);return {year,count:n,score:n?yr.reduce((sum,r)=>sum+r.question_count*levels[r.difficulty_label!],0)/n:0};});
-  return {name,count,score,labels,years};
- }).filter(x=>x.count>0).sort((a,b)=>b.score-a.score);
- const selected=bySubject.find(x=>x.name===subject);
- const fmtScore=(n:number)=>n?n.toFixed(2)+" / 5":"—";
- return <main className="cea-page"><Header title="Exam difficulty analysis" desc="Compare the difficulty pattern across exam years and subjects. The graph updates automatically when you change the year range or subject."/><StateView loading={data.loading} error={data.error}>
-  <Filters from={from} to={to} setFrom={setFrom} setTo={setTo}><SubjectSelect value={subject} onChange={setSubject} subjects={data.subjects}/></Filters>
-  {!known.length?<div className="cea-panel"><div className="cea-state">No labelled difficulty records are available for this selection.</div></div>:<>
-   <div className="cea-summary-metrics">
-    <Metric label="Questions with a difficulty label" value={fmt(total)}/>
-    <Metric label={subject==="all"?"Overall difficulty index":subject+" difficulty index"} value={fmtScore(average)} note="Weighted from supplied labels"/>
-    <Metric label="Subjects compared" value={String(bySubject.length)}/>
-    <Metric label="Years selected" value={String(byYear.length)}/>
-   </div>
+ const labels=[{key:"Easy",name:"Easy",color:"#2d9b76"},{key:"Easy-Moderate",name:"Easy–Moderate",color:"#76b69a"},{key:"Moderate",name:"Moderate",color:"#e2ae45"},{key:"Moderate-Hard",name:"Moderate–Hard",color:"#df8151"},{key:"-",name:"Not specified",color:"#a7b0bd"}];
+ const byYear=range.map(year=>({year,subjects:(subject==="all"?data.subjects:[subject]).map(name=>{
+  const rows=filtered.filter(r=>r.exam_year===year&&r.subject===name);
+  const total=rows.reduce((sum,r)=>sum+r.question_count,0);
+  const values=labels.map(label=>({...label,count:rows.filter(r=>(r.difficulty_label||"-")===label.key).reduce((sum,r)=>sum+r.question_count,0)}));
+  return {name,total,values};
+ }).filter(x=>x.total>0)})).filter(x=>x.subjects.length);
+ const total=filtered.reduce((sum,r)=>sum+r.question_count,0);
+ const stats=(subject==="all"?data.subjects:[subject]).map(name=>{
+  const rows=filtered.filter(r=>r.subject===name),count=rows.reduce((sum,r)=>sum+r.question_count,0);
+  const values=labels.map(label=>({...label,count:rows.filter(r=>(r.difficulty_label||"-")===label.key).reduce((sum,r)=>sum+r.question_count,0)}));
+  return {name,count,values};
+ }).filter(x=>x.count>0);
+ const duration=1550+Math.min(1900,range.length*145+filtered.length*2);
+ const reset=(setter:(v:string)=>void)=>(v:string)=>{setter(v);setAnalysed(false)};
+ return <main className="cea-page"><Header title="Exam difficulty analysis" desc="See how difficult each subject was in each exam year. Choose a year range and subject, then analyse the paper pattern."/><StateView loading={data.loading} error={data.error}>
+  <Filters from={from} to={to} setFrom={reset(setFrom)} setTo={reset(setTo)}><SubjectSelect value={subject} onChange={reset(setSubject)} subjects={data.subjects}/></Filters>
+  <AnalysisEngine title="Exam difficulty analysis" subtitle="Compare the difficulty mix across years and subjects using the selected records." steps={["Loading the selected exam years","Grouping records by subject","Comparing each difficulty label","Preparing your visual report"]} durationMs={duration} mode="analyse" buttonLabel="Analyse difficulty" disabled={!filtered.length} onComplete={()=>setAnalysed(true)}/>
+  {analysed&&<><div className="cea-summary-metrics"><Metric label="Questions analysed" value={fmt(total)}/><Metric label="Years included" value={String(byYear.length)}/><Metric label="Subjects included" value={String(stats.length)}/></div>
    <section className="cea-panel">
-    <div className="cea-section-head"><div><span className="cea-kicker">YEAR-BY-YEAR</span><h2>{subject==="all"?"Subject difficulty comparison":"Difficulty trend · "+subject}</h2></div><span className="cea-pill">{from}–{to}</span></div>
-    <div style={{display:"flex",gap:16,flexWrap:"wrap",marginBottom:18}}>
-     {(subject==="all"?data.subjects:[subject]).map(name=><span key={name} style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:13,fontWeight:650}}><i style={{display:"inline-block",width:10,height:10,borderRadius:3,background:["#278c6b","#d39a35","#557fc1"][data.subjects.indexOf(name)]||"#64748b"}}/>{name}</span>)}
-    </div>
-    <div style={{display:"grid",gridTemplateColumns:"repeat("+Math.max(1,byYear.length)+",minmax(52px,1fr))",gap:10,alignItems:"end",minHeight:220,overflowX:"auto"}}>
-     {byYear.map(y=><div key={y.year} style={{minWidth:48,textAlign:"center"}}>
-      <div style={{height:174,display:"flex",alignItems:"end",justifyContent:"center",gap:4,borderBottom:"1px solid var(--border,#dbe3ea)",padding:"0 2px"}}>
-       {y.subjects.filter(s=>subject==="all"||s.name===subject).map(s=><div key={s.name} title={s.name+": "+s.score.toFixed(2)+"/5 · "+s.count+" labelled questions"} style={{width:subject==="all"?"28%":"58%",maxWidth:26,height:Math.max(3,s.score/5*100)+"%",borderRadius:"6px 6px 0 0",background:["#278c6b","#d39a35","#557fc1"][data.subjects.indexOf(s.name)]||"#64748b",transition:"height .25s ease"}}/>)}
-      </div><b style={{display:"block",fontSize:12,marginTop:8}}>{y.year}</b>
-      {y.subjects.filter(s=>subject==="all"||s.name===subject).map(s=><small key={s.name} style={{display:"block",fontSize:10,color:"var(--muted,#64748b)"}}>{s.score.toFixed(1)}</small>)}
-     </div>)}
-    </div>
-    <p className="cea-muted" style={{marginTop:16}}>Difficulty index: Easy = 1, Easy-Moderate = 2, Moderate = 3, Moderate-Hard = 4, Hard = 5. Higher values indicate a tougher labelled mix. Unlabelled records are excluded.</p>
+    <div className="cea-section-head"><div><span className="cea-kicker">YEAR-BY-YEAR BREAKDOWN</span><h2>{subject==="all"?"Which subject was tougher?":subject+" · yearly difficulty mix"}</h2></div><span className="cea-pill">{from}–{to}</span></div>
+    <div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:22}}>{labels.map(x=><span key={x.key} style={{display:"inline-flex",alignItems:"center",gap:6,fontSize:12,fontWeight:650}}><i style={{width:10,height:10,borderRadius:3,background:x.color}}/>{x.name}</span>)}</div>
+    <div style={{display:"grid",gap:20}}>{byYear.map(y=><div key={y.year} style={{borderBottom:"1px solid var(--border,#e2e8f0)",paddingBottom:16}}>
+     <b style={{display:"block",fontSize:16,marginBottom:12}}>{y.year}</b>
+     <div style={{display:"grid",gap:12}}>{y.subjects.map(s=><div key={s.name} style={{display:"grid",gridTemplateColumns:"minmax(88px,112px) minmax(0,1fr)",gap:10,alignItems:"center"}}>
+      <div><b style={{fontSize:12}}>{s.name}</b><small style={{display:"block",color:"var(--muted,#64748b)",fontSize:10}}>{fmt(s.total)} questions</small></div>
+      <div><div aria-label={y.year+" "+s.name+" difficulty distribution"} style={{display:"flex",height:25,overflow:"hidden",borderRadius:8,background:"var(--surface-muted,#eef2f6)"}}>{s.values.filter(v=>v.count>0).map(v=><div key={v.key} title={v.name+": "+v.count+" questions ("+(v.count/s.total*100).toFixed(1)+"%)"} style={{width:(v.count/s.total*100)+"%",background:v.color,display:"flex",alignItems:"center",justifyContent:"center",transition:"width .45s ease"}}>{v.count/s.total>=.14&&<span style={{fontSize:10,color:"#fff",fontWeight:750}}>{Math.round(v.count/s.total*100)}%</span>}</div>)}</div><small style={{display:"block",textAlign:"right",fontSize:10,color:"var(--muted,#64748b)",marginTop:4}}>100% of records</small></div>
+     </div>)}</div>
+    </div>)}</div>
    </section>
-   <section className="cea-panel">
-    <div className="cea-section-head"><div><span className="cea-kicker">SUBJECT STATISTICS</span><h2>{subject==="all"?"Subject-wise comparison":subject+" analysis"}</h2></div></div>
-    {bySubject.filter(s=>subject==="all"||s.name===subject).map(s=><article className="cea-tough-row" key={s.name}><div><b>{s.name}</b><small>{fmt(s.count)} labelled questions · {s.labels.length} difficulty levels represented</small></div><strong>{fmtScore(s.score)}</strong></article>)}
+   <section className="cea-panel"><div className="cea-section-head"><div><span className="cea-kicker">SUBJECT STATISTICS</span><h2>{subject==="all"?"Compare all subjects":subject+" statistics"}</h2></div></div>
+    {stats.map(s=><div key={s.name} style={{padding:"14px 0",borderBottom:"1px solid var(--border,#e2e8f0)"}}><div style={{display:"flex",justifyContent:"space-between",gap:10,alignItems:"center",marginBottom:10}}><b>{s.name}</b><strong>{fmt(s.count)} questions</strong></div>{s.values.filter(v=>v.count>0).map(v=><div key={v.key} style={{display:"grid",gridTemplateColumns:"minmax(105px,130px) minmax(0,1fr) 76px",gap:8,alignItems:"center",margin:"8px 0"}}><small>{v.name}</small><div style={{height:9,background:"var(--surface-muted,#eef2f6)",borderRadius:20,overflow:"hidden"}}><i style={{display:"block",height:"100%",width:(v.count/s.count*100)+"%",background:v.color,borderRadius:20}}/></div><small style={{textAlign:"right",fontWeight:650}}>{fmt(v.count)} · {pct(v.count/s.count*100)}</small></div>)}</div>)}
    </section>
-   {selected&&<section className="cea-panel">
-    <div className="cea-section-head"><div><span className="cea-kicker">SELECTED SUBJECT</span><h2>{selected.name} · detailed statistics</h2></div><span className="cea-pill">{fmt(selected.count)} questions</span></div>
-    {selected.labels.map(x=><article className="cea-tough-row" key={x.label}><div><b>{x.label}</b><small>Labelled questions in selected years</small></div><strong>{fmt(x.count)} · {pct(x.count/selected.count*100)}</strong></article>)}
-    <div className="cea-table-wrap"><table className="cea-table"><thead><tr><th>Year</th><th>Labelled questions</th><th>Difficulty index</th></tr></thead><tbody>{selected.years.filter(x=>x.count>0).map(x=><tr key={x.year}><td>{x.year}</td><td>{fmt(x.count)}</td><td>{fmtScore(x.score)}</td></tr>)}</tbody></table></div>
-   </section>}
   </>}
  </StateView></main>
 }
