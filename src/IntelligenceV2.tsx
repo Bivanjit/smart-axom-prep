@@ -61,9 +61,7 @@ function Rank(){
  const points:CutoffCurvePoint[]=modelRows.map(([x,y])=>mode==="marks"?({marks:x,rank:y}):({rank:x,marks:y}));
  const value=Number(input),result=input.trim()&&Number.isFinite(value)&&value>0?interpolateCurve(points,value,mode):null;
  const inputValid=mode==="marks"?value>0&&value<=480:value>0&&value<=27000;
- const nearest=[...verified].sort((a,b)=>Math.abs((mode==="marks"?a.marks:a.rank)-value)-Math.abs((mode==="marks"?b.marks:b.rank)-value)).slice(0,8);
  const loading=cutoffLoading||categoryLoading||sourceLoading||!estimateData;
- const latestVerifiedYear=verified.length?Math.max(...verified.map(x=>x.year)):null;
  const databaseYears=[2024,2023].filter(y=>verified.some(x=>x.year===y));
  const references=verified.filter(x=>databaseYears.includes(x.year));
  return <Shell title="Assam CEE marks ↔ rank predictor" desc="Estimate your expected rank from marks, or estimate marks from a target rank, using the supplied reference curve and verified DTE Assam cutoff records.">
