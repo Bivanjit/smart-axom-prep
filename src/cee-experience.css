@@ -154,3 +154,20 @@ html[data-theme="dark"] .cx-page .cx-search-options button:hover{background:#263
 .cx-question .katex-display,.cx-options .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .cx-options .katex,.cx-question .katex,.cx-explanation .katex{white-space:normal}
 @media(max-width:560px){.cx-options{grid-template-columns:1fr}.cx-options button{min-height:58px;padding:13px}}
+
+/* Final question layout: one continuous text flow per prompt and answer. */
+.cx-page{padding-top:18px!important}
+@media(max-width:560px){.cx-page{padding-top:14px!important}}
+.cx-back{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:40px;padding:0 14px;border:1px solid var(--border,#d8e0eb);border-radius:10px;background:var(--surface,#fff);color:var(--text,#1c2b42)!important;font-weight:700;box-shadow:0 2px 7px rgba(20,40,70,.07);transition:background .15s,border-color .15s,transform .15s}
+.cx-back:hover{background:var(--soft,#f1f5f9);border-color:#8da2bf;transform:translateY(-1px)}
+.cx-question{overflow:hidden;min-width:0}
+.cx-question h3{min-width:0;overflow-wrap:anywhere;word-break:normal}
+.cx-question .math-text,.cx-options .math-text,.cx-explanation .math-text{display:inline!important;min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere;word-break:normal;flex:initial!important;line-height:1.65}
+.cx-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+.cx-options button{display:flex;flex-direction:row;align-items:center;gap:10px;min-width:0;width:100%;height:auto;min-height:62px;max-height:none;padding:12px 14px;overflow:hidden;white-space:normal;text-align:left;line-height:1.55}
+.cx-options button>span:first-child:not(.math-text){flex:0 0 26px}
+.cx-options button>.math-text{flex:1 1 0!important;min-width:0;max-width:100%;overflow-wrap:anywhere}
+.cx-question h3 .katex,.cx-options .katex,.cx-explanation .katex{font-size:1em;white-space:normal}
+.cx-question h3 .katex-display,.cx-options .katex-display{display:block;max-width:100%;margin:.3em 0;overflow-x:auto;overflow-y:hidden}
+.math-text sup,.math-text sub{font-size:.72em;line-height:0}
+@media(max-width:560px){.cx-options{grid-template-columns:minmax(0,1fr)}.cx-options button{min-height:58px;padding:12px}.cx-question{padding:16px}.cx-question-meta{flex-wrap:wrap}}
