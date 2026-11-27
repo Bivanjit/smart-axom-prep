@@ -51,7 +51,7 @@ function findMarksBand(bands:CEEForecastBand[],marks:number){return bands.find(b
 function findRankBand(bands:CEEForecastBand[],rank:number){
  if(rank<=200)return {marksMin:320,marksMax:480,marksLabel:"320–480+ marks",rankMin:1,rankMax:200,rankLabel:"1–200"};
  if(rank<=300)return {marksMin:229,marksMax:271,marksLabel:"229–271 marks",rankMin:201,rankMax:300,rankLabel:"201–300"};
- const b=bands.find(x=>rank>=x.rankMin&&rank<=x.rankMax);
+ const b=bands.filter(x=>x.marksMin>=55).find(x=>rank>=x.rankMin&&rank<=x.rankMax);
  return b?{...b,rankLabel:b.rankMin.toLocaleString("en-IN")+"–"+b.rankMax.toLocaleString("en-IN")}:null;
 }
 function Rank(){
