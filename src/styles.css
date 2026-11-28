@@ -1938,20 +1938,22 @@ html,body,#root{transition:background-color 160ms cubic-bezier(.2,.75,.25,1),col
 @media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}html,body,#root,.theme-toggle{transition:none!important}.theme-toggle.is-switching{animation:none!important}}
 
 
-/* Full-screen radial theme reveal, originating at the floating theme control. */
+
+
+/* Native View Transitions API: compositor-friendly circular reveal for theme changes. */
 ::view-transition-group(root){animation:none!important;isolation:isolate}
 ::view-transition-image-pair(root){isolation:isolate}
-::view-transition-old(root){animation:sp-theme-old-hold 520ms linear both;z-index:1}
+::view-transition-old(root){animation:none!important;z-index:1}
 ::view-transition-new(root){
  z-index:2;
- animation:sp-theme-radial-reveal 520ms cubic-bezier(.18,.72,.18,1) both;
+ clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%));
+ animation:sp-theme-radial-wipe 420ms cubic-bezier(.2,.82,.22,1) both;
+ will-change:clip-path;
 }
-@keyframes sp-theme-old-hold{to{opacity:1}}
-@keyframes sp-theme-radial-reveal{
- from{clip-path:circle(0px at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}
- to{clip-path:circle(150vmax at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}
+@keyframes sp-theme-radial-wipe{
+ from{clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
+ to{clip-path:circle(var(--sp-theme-radius,150vmax) at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
 }
-html,body,#root{transition:none!important}
 @media(prefers-reduced-motion:reduce){
  ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
 }
