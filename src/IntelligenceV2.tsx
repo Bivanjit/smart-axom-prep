@@ -99,7 +99,7 @@ function Rank(){
  const rankBand=mode==="rank"&&inputValid?findRankBand(estimateData?.bands||[],value):null;
  const primaryOutput=mode==="marks"?rankEstimate?.toLocaleString("en-IN"):marksEstimate?.toLocaleString("en-IN");
  const nearbyByYear=[2023,2024].map(year=>({year,records:verified.filter(x=>x.year===year).sort((a,b)=>Math.abs((mode==="marks"?a.marks:a.rank)-value)-Math.abs((mode==="marks"?b.marks:b.rank)-value)).slice(0,4)})).filter(x=>x.records.length);
- const marksOutsidePublished=mode==="marks"&&value>=50&&value<=54;
+ const marksOutsidePublished=mode==="marks"&&value>=50&&value<=54&&!officialRankEstimates.length;
  return <Shell title="Assam CEE marks ↔ rank predictor" desc="Estimate an indicative merit rank from marks, or marks from a target rank, using SmartPrep Axom reference bands and historical admission records.">
   <section className="intel-panel predictor-parameters">
    <div className="v2-filter-heading"><Calculator/><div><b>Choose your prediction direction</b><small>Uses verified official score-to-rank records when available; otherwise falls back to published reference bands.</small></div></div>
