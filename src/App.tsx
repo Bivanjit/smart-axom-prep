@@ -1,5 +1,4 @@
 import {syllabus,syllabusNotice} from './syllabus';
-import Reviews from './Reviews';
 
 import {supabase} from './lib/supabase';
 
