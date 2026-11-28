@@ -28,10 +28,10 @@ export default function TargetCard(){
  ctx.strokeStyle="#dce5e9";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(104,685);ctx.lineTo(976,685);ctx.stroke();
  ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("03  /  PREFERRED BRANCH",104,735);ctx.fillText("04  /  TARGET MARKS",575,735);
  fitText(ctx,data.branch.trim()||"Choose your branch",104,790,410,36,data.branch.trim()?"#122d43":"#9aabba",600,"Georgia,Times New Roman,serif");
- fitText(ctx,data.target?data.target+" / 480":"— / 480",575,790,390,34,"#122d43",800);
+ fitText(ctx,data.target?data.target+" / 480":"Not set / 480",575,790,390,34,"#122d43",800);
  ctx.strokeStyle="#dce5e9";ctx.beginPath();ctx.moveTo(104,820);ctx.lineTo(976,820);ctx.stroke();
  ctx.fillStyle="#527086";ctx.font="800 13px Inter,Arial,sans-serif";ctx.fillText("05  /  CURRENT MOCK SCORE",104,865);ctx.fillText("06  /  TARGET PROGRESS",575,865);
- fitText(ctx,data.mock?data.mock+" / 480":"— / 480",104,908,390,29,"#122d43",800);
+ fitText(ctx,data.mock?data.mock+" / 480":"Not set / 480",104,908,390,29,"#122d43",800);
  fitText(ctx,data.target&&data.mock?Math.round(progress)+"%":"Set your marks",575,908,390,29,"#087c67",800);
  rounded(ctx,76,985,928,20,10);ctx.fillStyle="rgba(255,255,255,.15)";ctx.fill();if(progress>0){rounded(ctx,76,985,928*progress/100,20,10);ctx.fillStyle="#4be0b7";ctx.fill()}
  ctx.fillStyle="#d9e6ef";ctx.font="italic 25px Georgia,serif";ctx.fillText("“One focused step closer to my goal.”",76,1095);
