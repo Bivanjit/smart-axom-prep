@@ -364,3 +364,32 @@ html[data-theme="dark"] .cx-page .cx-pyq-card{backdrop-filter:none;-webkit-backd
 @media(prefers-reduced-motion:reduce){
  ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
 }
+
+
+/* Admission Navigator: stronger checklist text contrast in both appearances. */
+html[data-theme="light"] .cx-page .cx-admission-hero b,
+html[data-theme="light"] .cx-page .cx-doc-heading b,
+html[data-theme="light"] .cx-page .cx-doc-list label b,
+html[data-theme="light"] .cx-page .cx-official-links h3,
+html[data-theme="light"] .cx-page .cx-official-links a{
+  color:#17243a!important;-webkit-text-fill-color:#17243a!important;opacity:1!important;
+}
+html[data-theme="light"] .cx-page .cx-admission-hero p,
+html[data-theme="light"] .cx-page .cx-doc-heading small,
+html[data-theme="light"] .cx-page .cx-doc-list label small,
+html[data-theme="light"] .cx-page .cx-official-links a small{
+  color:#46586e!important;-webkit-text-fill-color:#46586e!important;opacity:1!important;
+}
+html[data-theme="dark"] .cx-page .cx-admission-hero b,
+html[data-theme="dark"] .cx-page .cx-doc-heading b,
+html[data-theme="dark"] .cx-page .cx-doc-list label b,
+html[data-theme="dark"] .cx-page .cx-official-links h3,
+html[data-theme="dark"] .cx-page .cx-official-links a{
+  color:#f0f5fb!important;-webkit-text-fill-color:#f0f5fb!important;opacity:1!important;
+}
+html[data-theme="dark"] .cx-page .cx-admission-hero p,
+html[data-theme="dark"] .cx-page .cx-doc-heading small,
+html[data-theme="dark"] .cx-page .cx-doc-list label small,
+html[data-theme="dark"] .cx-page .cx-official-links a small{
+  color:#c5d1df!important;-webkit-text-fill-color:#c5d1df!important;opacity:1!important;
+}
