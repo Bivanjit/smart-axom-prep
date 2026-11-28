@@ -1896,3 +1896,22 @@ body,body *{transition-property:background-color,color,border-color,box-shadow;t
 @media(max-width:900px){.admin-calendar-grid{grid-template-columns:1fr}.admin-side{overflow:hidden}.admin-nav-search{margin-top:10px}.admin-side nav{max-height:42vh}}
 @media(max-width:600px){.admin-calendar header{flex-direction:column}.admin-calendar-tools{grid-template-columns:1fr}.admin-calendar-dates{grid-template-columns:1fr}.admin-calendar-list article{flex-direction:column}.admin-calendar-row-actions{justify-content:flex-end}}
 .admission-calendar{margin:26px 0;padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.admission-calendar h2{font:800 20px Manrope;color:var(--text);margin:0 0 12px}.admission-calendar article{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.admission-calendar article b{color:var(--text)}.admission-calendar article p{font-size:12px;color:var(--muted);line-height:1.6}.admission-calendar article small{font-size:10px;color:var(--muted)}.admission-calendar article a{white-space:nowrap;color:var(--blue);font-size:11px}@media(max-width:600px){.admission-calendar article{flex-direction:column}}
+/* Admin control room follows the active website appearance without sacrificing contrast. */
+html[data-theme=dark] .admin-shell{background:#0b1422!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-main{color:#e8eff9!important}
+html[data-theme=dark] .admin-top h1,html[data-theme=dark] .admin-main h2,html[data-theme=dark] .admin-main h3{color:#f1f6ff!important}
+html[data-theme=dark] .admin-main p,html[data-theme=dark] .admin-main .tiny,html[data-theme=dark] .admin-main small{color:#aebdd0!important}
+html[data-theme=dark] .admin-main [style*="background: rgb(255, 255, 255)"],html[data-theme=dark] .admin-main [style*="background: white"],html[data-theme=dark] .admin-main [style*="background:#fff"],html[data-theme=dark] .admin-main [style*="background: #fff"]{background:#142238!important;border-color:#2c405c!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-main input:not([type=checkbox]),html[data-theme=dark] .admin-main textarea,html[data-theme=dark] .admin-main select{background:#0d1b2e!important;color:#e8eff9!important;border-color:#344a67!important}
+html[data-theme=dark] .admin-main input::placeholder,html[data-theme=dark] .admin-main textarea::placeholder{color:#8296b0!important}
+html[data-theme=dark] .admin-main article{border-color:#2b405b!important}
+html[data-theme=dark] .admin-main a{color:#7dbaff}
+html[data-theme=dark] .admin-main .admin-refresh{background:#142238!important;border-color:#344a67!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-login{background:#0b1422!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-login form,html[data-theme=dark] .admin-login [style*="background: rgb(255, 255, 255)"]{background:#142238!important;border-color:#344a67!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-login input{background:#0d1b2e!important;color:#e8eff9!important;border-color:#344a67!important}
+html[data-theme=dark] .admin-calendar-editor,html[data-theme=dark] .admin-calendar-list{background:#142238!important;border-color:#344a67!important;color:#e8eff9!important}
+html[data-theme=dark] .admin-calendar-editor h3,html[data-theme=dark] .admin-calendar-list h3,html[data-theme=dark] .admin-calendar-list article b{color:#f1f6ff!important}
+html[data-theme=dark] .admin-calendar-editor label,html[data-theme=dark] .admin-calendar-list article small,html[data-theme=dark] .admin-calendar-list article p{color:#afbed1!important}
+html[data-theme=dark] .admin-calendar-editor input,html[data-theme=dark] .admin-calendar-editor textarea,html[data-theme=dark] .admin-calendar-editor select,html[data-theme=dark] .admin-calendar-tools input,html[data-theme=dark] .admin-calendar-tools select{background:#0d1b2e!important;color:#e8eff9!important;border-color:#344a67!important}
+html[data-theme=dark] .admin-calendar-note,html[data-theme=dark] .admin-calendar-empty{background:#1b3553!important;color:#d6e6fa!important}
