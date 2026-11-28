@@ -30,7 +30,7 @@ function useAnalytics(){
    ]);
    if(yr.error)throw yr.error;if(ag.error)throw ag.error;if(qc.error)throw qc.error;
    if(live){setRows((yr.data||[]) as Row[]);setAggregates((ag.data||[]) as Aggregate[]);setDataset(active as Dataset);setQuestionSlots(qc.count||0);}
-  }catch(e){if(live)setError(e instanceof Error?e.message:"Could not load the CEE analysis dataset.");}
+  }catch(e){if(live)setError("CEE analysis is temporarily unavailable. Please try again shortly.");}
   finally{if(live)setLoading(false);}
  };void load();return()=>{live=false}},[]);
  const years=useMemo(()=>[...new Set(rows.map(x=>x.exam_year))].sort((a,b)=>a-b),[rows]);
@@ -49,7 +49,7 @@ function QuestionBank(){
  const [items,setItems]=useState<QuestionRecord[]>([]),[loading,setLoading]=useState(true),[error,setError]=useState("");
  const [year,setYear]=useState("all"),[subject,setSubject]=useState("all"),[status,setStatus]=useState("all"),[search,setSearch]=useState(""),[page,setPage]=useState(0);
  const pageSize=30;
- useEffect(()=>{let live=true;const load=async()=>{if(!supabase){setError("Database connection is unavailable.");setLoading(false);return;}setLoading(true);setError("");try{
+ useEffect(()=>{let live=true;const load=async()=>{if(!supabase){setError("Question analysis is temporarily unavailable. Please try again shortly.");setLoading(false);return;}setLoading(true);setError("");try{
   const cols="exam_year,question_number,subject,chapter_slug,difficulty,question_excerpt,analysis_status,source_pdf";
   // Respect the project's PostgREST max-rows setting. A single 0-999 range can be silently capped,
   // so fetch deterministic, non-overlapping pages until the final short page is reached.
@@ -62,7 +62,7 @@ function QuestionBank(){
    if(batch.length<batchSize)break;
   }
   if(live)setItems(all);
- }catch(e){if(live)setError(e instanceof Error?e.message:"Could not load question records.");}finally{if(live)setLoading(false);}};
+ }catch(e){if(live)setError("Question records are temporarily unavailable. Please try again shortly.");}finally{if(live)setLoading(false);}};
  void load();return()=>{live=false};
  },[]);
  const filtered=useMemo(()=>items.filter(x=>(year==="all"||String(x.exam_year)===year)&&(subject==="all"||x.subject===subject)&&(status==="all"||(status==="text"?hasQuestionText(x):!hasQuestionText(x)))&&(!search||[x.question_excerpt,x.chapter_slug,x.source_pdf,String(x.question_number),String(x.exam_year)].join(" ").toLowerCase().includes(search.toLowerCase()))),[items,year,subject,status,search]);
