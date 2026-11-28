@@ -1928,3 +1928,15 @@ html[data-theme=dark] .admin-calendar-note,html[data-theme=dark] .admin-calendar
 @media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}}
 .theme-toggle{position:fixed;z-index:30;right:22px;bottom:24px;width:54px;height:54px;box-shadow:0 12px 32px #071b4230;transition:opacity .24s ease,visibility .24s ease,background-color .18s ease,color .18s ease,border-color .18s ease}
 .theme-toggle-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px) scale(.92)}
+
+
+/* Chapter catalogue detail layout: keep labels and their descriptions distinct. */
+.chapter-insights{display:grid;gap:14px;margin:16px 0 4px}
+.chapter-insights>div{display:grid;grid-template-columns:minmax(132px,190px) minmax(0,1fr);align-items:start;gap:12px;padding:12px 14px;border:1px solid #e3eaf3;border-radius:10px;background:#fff}
+.chapter-insights>div>b{font:800 12px/1.5 Manrope,Inter,sans-serif;color:#18314f}
+.chapter-insights>div>span{font:400 12px/1.7 Inter,sans-serif;color:#596b80;min-width:0}
+.chapter-insights .chapter-intelligence-link{display:inline-flex;align-items:center;gap:8px;justify-self:start;margin-top:2px;font-size:12px;font-weight:800;color:#087bff;text-decoration:none}
+html[data-theme="dark"] .chapter-insights>div{background:#142238;border-color:#344a67}
+html[data-theme="dark"] .chapter-insights>div>b{color:#eaf2ff}
+html[data-theme="dark"] .chapter-insights>div>span{color:#bdc9d8}
+@media(max-width:600px){.chapter-insights{gap:9px}.chapter-insights>div{grid-template-columns:1fr;gap:4px;padding:12px}.chapter-insights>div>b{font-size:12px}.chapter-insights>div>span{font-size:12px}}
