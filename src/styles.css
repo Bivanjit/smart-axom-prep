@@ -2016,3 +2016,19 @@ html[data-theme="light"] .pyq-intro .pyq-access-badge span,
 html[data-theme="light"] .pyq-intro .pyq-stat span{color:#dce9f8!important}
 html[data-theme="light"] .pyq-intro .pyq-stat strong{color:#a9d8ff!important}
 html[data-theme="light"] .pyq-intro .pyq-access-copy>b{color:#ffffff!important}
+
+/* PYQ archive text must remain legible on the navy hero in every theme */
+body .pyq-intro h2,
+body .pyq-intro h2 *,
+body .pyq-intro .pyq-access-badge,
+body .pyq-intro .pyq-access-badge *,
+body .pyq-intro .pyq-access-copy,
+body .pyq-intro .pyq-access-copy *,
+body .pyq-intro .pyq-stat,
+body .pyq-intro .pyq-stat *{color:#f7fbff!important}
+body .pyq-intro>div>p,
+body .pyq-intro .pyq-access-copy p,
+body .pyq-intro .pyq-access-badge span,
+body .pyq-intro .pyq-stat span{color:#dce9f8!important}
+body .pyq-intro .pyq-stat strong{color:#ffffff!important;font-weight:900!important}
+body .pyq-intro .pyq-access-copy>b{color:#ffffff!important;font-weight:800!important}
