@@ -1998,3 +1998,21 @@ html[data-theme="dark"] .pyq-intro .pyq-access-copy>b{color:#f2f6fb!important}
 .pyq-intro .pyq-access-copy p{margin:0;color:#dce8f7!important;line-height:1.8}
 .pyq-intro .pyq-access-badge span{color:#e0ebfa!important}
 @media(max-width:760px){.pyq-intro{grid-template-columns:1fr!important}.pyq-intro .pyq-access-card{max-width:100%;margin-inline:auto}.pyq-intro .pyq-access-badge{margin-inline:auto}}
+
+/* Final explicit light-theme contrast for every text element in PYQ archive hero */
+html[data-theme="light"] .pyq-intro,
+html[data-theme="light"] .pyq-intro h2,
+html[data-theme="light"] .pyq-intro h2 *,
+html[data-theme="light"] .pyq-intro p,
+html[data-theme="light"] .pyq-intro .pyq-access-badge,
+html[data-theme="light"] .pyq-intro .pyq-access-badge *,
+html[data-theme="light"] .pyq-intro .pyq-access-copy,
+html[data-theme="light"] .pyq-intro .pyq-access-copy *,
+html[data-theme="light"] .pyq-intro .pyq-stat,
+html[data-theme="light"] .pyq-intro .pyq-stat *{color:#f7fbff!important}
+html[data-theme="light"] .pyq-intro>div>p,
+html[data-theme="light"] .pyq-intro .pyq-access-copy p,
+html[data-theme="light"] .pyq-intro .pyq-access-badge span,
+html[data-theme="light"] .pyq-intro .pyq-stat span{color:#dce9f8!important}
+html[data-theme="light"] .pyq-intro .pyq-stat strong{color:#a9d8ff!important}
+html[data-theme="light"] .pyq-intro .pyq-access-copy>b{color:#ffffff!important}
