@@ -6,7 +6,14 @@ export default function PWAInstall(){
  const [available,setAvailable]=useState(false);
  const [installed,setInstalled]=useState(false);
  useEffect(()=>{
-  if("serviceWorker" in navigator){const register=()=>{void navigator.serviceWorker.register("/sw.js",{scope:"/"}).catch(error=>console.warn("PWA service worker registration failed",error));};if(document.readyState==="complete")register();else window.addEventListener("load",register,{once:true});}
+  // Search crawlers and Google's live rendering environment do not need an installed
+  // service worker. Avoid registering there because Google's renderer can reject the
+  // registration even though the site itself is healthy in a real browser.
+  const isSearchCrawler=/Googlebot|Google-InspectionTool|bingbot|BingPreview|DuckDuckBot|Slurp|YandexBot/i.test(navigator.userAgent);
+  if(!isSearchCrawler&&"serviceWorker" in navigator&&window.isSecureContext){
+   const register=()=>{void navigator.serviceWorker.register("/sw.js",{scope:"/"}).catch(error=>console.warn("PWA service worker registration failed",error));};
+   if(document.readyState==="complete")register();else window.addEventListener("load",register,{once:true});
+  }
   const onPrompt=(event:Event)=>{event.preventDefault();window.deferredSmartPrepInstall=event as InstallPromptEvent;setAvailable(true);};
   const onInstalled=()=>{setInstalled(true);setAvailable(false);window.deferredSmartPrepInstall=null;};
   window.addEventListener("beforeinstallprompt",onPrompt);window.addEventListener("appinstalled",onInstalled);
