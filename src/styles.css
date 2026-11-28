@@ -1959,3 +1959,10 @@ html[data-theme="dark"] .chapter-insights>div>span{color:#bdc9d8}
 .pyq-stat strong{color:#b8dcff}
 .pyq-stat span{color:#d4e2f5}
 @media(max-width:640px){.pyq-intro{padding:24px!important;gap:22px}.pyq-access-card{padding:14px}.pyq-access-badge{gap:7px;padding:8px 10px}.pyq-access-copy{padding:14px}.pyq-stat{border-left:0;border-top:1px solid rgba(195,219,249,.35);padding:20px 0 0}}
+
+.pyq-sync-note{margin-top:22px;padding:19px 21px;border:1px solid #d7e5f5;border-left:4px solid #087bff;border-radius:14px;background:linear-gradient(135deg,#f4f8ff,#edf5ff);box-shadow:0 10px 28px rgba(15,45,85,.06)}
+.pyq-sync-note>b{display:block;margin-bottom:6px;color:#12315b;font:800 13px Manrope,sans-serif}
+.pyq-sync-note p{margin:0;color:#526783;font-size:12px;line-height:1.8}
+html[data-theme="dark"] .pyq-sync-note{background:linear-gradient(135deg,#15263b,#172d49);border-color:#314a68;border-left-color:#56a5ff}
+html[data-theme="dark"] .pyq-sync-note>b{color:#eff6ff}
+html[data-theme="dark"] .pyq-sync-note p{color:#c5d6ea}
