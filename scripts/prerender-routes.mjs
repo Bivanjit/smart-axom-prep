@@ -38,7 +38,18 @@ const routes=[
  ["/assam-cee-strategy","Assam CEE 2027 Preparation Strategy | SmartPrep Axom","A practical Assam CEE strategy with a sample three-hour PCM time split and negative-marking discipline."],
  ["/assam-cee-mock-test","Assam CEE 2027 Mock Test: Free Practice Guide | SmartPrep Axom","Find Assam CEE mock-test guidance, free public PYQ papers and available SmartPrep Axom app test-series options."],
  ["/assam-cee-rank-predictor","Assam CEE 2027 Rank Predictor and Marks vs Rank | SmartPrep Axom","Explore indicative Assam CEE marks-versus-rank estimates and understand their limitations."],
- ["/assam-cee-college-predictor","Assam CEE College Predictor: AEC, JEC and Cutoffs | SmartPrep Axom","Compare available verified historical Assam CEE college cutoff references for AEC, JEC and other institutes."]
+ ["/assam-cee-college-predictor","Assam CEE College Predictor: AEC, JEC and Cutoffs | SmartPrep Axom","Compare available verified historical Assam CEE college cutoff references for AEC, JEC and other institutes."],
+ ["/cee-tools","Assam CEE Workspace | SmartPrep Axom","Open SmartPrep Axom daily practice, chapter intelligence, college planning and preparation tools."],
+ ["/daily-10","Assam CEE Daily 10 Challenge | SmartPrep Axom","Attempt the published daily Assam CEE question challenge when available."],
+ ["/practice-arena","Assam CEE Practice Arena | SmartPrep Axom","Explore available Assam CEE practice entry points and the chapter catalogue."],
+ ["/my-college-path","Assam CEE My College Path | SmartPrep Axom","Organise a personal Assam engineering college and branch preference list."],
+ ["/chapter-intelligence","Assam CEE Chapter Intelligence | SmartPrep Axom","Review published chapter-wise Assam CEE historical question analytics."],
+ ["/question-finder","Assam CEE Question Finder | SmartPrep Axom","Search available Assam CEE question records by subject, chapter and year."],
+ ["/admission-navigator","Assam CEE Admission Navigator | SmartPrep Axom","Organise counselling preparation and official-source checks."],
+ ["/my-cee-journey","My Assam CEE Preparation Journey | SmartPrep Axom","Track personal Assam CEE preparation milestones in this browser."],
+ ["/my-target-card","Assam CEE Target Card Generator | SmartPrep Axom","Create a personal Assam CEE target card."],
+ ["/app/features","SmartPrep Axom Android App Features","Explore Android app learning, practice and revision features."],
+ ["/cee-outlook","Assam CEE Chapter Outlook | SmartPrep Axom","Explore available historical chapter question trends and revision priorities."]
 ];
 for(let y=2018;y<=2026;y++) routes.push(["/previous-papers/"+y,"Assam CEE "+y+" Question Paper – Free PDF Download | SmartPrep Axom","Download the published Assam CEE "+y+" question paper PDF free, without login or signup."]);
 
@@ -62,6 +73,8 @@ const seoContent={
  "/previous-papers/2026":["Assam CEE 2026 question paper PDF download","Download the Assam CEE 2026 question paper PDF from the SmartPrep Axom public archive. The published paper is a free PDF with no login or signup. The paper follows the 2026 format: 120 multiple-choice questions across Physics, Chemistry and Mathematics, with 40 questions per subject, a three-hour duration and 480 maximum marks.","Use the original PDF to practise the paper under timed conditions. The 2026 marking scheme was +4 for a correct answer, −1 for an incorrect answer and 0 for an unattempted question. This page provides the published PDF; it does not claim to provide interactive question-by-question solutions."]
 
  "/about":["Built by a student, for every Assam CEE aspirant","SmartPrep Axom began as a student-built project with a simple goal: make useful Assam CEE preparation resources easier to find without clutter or forced website signup. The public website brings together exam guides, published PYQ downloads and reference tools for Physics, Chemistry and Mathematics.","The project is being developed for students across Assam, including those using slower mobile connections. English and Assamese learning support is available where the relevant content has been prepared. Public website resources are free; optional app plans and current inclusions are described in the app before activation."],
+
+ "/about":[["Who built SmartPrep Axom?","SmartPrep Axom is a student-built independent preparation project focused on Assam CEE."],["Can I use public website resources without login?","Yes. Public guides, published PYQ downloads and reference pages are available without website login or signup."],["Which subjects does SmartPrep Axom focus on?","The platform focuses on Physics, Chemistry and Mathematics for Assam CEE preparation."],["Does SmartPrep Axom provide Assamese content?","English and Assamese learning support is available where the relevant content has been prepared; availability varies by resource."],["Is SmartPrep Axom affiliated with ASTU or DTE Assam?","No. It is independent and is not operated by ASTU, DTE Assam or the Government of Assam."]],
  "/faq":["SmartPrep Axom FAQ: free Assam CEE resources, PYQs and predictors","Find clear answers about free public website access, Assam CEE previous-year papers, Assamese learning support, rank estimates, college cutoffs and optional Android app plans.","SmartPrep Axom is an independent educational preparation project. Verify examination details with ASTU and counselling information with DTE Assam."]
 };
 const faqData={
