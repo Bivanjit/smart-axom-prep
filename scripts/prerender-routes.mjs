@@ -4,6 +4,7 @@ import {dirname,join} from "node:path";
 const origin="https://smartprep-axom.pages.dev";
 const routes=[
  ["/about","About SmartPrep Axom","Learn about SmartPrep Axom, an independent Assam CEE preparation project and its study resources."],
+ ["/about-developer","About the Developer | SmartPrep Axom","Read the story behind SmartPrep Axom: an independent Assam CEE preparation project built by an aspirant to make useful study resources easier to access and affordable."],
  ["/practice","Chapter-wise Practice | SmartPrep Axom","Explore structured Assam CEE practice by Physics, Chemistry and Mathematics."],
  ["/practice/physics","Physics Practice | SmartPrep Axom","Practise Physics questions and strengthen concepts for Assam CEE."],
  ["/practice/chemistry","Chemistry Practice | SmartPrep Axom","Practise Chemistry questions and revise key Assam CEE topics."],
