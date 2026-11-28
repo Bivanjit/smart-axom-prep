@@ -18,7 +18,7 @@ const hasQuestionText=(x:QuestionRecord)=>!!x.question_excerpt?.trim()&&!x.quest
 function useAnalytics(){
  const [rows,setRows]=useState<Row[]>([]),[aggregates,setAggregates]=useState<Aggregate[]>([]),[dataset,setDataset]=useState<Dataset|null>(null),[questionSlots,setQuestionSlots]=useState(0),[loading,setLoading]=useState(true),[error,setError]=useState("");
  useEffect(()=>{let live=true;const load=async()=>{
-  if(!supabase){setError("Database connection is unavailable.");setLoading(false);return;}
+  if(!supabase){setError("This analysis is temporarily unavailable. Please try again shortly.");setLoading(false);return;}
   setLoading(true);setError("");
   try{
    const {data:versions,error:ve}=await supabase.from("analytics_dataset_versions").select("id,version,label,source_description,created_at,status").eq("dataset_key","cee_paper_analysis").eq("status","published").order("created_at",{ascending:false}).limit(1);
