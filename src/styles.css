@@ -1936,3 +1936,22 @@ html,body,#root{transition:background-color 160ms cubic-bezier(.2,.75,.25,1),col
 .theme-toggle.is-switching{animation:sp-theme-glow 260ms ease-out}
 @keyframes sp-theme-glow{0%{box-shadow:0 0 0 0 rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}40%{box-shadow:0 0 0 5px rgba(56,139,220,.12),0 0 16px rgba(56,139,220,.2),0 8px 22px rgba(18,38,62,.16)}100%{box-shadow:0 0 0 10px rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}}
 @media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}html,body,#root,.theme-toggle{transition:none!important}.theme-toggle.is-switching{animation:none!important}}
+
+
+/* Full-screen radial theme reveal, originating at the floating theme control. */
+::view-transition-group(root){animation:none!important;isolation:isolate}
+::view-transition-image-pair(root){isolation:isolate}
+::view-transition-old(root){animation:sp-theme-old-hold 520ms linear both;z-index:1}
+::view-transition-new(root){
+ z-index:2;
+ animation:sp-theme-radial-reveal 520ms cubic-bezier(.18,.72,.18,1) both;
+}
+@keyframes sp-theme-old-hold{to{opacity:1}}
+@keyframes sp-theme-radial-reveal{
+ from{clip-path:circle(0px at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}
+ to{clip-path:circle(150vmax at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}
+}
+html,body,#root{transition:none!important}
+@media(prefers-reduced-motion:reduce){
+ ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
+}
