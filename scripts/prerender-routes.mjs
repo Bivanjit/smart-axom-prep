@@ -53,7 +53,7 @@ const routes=[
 ];
 for(let y=2018;y<=2026;y++) routes.push(["/previous-papers/"+y,"Assam CEE "+y+" Question Paper – Free PDF Download | SmartPrep Axom","Download the published Assam CEE "+y+" question paper PDF free, without login or signup."]);
 
-const seoContent=const seoContent={
+const seoContent={
   "/practice": [
     "Free Assam CEE 2027 chapter-wise practice",
     "Explore the Physics, Chemistry and Mathematics chapter catalogue for Assam CEE preparation. SmartPrep Axom's public website resources are free to access and do not require login or signup. Browse the available chapter outlines, identify important concepts and use linked intelligence tools to review historical question trends. Expanded chapter practice, subject-wise tests and full mock tests are available in the Android app, with optional low-cost membership plans.",
