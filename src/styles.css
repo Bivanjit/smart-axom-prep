@@ -1915,3 +1915,10 @@ html[data-theme=dark] .admin-calendar-editor h3,html[data-theme=dark] .admin-cal
 html[data-theme=dark] .admin-calendar-editor label,html[data-theme=dark] .admin-calendar-list article small,html[data-theme=dark] .admin-calendar-list article p{color:#afbed1!important}
 html[data-theme=dark] .admin-calendar-editor input,html[data-theme=dark] .admin-calendar-editor textarea,html[data-theme=dark] .admin-calendar-editor select,html[data-theme=dark] .admin-calendar-tools input,html[data-theme=dark] .admin-calendar-tools select{background:#0d1b2e!important;color:#e8eff9!important;border-color:#344a67!important}
 html[data-theme=dark] .admin-calendar-note,html[data-theme=dark] .admin-calendar-empty{background:#1b3553!important;color:#d6e6fa!important}
+
+
+/* Fast, low-jank theme switching: animate only paint properties, never layout. */
+html,body,#root{transition:background-color 140ms ease-out,color 140ms ease-out!important}
+body{transition:background-color 140ms ease-out,color 140ms ease-out!important}
+.theme-toggle{transition:background-color 140ms ease-out,color 140ms ease-out,border-color 140ms ease-out,transform 160ms ease-out,opacity 140ms ease-out!important}
+@media(prefers-reduced-motion:reduce){html,body,#root,.theme-toggle{transition:none!important}}
