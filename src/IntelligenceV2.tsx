@@ -164,7 +164,7 @@ function College(){
     </div>
    </div>
    <AnalysisEngine title="Building your college shortlist" subtitle="Matching your expected score with historical college and branch cutoffs." steps={["Checking your rank or marks","Applying your category and seat preferences","Comparing available college and branch cutoffs","Organising your best-matching options"]} durationMs={2100+Math.min(1500,referenceCutoffs.length/10)} mode="match" buttonLabel="Generate my college prediction" disabled={!valid||cl||!rows.length} onComplete={()=>{setGenerated(true);setExpanded(groups.slice(0,3).map(g=>g.key))}}/>
-   <div className="college-predictor-foot"><span><ShieldCheck/> Personalised historical comparison</span><span>{years.length?"Latest verified data: "+years[0]:"No verified cutoff data"}</span></div>
+   <div className="college-predictor-foot"><span><ShieldCheck/> Personalised historical comparison</span><span>{years.length?"Latest available data":"No verified cutoff data"}</span></div>
   </section>
   {cl?<Loading label="Loading college and branch records…"/>:cutoffError?<Empty title="Could not load college records">{cutoffError}</Empty>:!rows.length?<Empty title="No historical records available">Try another category, quota, college or branch selection.</Empty>:generated?<>
    <section className="college-results-summary">
