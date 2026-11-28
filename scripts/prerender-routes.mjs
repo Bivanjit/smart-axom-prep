@@ -376,7 +376,9 @@ for(const [path,title,description] of routes){
  html=setMeta(html,'<meta\\s+property="og:url"[^>]*>',`<meta property="og:url" content="${canonical}" />`);
  html=setMeta(html,'<meta\\s+property="og:title"[^>]*>',`<meta property="og:title" content="${esc(title)}" />`);
  html=setMeta(html,'<meta\\s+property="og:description"[^>]*>',`<meta property="og:description" content="${esc(description)}" />`);
- html=html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>'+"\n"+'    <script type="module"');
+ html=setMeta(html,'<meta\\s+name="twitter:title"[^>]*>',`<meta name="twitter:title" content="${esc(title)}" />`);
+ html=setMeta(html,'<meta\\s+name="twitter:description"[^>]*>',`<meta name="twitter:description" content="${esc(description)}" />`);
+ html=html.replace(/<div id="root">[\s\S]*?<\/div>/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>');
  const target=join("dist",path.slice(1),"index.html");
  await mkdir(dirname(target),{recursive:true});
  await writeFile(target,html,"utf8");
