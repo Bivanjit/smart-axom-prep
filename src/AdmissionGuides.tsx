@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {ArrowRight,CalendarDays,ExternalLink,ShieldCheck,BookOpen,GraduationCap} from "lucide-react";
+import {ArrowRight,CalendarDays,ExternalLink,ShieldCheck} from "lucide-react";
 
 type FAQ={q:string;a:string};
 type Guide={title:string;description:string;eyebrow:string;intro:string;sections:{title:string;body:string;items?:string[]}[];faqs:FAQ[]};
