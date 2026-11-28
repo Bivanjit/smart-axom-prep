@@ -173,14 +173,14 @@ function College(){
    <section className="college-results-section">
     <div className="college-results-title"><div><span className="intel-eyebrow">YOUR MATCHED OPTIONS</span><h2>College predictions</h2><p>{groups.length} college and branch combinations found for your selected preferences.</p></div><span className="college-result-count">{fmt(groups.length)} options</span></div>
     {groups.length?<div className="college-result-list">{groups.map((g,index)=>{
-     const isOpen=expanded.includes(g.key),byYear=years.map(year=>({year,records:g.records.filter(x=>Number(x.admission_year)===year).sort((a,b)=>Number(a.closing_rank)-Number(b.closing_rank))}));
+     const isOpen=expanded.includes(g.key),byYear=years.map(year=>({year,records:g.records.filter(x=>Number(x.admission_year)===year).sort((a,b)=>Number(a.closing_rank)-Number(b.closing_rank))})).filter(group=>group.records.length>0);
      return <article className={"college-result-card "+(g.status==="match"?"is-match":"is-near")} key={g.key}>
       <button type="button" className="college-result-toggle" onClick={()=>toggle(g.key)} aria-expanded={isOpen}>
        <span className="college-result-rank">{String(index+1).padStart(2,"0")}</span>
        <span className="college-result-main"><b>{g.collegeName}</b><small>{g.branchName}</small><em className={g.status==="match"?"status-match":"status-near"}>{statusLabel(g.status)}</em></span>
        <span className="college-result-action">{isOpen?"−":"+"}</span>
       </button>
-      {isOpen?<div className="college-year-comparison">{byYear.map(group=><section className="college-year-card" key={group.year}><h3>{group.year}</h3>{group.records.length?group.records.map(x=><div className="college-round-row" key={x.id}><span>{x.rd?.round_name||"Counselling round"}</span><div><b>{x.closing_rank?"#"+fmt(x.closing_rank):"—"}</b><small>Closing rank</small></div><div><b>{x.closing_marks!=null?fmt(x.closing_marks):"—"}</b><small>Marks</small></div></div>):<p className="college-no-year">No record</p>}</section>)}</div>:null}
+      {isOpen?<div className="college-year-comparison">{byYear.length?byYear.map(group=><section className="college-year-card" key={group.year}><h3>{group.year}</h3>{group.records.map(x=><div className="college-round-row" key={x.id}><span>{x.rd?.round_name||"Counselling round"}</span><div><b>{x.closing_rank?"#"+fmt(x.closing_rank):"—"}</b><small>Closing rank</small></div><div><b>{x.closing_marks!=null?fmt(x.closing_marks):"—"}</b><small>Marks</small></div></div>)}</section>):<p className="college-no-year">No historical records are available for this college, branch and category selection.</p>}</div>:null}
      </article>;
     })}</div>:<Empty title="No close historical options">No college or branch cutoff is close to this input under the selected filters. Try a different category or preference.</Empty>}
    </section>
