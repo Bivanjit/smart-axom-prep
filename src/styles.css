@@ -1915,14 +1915,16 @@ html[data-theme=dark] .admin-calendar-note,html[data-theme=dark] .admin-calendar
 
 
 
-html,body,#root{transition:background-color 160ms cubic-bezier(.2,.75,.25,1),color 160ms cubic-bezier(.2,.75,.25,1)!important}
-.theme-toggle{isolation:isolate;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 160ms ease,transform 160ms ease!important}
-.theme-toggle.is-switching{animation:sp-theme-glow 260ms ease-out}
-@keyframes sp-theme-glow{0%{box-shadow:0 0 0 0 rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}40%{box-shadow:0 0 0 5px rgba(56,139,220,.12),0 0 16px rgba(56,139,220,.2),0 8px 22px rgba(18,38,62,.16)}100%{box-shadow:0 0 0 10px rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}}
-@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}html,body,#root,.theme-toggle{transition:none!important}.theme-toggle.is-switching{animation:none!important}}
 
-/* Lightweight theme morph: no full-page snapshots or descendant-wide transitions. */
-html,body,#root{transition:background-color 180ms cubic-bezier(.2,.75,.25,1),color 180ms cubic-bezier(.2,.75,.25,1)!important}
-.theme-toggle{position:fixed;z-index:30;right:22px;bottom:24px;width:54px;height:54px;box-shadow:0 12px 32px #071b4230;transition:opacity .24s ease,visibility .24s ease,background-color 180ms ease,color 180ms ease,border-color 180ms ease}
+/* Native View Transitions API: reveal the new theme from the toggle button. */
+@supports (view-transition-name:root){
+  html{view-transition-name:root}
+  ::view-transition-group(root){animation-duration:520ms;animation-timing-function:cubic-bezier(.22,.75,.18,1)}
+  ::view-transition-image-pair(root){isolation:isolate}
+  ::view-transition-old(root){animation:none;mix-blend-mode:normal}
+  ::view-transition-new(root){animation:sp-theme-radial-wipe 520ms cubic-bezier(.22,.75,.18,1) both;clip-path:circle(0 at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}
+  @keyframes sp-theme-radial-wipe{to{clip-path:circle(var(--sp-theme-radius,150vmax) at var(--sp-theme-x,calc(100% - 48px)) var(--sp-theme-y,calc(100% - 48px)))}}
+}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}}
+.theme-toggle{position:fixed;z-index:30;right:22px;bottom:24px;width:54px;height:54px;box-shadow:0 12px 32px #071b4230;transition:opacity .24s ease,visibility .24s ease,background-color .18s ease,color .18s ease,border-color .18s ease}
 .theme-toggle-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px) scale(.92)}
-@media(prefers-reduced-motion:reduce){html,body,#root,.theme-toggle{transition:none!important}}
