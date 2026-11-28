@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import {useEffect,useState} from "react";
 import {supabase} from "./lib/supabase";
 import {ArrowRight,CalendarDays,ExternalLink,ShieldCheck} from "lucide-react";
+import "./admission-guides.css";
 
 type FAQ={q:string;a:string};
 type Guide={title:string;description:string;eyebrow:string;intro:string;sections:{title:string;body:string;items?:string[]}[];faqs:FAQ[]};
