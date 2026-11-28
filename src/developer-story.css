@@ -104,3 +104,21 @@ html[data-theme=dark] .dev-story-page .dev-story-thanks{color:#e2ebf8!important}
 html[data-theme=dark] .dev-story-page .dev-story-work-stats>div{background:linear-gradient(120deg,#19283b,#202f44)!important;border-color:#40516a!important}
 html[data-theme=dark] .dev-story-page .dev-story-work-stats span{color:#d5e3f5!important}
 html[data-theme=dark] .dev-story-page .dev-story-work-stats b{background:#25476b!important;color:#b9dcff!important}
+
+/* Final mobile contrast corrections */
+html[data-theme=light] .dev-story-page .dev-story-hero .dev-story-anon,
+html[data-theme=light] .dev-story-page .dev-story-hero .dev-story-anon p,
+html[data-theme=light] .dev-story-page .dev-story-hero .dev-story-anon b{color:#f0f6ff!important}
+html[data-theme=dark] .dev-story-page .dev-story-hero .dev-story-anon,
+html[data-theme=dark] .dev-story-page .dev-story-hero .dev-story-anon p,
+html[data-theme=dark] .dev-story-page .dev-story-hero .dev-story-anon b{color:#f0f6ff!important}
+html[data-theme=dark] .dev-story-page .dev-story-thanks{
+ background:linear-gradient(115deg,#1b3553,#292b4d)!important;
+ border:1px solid #496184!important;
+ color:#f0f5ff!important;
+}
+html[data-theme=dark] .dev-story-page .dev-story-thanks *{color:#f0f5ff!important}
+html[data-theme=light] .dev-story-page .dev-story-thanks{
+ background:linear-gradient(110deg,#e6f5ff,#f0ebff)!important;
+ color:#193c61!important;
+}
