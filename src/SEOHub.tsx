@@ -6,7 +6,7 @@ import {syllabus,syllabusNotice} from "./syllabus";
 import {supabase} from "./lib/supabase";
 import "./seo-hub.css";
 
-type Page="overview"|"pattern"|"syllabus"|"cutoff"|"strategy"|"year";
+type Page="overview"|"pattern"|"syllabus"|"cutoff"|"strategy"|"mock"|"rank"|"college"|"year";
 type FAQ={q:string;a:string};
 type Cutoff={admission_year:number;opening_rank:number|null;closing_rank:number|null;closing_marks:number|null;seat_type:string|null;quota_code:string|null;source_file:string|null;source_page:number|null;engineering_institutions:any;engineering_branches:any;admission_categories:any;counselling_rounds:any;admission_source_documents:any};
 type Paper={id:string;title:string;exam_name:string;exam_year:number;description:string|null;duration_minutes:number;total_marks:number;paper_file_path:string|null};
