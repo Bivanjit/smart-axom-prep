@@ -345,5 +345,22 @@ html[data-theme="dark"] .cx-page .cx-pyq-card{backdrop-filter:none;-webkit-backd
  html,body,#root{transition:background-color 110ms ease,color 110ms ease!important}
  .header,.cx-page,.cx-panel,.cx-pyq-card,.theme-toggle{transition:background-color 110ms ease,border-color 110ms ease,color 110ms ease!important}
 }
-::view-transition-group(root),::view-transition-image-pair(root),
-::view-transition-old(root),::view-transition-new(root){animation:none!important}
+
+
+/* Native View Transitions API: compositor-friendly circular reveal for theme changes. */
+::view-transition-group(root){animation:none!important;isolation:isolate}
+::view-transition-image-pair(root){isolation:isolate}
+::view-transition-old(root){animation:none!important;z-index:1}
+::view-transition-new(root){
+ z-index:2;
+ clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%));
+ animation:sp-theme-radial-wipe 420ms cubic-bezier(.2,.82,.22,1) both;
+ will-change:clip-path;
+}
+@keyframes sp-theme-radial-wipe{
+ from{clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
+ to{clip-path:circle(var(--sp-theme-radius,150vmax) at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
+}
+@media(prefers-reduced-motion:reduce){
+ ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
+}
