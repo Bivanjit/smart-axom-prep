@@ -2032,3 +2032,20 @@ body .pyq-intro .pyq-access-badge span,
 body .pyq-intro .pyq-stat span{color:#dce9f8!important}
 body .pyq-intro .pyq-stat strong{color:#ffffff!important;font-weight:900!important}
 body .pyq-intro .pyq-access-copy>b{color:#ffffff!important;font-weight:800!important}
+
+/* PYQ archive navy hero: hard-set accessible light text regardless of theme */
+main.container.page .pyq-intro h2,
+main.container.page .pyq-intro h2 *,
+main.container.page .pyq-intro .pyq-access-badge,
+main.container.page .pyq-intro .pyq-access-badge *,
+main.container.page .pyq-intro .pyq-access-copy,
+main.container.page .pyq-intro .pyq-access-copy *,
+main.container.page .pyq-intro .pyq-stat,
+main.container.page .pyq-intro .pyq-stat *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+main.container.page .pyq-intro>div>p,
+main.container.page .pyq-intro .pyq-access-copy p,
+main.container.page .pyq-intro .pyq-access-badge span,
+main.container.page .pyq-intro .pyq-stat span{color:#e1edfb!important;-webkit-text-fill-color:#e1edfb!important}
+main.container.page .pyq-intro .pyq-stat strong{color:#fff!important;-webkit-text-fill-color:#fff!important;font-weight:900!important}
+main.container.page .pyq-intro .pyq-access-card{margin-left:auto!important;margin-right:auto!important;width:100%!important;max-width:560px!important}
+main.container.page .pyq-intro .pyq-access-badge{margin-left:auto!important;margin-right:auto!important}
