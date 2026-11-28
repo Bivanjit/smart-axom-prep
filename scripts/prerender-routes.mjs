@@ -443,4 +443,23 @@ for(const path of ["/admin","/admin/login","/admin/intelligence"]){
  await mkdir(dirname(target),{recursive:true});
  await writeFile(target,html,"utf8");
 }
+// Generate sitemap.xml from the same source of truth as the prerendered public pages.
+// Keep the homepage in the sitemap and update lastmod on each successful build.
+const buildDate = new Date().toISOString().slice(0, 10);
+const sitemapPaths = ["/", ...routes.map(([path]) => path)];
+const sitemapEntries = sitemapPaths.map((path) => {
+  const loc = origin + path;
+  const priority = path === "/" ? "1.0" : path.startsWith("/assam-cee-") ? "0.9" : "0.7";
+  const changefreq = path === "/" ? "daily" : "weekly";
+  return `  <url><loc>${loc}</loc><lastmod>${buildDate}</lastmod><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+});
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...sitemapEntries,
+  '</urlset>',
+  ""
+].join("\\n");
+await writeFile("dist/sitemap.xml", sitemap, "utf8");
+
 console.log(`Generated ${routes.length} public route metadata documents and 3 noindex admin documents.`);
