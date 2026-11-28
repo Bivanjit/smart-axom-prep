@@ -2049,3 +2049,33 @@ main.container.page .pyq-intro .pyq-stat span{color:#e1edfb!important;-webkit-te
 main.container.page .pyq-intro .pyq-stat strong{color:#fff!important;-webkit-text-fill-color:#fff!important;font-weight:900!important}
 main.container.page .pyq-intro .pyq-access-card{margin-left:auto!important;margin-right:auto!important;width:100%!important;max-width:560px!important}
 main.container.page .pyq-intro .pyq-access-badge{margin-left:auto!important;margin-right:auto!important}
+
+
+/* Contrast fixes: review summary and Assam CEE institute guide */
+html[data-theme="dark"] .reviews-score{
+  background:#1b2838!important;border-color:#3a4b60!important;color:#f2f6fb!important;
+}
+html[data-theme="dark"] .reviews-score strong,
+html[data-theme="dark"] .reviews-score small{
+  color:#f2f6fb!important;-webkit-text-fill-color:#f2f6fb!important;
+}
+html[data-theme="dark"] .reviews-score small{color:#c5d1df!important;-webkit-text-fill-color:#c5d1df!important}
+html[data-theme="light"] .reviews-score{
+  background:#fff!important;border-color:#d8e1ec!important;color:#14243b!important;
+}
+html[data-theme="light"] .reviews-score strong{color:#14243b!important;-webkit-text-fill-color:#14243b!important}
+html[data-theme="light"] .reviews-score small{color:#53647a!important;-webkit-text-fill-color:#53647a!important}
+html[data-theme="dark"] .guide-grid section h2,
+html[data-theme="dark"] .guide-grid section p,
+html[data-theme="dark"] .guide-grid section ul,
+html[data-theme="dark"] .guide-grid section li,
+html[data-theme="dark"] .guide-grid section .tiny{
+  color:#e7edf5!important;-webkit-text-fill-color:#e7edf5!important;opacity:1!important;
+}
+html[data-theme="light"] .guide-grid section h2,
+html[data-theme="light"] .guide-grid section p,
+html[data-theme="light"] .guide-grid section ul,
+html[data-theme="light"] .guide-grid section li{
+  color:#17243a!important;-webkit-text-fill-color:#17243a!important;opacity:1!important;
+}
+html[data-theme="light"] .guide-grid section .tiny{color:#53647a!important;-webkit-text-fill-color:#53647a!important}
