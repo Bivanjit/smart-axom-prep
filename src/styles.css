@@ -1882,12 +1882,6 @@ html[data-theme="dark"] .about-proof-item strong{color:#fff!important;-webkit-te
 html[data-theme="light"] .about-proof-item small,
 html[data-theme="dark"] .about-proof-item small{color:#c8d9ed!important;-webkit-text-fill-color:#c8d9ed!important}
 
-/* Theme transition and non-obstructive floating appearance control */
-/* Avoid animating every descendant during theme changes; this is costly on data-heavy pages. */
-html,body,#root{transition:background-color 140ms ease-out,color 140ms ease-out}
-body{transition:background-color 140ms ease-out,color 140ms ease-out}
-.theme-toggle{position:fixed;z-index:30;right:22px;bottom:24px;width:54px;height:54px;box-shadow:0 12px 32px #071b4230;transition:opacity .24s ease,transform .3s ease,visibility .24s ease,background-color .28s,color .28s}
-.theme-toggle-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px) scale(.92)}
 .admin-nav-search{display:flex;align-items:center;gap:9px;margin:16px 4px 0;padding:10px 11px;border:1px solid #294267;border-radius:10px;background:#0b2851;color:#9eb4d1}
 .admin-nav-search input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:#fff;font:12px Inter}
 .admin-nav-search input::placeholder{color:#91a8c6}
@@ -1919,26 +1913,16 @@ html[data-theme=dark] .admin-calendar-editor input,html[data-theme=dark] .admin-
 html[data-theme=dark] .admin-calendar-note,html[data-theme=dark] .admin-calendar-empty{background:#1b3553!important;color:#d6e6fa!important}
 
 
-/* Fast, low-jank theme switching: animate only paint properties, never layout. */
-html,body,#root{transition:background-color 140ms ease-out,color 140ms ease-out!important}
-body{transition:background-color 140ms ease-out,color 140ms ease-out!important}
-.theme-toggle{transition:background-color 140ms ease-out,color 140ms ease-out,border-color 140ms ease-out,transform 160ms ease-out,opacity 140ms ease-out!important}
-@media(prefers-reduced-motion:reduce){html,body,#root,.theme-toggle{transition:none!important}}
 
 
-/* Fast, low-cost ambient theme morph: opacity-only snapshots avoid mobile GPU blur jank. */
-::view-transition-group(root){animation-duration:190ms;animation-timing-function:cubic-bezier(.2,.75,.25,1)}
-::view-transition-image-pair(root){isolation:isolate}
-::view-transition-old(root){animation:sp-theme-old 190ms cubic-bezier(.2,.75,.25,1) both}
-::view-transition-new(root){animation:sp-theme-new 190ms cubic-bezier(.2,.75,.25,1) both}
-@keyframes sp-theme-old{to{opacity:0}}
-@keyframes sp-theme-new{from{opacity:.82}to{opacity:1}}
 html,body,#root{transition:background-color 160ms cubic-bezier(.2,.75,.25,1),color 160ms cubic-bezier(.2,.75,.25,1)!important}
 .theme-toggle{isolation:isolate;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 160ms ease,transform 160ms ease!important}
 .theme-toggle.is-switching{animation:sp-theme-glow 260ms ease-out}
 @keyframes sp-theme-glow{0%{box-shadow:0 0 0 0 rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}40%{box-shadow:0 0 0 5px rgba(56,139,220,.12),0 0 16px rgba(56,139,220,.2),0 8px 22px rgba(18,38,62,.16)}100%{box-shadow:0 0 0 10px rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}}
 @media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}html,body,#root,.theme-toggle{transition:none!important}.theme-toggle.is-switching{animation:none!important}}
 
-
-
-
+/* Lightweight theme morph: no full-page snapshots or descendant-wide transitions. */
+html,body,#root{transition:background-color 180ms cubic-bezier(.2,.75,.25,1),color 180ms cubic-bezier(.2,.75,.25,1)!important}
+.theme-toggle{position:fixed;z-index:30;right:22px;bottom:24px;width:54px;height:54px;box-shadow:0 12px 32px #071b4230;transition:opacity .24s ease,visibility .24s ease,background-color 180ms ease,color 180ms ease,border-color 180ms ease}
+.theme-toggle-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px) scale(.92)}
+@media(prefers-reduced-motion:reduce){html,body,#root,.theme-toggle{transition:none!important}}
