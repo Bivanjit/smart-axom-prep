@@ -35,38 +35,318 @@ const routes=[
  ["/assam-cee-exam-pattern","Assam CEE Exam Pattern and Marking Scheme | SmartPrep Axom","Official 2026 Assam CEE pattern: 120 MCQs, 40 each in PCM, three hours and +4/-1 marking."],
  ["/assam-cee-syllabus","Assam CEE Syllabus: Physics, Chemistry and Mathematics | SmartPrep Axom","Browse the SmartPrep Axom PCM chapter planning index, Class 11 and 12 topics and PYQ references."],
  ["/assam-cee-cutoff","Assam CEE College Cutoff: Verified Historical Ranks | SmartPrep Axom","Explore verified Assam engineering college closing-rank records for 2023 and 2024."],
- ["/assam-cee-strategy","Assam CEE 2027 Preparation Strategy | SmartPrep Axom","A practical Assam CEE strategy with a sample three-hour PCM time split and negative-marking discipline."]
+ ["/assam-cee-strategy","Assam CEE 2027 Preparation Strategy | SmartPrep Axom","A practical Assam CEE strategy with a sample three-hour PCM time split and negative-marking discipline."],
+ ["/assam-cee-mock-test","Assam CEE 2027 Mock Test: Free Practice Guide | SmartPrep Axom","Find Assam CEE mock-test guidance, free public PYQ papers and available SmartPrep Axom app test-series options."],
+ ["/assam-cee-rank-predictor","Assam CEE 2027 Rank Predictor and Marks vs Rank | SmartPrep Axom","Explore indicative Assam CEE marks-versus-rank estimates and understand their limitations."],
+ ["/assam-cee-college-predictor","Assam CEE College Predictor: AEC, JEC and Cutoffs | SmartPrep Axom","Compare available verified historical Assam CEE college cutoff references for AEC, JEC and other institutes."],
+ ["/cee-tools","Assam CEE Workspace | SmartPrep Axom","Open SmartPrep Axom daily practice, chapter intelligence, college planning and preparation tools."],
+ ["/daily-10","Assam CEE Daily 10 Challenge | SmartPrep Axom","Attempt the published daily Assam CEE question challenge when available."],
+ ["/practice-arena","Assam CEE Practice Arena | SmartPrep Axom","Explore available Assam CEE practice entry points and the chapter catalogue."],
+ ["/my-college-path","Assam CEE My College Path | SmartPrep Axom","Organise a personal Assam engineering college and branch preference list."],
+ ["/chapter-intelligence","Assam CEE Chapter Intelligence | SmartPrep Axom","Review published chapter-wise Assam CEE historical question analytics."],
+ ["/question-finder","Assam CEE Question Finder | SmartPrep Axom","Search available Assam CEE question records by subject, chapter and year."],
+ ["/admission-navigator","Assam CEE Admission Navigator | SmartPrep Axom","Organise counselling preparation and official-source checks."],
+ ["/my-cee-journey","My Assam CEE Preparation Journey | SmartPrep Axom","Track personal Assam CEE preparation milestones in this browser."],
+ ["/my-target-card","Assam CEE Target Card Generator | SmartPrep Axom","Create a personal Assam CEE target card."],
+ ["/app/features","SmartPrep Axom Android App Features","Explore Android app learning, practice and revision features."],
+ ["/cee-outlook","Assam CEE Chapter Outlook | SmartPrep Axom","Explore available historical chapter question trends and revision priorities."]
 ];
 for(let y=2018;y<=2026;y++) routes.push(["/previous-papers/"+y,"Assam CEE "+y+" Question Paper – Free PDF Download | SmartPrep Axom","Download the published Assam CEE "+y+" question paper PDF free, without login or signup."]);
 
 const seoContent={
- "/practice":["Free Assam CEE 2027 chapter-wise practice","Explore the Physics, Chemistry and Mathematics chapter catalogue for Assam CEE preparation. SmartPrep Axom's public website resources are free to access and do not require login or signup. Browse the available chapter outlines, identify important concepts and use linked intelligence tools to review historical question trends. Expanded chapter practice, subject-wise tests and full mock tests are available in the Android app, with optional low-cost membership plans.","Start with the subject you want to strengthen, then use CEE Chapter Outlook and PYQ Intelligence to plan revision. The chapter catalogue is a study-planning aid; verify the current official syllabus when ASTU publishes the 2027 brochure."],
- "/previous-papers":["Assam CEE previous year question papers and free PYQ archive","Browse Assam CEE previous-year papers published in the SmartPrep Axom archive. Select an examination year and download the available paper directly. The public website archive is free to access: no login, no signup and no account creation are required.","Use previous-year papers to become familiar with question styles, subject balance and time management. Paper availability depends on what has been uploaded and published in the archive; this page does not claim that every year or every paper is available. For extra chapter practice, subject-wise tests and full-length mock tests, explore the SmartPrep Axom Android app. Optional paid app features are offered through low-cost plans; check the app for current prices and access details."],
- "/test-series":["Assam CEE 2027 mock test and test-series information","Understand the Assam CEE paper format and explore the SmartPrep Axom mock-test pathway. The public website provides preparation information and reference tools without login or signup. Full-length mock tests, subject-wise tests and expanded chapter practice are available in the Android app according to the published app plan.","Use the official ASTU brochure as the final authority for the 2027 examination pattern. Historical exam format information is labelled by year and should not be treated as a confirmed 2027 notification."],
- "/exam-guide":["Assam CEE 2027 exam guide, syllabus, preparation and admission references","This independent Assam CEE guide brings together exam-pattern references, syllabus navigation, previous-year question resources, chapter intelligence and admission-planning links for students in Assam. SmartPrep Axom's public website resources are free to explore without login or signup.","Check the latest ASTU notification for exam dates, eligibility, application details, admit cards, syllabus and marking rules. For admission and counselling, verify current DTE Assam notices, seat matrix and category rules. Historical cutoffs and rank estimates are planning references, not guarantees of allotment."],
- "/analytics/pyq-analysis":["Assam CEE chapter-wise PYQ analysis and question trends","Explore published Assam CEE previous-year question analysis by subject and chapter. Review question frequency, recurrence, difficulty labels and weightage where records are available. Use these trends to prioritise revision while continuing to cover the complete syllabus.","The analysis reflects the dataset currently published by SmartPrep Axom. Historical frequency is not a promise that a chapter will appear in the next examination. Website intelligence tools are free to access without login or signup."],
- "/analytics/cee-2027-predictions":["Assam CEE 2027 chapter priority and preparation outlook","Use historical Assam CEE question trends to build a practical revision outlook for Physics, Chemistry and Mathematics. Chapter priority signals help organise study time; they are not guaranteed predictions of the 2027 question paper.","Review underlying PYQ analysis, compare chapter recurrence and complete the full syllabus. SmartPrep Axom's public intelligence resources are free to use without login or signup."],
- "/predictor/rank":["Assam CEE marks and rank predictor reference","Explore an indicative Assam CEE rank estimate using historical references and assumptions displayed by the predictor. Results are planning estimates only: actual rank depends on the official examination, candidate performance and merit list.","Use the result alongside official ASTU merit information and current DTE Assam counselling notices. SmartPrep Axom provides public website tools without login or signup; no predictor can guarantee a rank or admission."],
- "/predictor/college":["Assam CEE college predictor and historical cutoff explorer","Compare your expected Assam CEE rank with published historical college and branch closing-rank references. Use results to prepare a preference shortlist, then confirm current seat availability, category rules and counselling rounds through official DTE Assam notices.","Historical cutoffs are not current vacancies and cannot guarantee allotment. SmartPrep Axom's public website predictors and reference tools are free to explore without login or signup."],
- "/analytics":["Assam CEE intelligence: PYQ trends, chapter weightage and admission references","Explore SmartPrep Axom's Assam CEE intelligence tools for chapter-wise previous-year question trends, exam difficulty references, chapter outlook, rank estimates and college cutoff comparisons. Public website tools are free to access without login or signup.","Use historical data as a revision and planning aid, not as a guarantee of future questions or admission. Confirm examination rules and counselling details through ASTU and DTE Assam."],
- "/cee-outlook":["Assam CEE chapter outlook: PYQ frequency and weightage","Review published chapter-level PYQ counts, average yearly frequency, recurrence and weightage for Physics, Chemistry and Mathematics. The outlook helps students plan revision using historical evidence while keeping full syllabus coverage in view.","Priority labels are study-planning signals, not guaranteed 2027 question counts. SmartPrep Axom's public website intelligence tools are free to use without login or signup."]
-,
- "/assam-cee-2027":["Assam CEE 2027 complete guide","Assam CEE is conducted by ASTU for B.Tech admission in Assam. The official 2026 brochure confirms a three-hour, 120-question paper with 40 questions each in Mathematics, Physics and Chemistry. Correct answers carried four marks and incorrect answers lost one mark.","As of 27 November 2026, 2027 application and examination dates are awaiting official ASTU notification. Check ASTU notices for confirmed dates, eligibility, syllabus and final rules."],
- "/assam-cee-exam-pattern":["Assam CEE exam pattern and marking scheme","The official ASTU CEE 2026 brochure specifies one paper of 120 MCQs and three hours. Mathematics, Physics and Chemistry each had 40 questions, for 480 marks in total.","The 2026 marking scheme was +4 for a correct answer and −1 for an incorrect answer. These are historical rules, not a guarantee of the 2027 format."],
- "/assam-cee-syllabus":["Assam CEE syllabus chapter index for Physics, Chemistry and Mathematics","Browse the SmartPrep Axom Class 11 and 12 PCM planning catalogue. It is a study-navigation aid, not an official 2027 syllabus.","The official CEE 2026 brochure states that the exam followed the ASSEB Division II (Higher Secondary Division) syllabus. Confirm current chapter coverage with the 2027 ASTU brochure."],
- "/assam-cee-cutoff":["Assam CEE college cutoff: verified historical admission data","The SmartPrep Axom database currently contains 695 source-verified cutoff rows: 375 for 2023 and 320 for 2024. The verified public dataset does not yet cover all years from 2017 to 2026.","Records are organised by college, branch, category, counselling round and seat type. Historical closing ranks are not guarantees of future admission."],
- "/assam-cee-strategy":["Assam CEE 2027 preparation strategy and time management","Use the official 2026 three-hour, 120-question paper as a historical timed-practice framework. One possible practice allocation is 45 minutes Chemistry, 55 minutes Physics, 70 minutes Mathematics and 10 minutes review.","This is a suggested training split, not an official exam rule. Adjust it using your own timed-test accuracy and speed."],
- "/previous-papers/2026":["Assam CEE 2026 question paper PDF download","Download the Assam CEE 2026 question paper PDF from the SmartPrep Axom public archive. The published paper is a free PDF with no login or signup. The paper follows the 2026 format: 120 multiple-choice questions across Physics, Chemistry and Mathematics, with 40 questions per subject, a three-hour duration and 480 maximum marks.","Use the original PDF to practise the paper under timed conditions. The 2026 marking scheme was +4 for a correct answer, −1 for an incorrect answer and 0 for an unattempted question. This page provides the published PDF; it does not claim to provide interactive question-by-question solutions."]
+  "/practice": [
+    "Free Assam CEE 2027 chapter-wise practice",
+    "Explore the Physics, Chemistry and Mathematics chapter catalogue for Assam CEE preparation. SmartPrep Axom's public website resources are free to access and do not require login or signup. Browse the available chapter outlines, identify important concepts and use linked intelligence tools to review historical question trends. Expanded chapter practice, subject-wise tests and full mock tests are available in the Android app, with optional low-cost membership plans.",
+    "Start with the subject you want to strengthen, then use CEE Chapter Outlook and PYQ Intelligence to plan revision. The chapter catalogue is a study-planning aid; verify the current official syllabus when ASTU publishes the 2027 brochure."
+  ],
+  "/previous-papers": [
+    "Assam CEE previous year question papers and free PYQ archive",
+    "Browse Assam CEE previous-year papers published in the SmartPrep Axom archive. Select an examination year and download the available paper directly. The public website archive is free to access: no login, no signup and no account creation are required.",
+    "Use previous-year papers to become familiar with question styles, subject balance and time management. Paper availability depends on what has been uploaded and published in the archive; this page does not claim that every year or every paper is available. For extra chapter practice, subject-wise tests and full-length mock tests, explore the SmartPrep Axom Android app. Optional paid app features are offered through low-cost plans; check the app for current prices and access details."
+  ],
+  "/test-series": [
+    "Assam CEE 2027 mock test and test-series information",
+    "Understand the Assam CEE paper format and explore the SmartPrep Axom mock-test pathway. The public website provides preparation information and reference tools without login or signup. Full-length mock tests, subject-wise tests and expanded chapter practice are available in the Android app according to the published app plan.",
+    "Use the official ASTU brochure as the final authority for the 2027 examination pattern. Historical exam format information is labelled by year and should not be treated as a confirmed 2027 notification."
+  ],
+  "/exam-guide": [
+    "Assam CEE 2027 exam guide, syllabus, preparation and admission references",
+    "This independent Assam CEE guide brings together exam-pattern references, syllabus navigation, previous-year question resources, chapter intelligence and admission-planning links for students in Assam. SmartPrep Axom's public website resources are free to explore without login or signup.",
+    "Check the latest ASTU notification for exam dates, eligibility, application details, admit cards, syllabus and marking rules. For admission and counselling, verify current DTE Assam notices, seat matrix and category rules. Historical cutoffs and rank estimates are planning references, not guarantees of allotment."
+  ],
+  "/analytics/pyq-analysis": [
+    "Assam CEE chapter-wise PYQ analysis and question trends",
+    "Explore published Assam CEE previous-year question analysis by subject and chapter. Review question frequency, recurrence, difficulty labels and weightage where records are available. Use these trends to prioritise revision while continuing to cover the complete syllabus.",
+    "The analysis reflects the dataset currently published by SmartPrep Axom. Historical frequency is not a promise that a chapter will appear in the next examination. Website intelligence tools are free to access without login or signup."
+  ],
+  "/analytics/cee-2027-predictions": [
+    "Assam CEE 2027 chapter priority and preparation outlook",
+    "Use historical Assam CEE question trends to build a practical revision outlook for Physics, Chemistry and Mathematics. Chapter priority signals help organise study time; they are not guaranteed predictions of the 2027 question paper.",
+    "Review underlying PYQ analysis, compare chapter recurrence and complete the full syllabus. SmartPrep Axom's public intelligence resources are free to use without login or signup."
+  ],
+  "/predictor/rank": [
+    "Assam CEE marks and rank predictor reference",
+    "Explore an indicative Assam CEE rank estimate using historical references and assumptions displayed by the predictor. Results are planning estimates only: actual rank depends on the official examination, candidate performance and merit list.",
+    "Use the result alongside official ASTU merit information and current DTE Assam counselling notices. SmartPrep Axom provides public website tools without login or signup; no predictor can guarantee a rank or admission."
+  ],
+  "/predictor/college": [
+    "Assam CEE college predictor and historical cutoff explorer",
+    "Compare your expected Assam CEE rank with published historical college and branch closing-rank references. Use results to prepare a preference shortlist, then confirm current seat availability, category rules and counselling rounds through official DTE Assam notices.",
+    "Historical cutoffs are not current vacancies and cannot guarantee allotment. SmartPrep Axom's public website predictors and reference tools are free to explore without login or signup."
+  ],
+  "/analytics": [
+    "Assam CEE intelligence: PYQ trends, chapter weightage and admission references",
+    "Explore SmartPrep Axom's Assam CEE intelligence tools for chapter-wise previous-year question trends, exam difficulty references, chapter outlook, rank estimates and college cutoff comparisons. Public website tools are free to access without login or signup.",
+    "Use historical data as a revision and planning aid, not as a guarantee of future questions or admission. Confirm examination rules and counselling details through ASTU and DTE Assam."
+  ],
+  "/cee-outlook": [
+    "Assam CEE chapter outlook: PYQ frequency and weightage",
+    "Review published chapter-level PYQ counts, average yearly frequency, recurrence and weightage for Physics, Chemistry and Mathematics. The outlook helps students plan revision using historical evidence while keeping full syllabus coverage in view.",
+    "Priority labels are study-planning signals, not guaranteed 2027 question counts. SmartPrep Axom's public website intelligence tools are free to use without login or signup."
+  ],
+  "/assam-cee-2027": [
+    "Assam CEE 2027 complete guide",
+    "Assam CEE is conducted by ASTU for B.Tech admission in Assam. The official 2026 brochure confirms a three-hour, 120-question paper with 40 questions each in Mathematics, Physics and Chemistry. Correct answers carried four marks and incorrect answers lost one mark.",
+    "As of 27 November 2026, 2027 application and examination dates are awaiting official ASTU notification. Check ASTU notices for confirmed dates, eligibility, syllabus and final rules."
+  ],
+  "/assam-cee-exam-pattern": [
+    "Assam CEE exam pattern and marking scheme",
+    "The official ASTU CEE 2026 brochure specifies one paper of 120 MCQs and three hours. Mathematics, Physics and Chemistry each had 40 questions, for 480 marks in total.",
+    "The 2026 marking scheme was +4 for a correct answer and −1 for an incorrect answer. These are historical rules, not a guarantee of the 2027 format."
+  ],
+  "/assam-cee-syllabus": [
+    "Assam CEE syllabus chapter index for Physics, Chemistry and Mathematics",
+    "Browse the SmartPrep Axom Class 11 and 12 PCM planning catalogue. It is a study-navigation aid, not an official 2027 syllabus.",
+    "The official CEE 2026 brochure states that the exam followed the ASSEB Division II (Higher Secondary Division) syllabus. Confirm current chapter coverage with the 2027 ASTU brochure."
+  ],
+  "/assam-cee-cutoff": [
+    "Assam CEE college cutoff: verified historical admission data",
+    "The SmartPrep Axom database currently contains 695 source-verified cutoff rows: 375 for 2023 and 320 for 2024. The verified public dataset does not yet cover all years from 2017 to 2026.",
+    "Records are organised by college, branch, category, counselling round and seat type. Historical closing ranks are not guarantees of future admission."
+  ],
+  "/assam-cee-strategy": [
+    "Assam CEE 2027 preparation strategy and time management",
+    "Use the official 2026 three-hour, 120-question paper as a historical timed-practice framework. One possible practice allocation is 45 minutes Chemistry, 55 minutes Physics, 70 minutes Mathematics and 10 minutes review.",
+    "This is a suggested training split, not an official exam rule. Adjust it using your own timed-test accuracy and speed."
+  ],
+  "/previous-papers/2026": [
+    "Assam CEE 2026 question paper PDF download",
+    "Download the Assam CEE 2026 question paper PDF from the SmartPrep Axom public archive. The published paper is a free PDF with no login or signup. The paper follows the 2026 format: 120 multiple-choice questions across Physics, Chemistry and Mathematics, with 40 questions per subject, a three-hour duration and 480 maximum marks.",
+    "Use the original PDF to practise the paper under timed conditions. The 2026 marking scheme was +4 for a correct answer, −1 for an incorrect answer and 0 for an unattempted question. This page provides the published PDF; it does not claim to provide interactive question-by-question solutions."
+  ],
+  "/assam-cee-mock-test": [
+    "Free Assam CEE 2027 mock-test guide and practice options",
+    "Use the SmartPrep Axom public website to read the verified exam-format guide, browse published Assam CEE previous-year papers and explore preparation resources without login or signup. The public website does not claim that a full interactive mock-test engine is available here.",
+    "Full-length mock tests, subject-wise tests and expanded practice are offered through the Android app according to the current plan. Check the app for current price, validity and inclusions. Confirm the 2027 exam pattern with the latest ASTU brochure."
+  ],
+  "/assam-cee-rank-predictor": [
+    "Assam CEE 2027 rank predictor and marks-versus-rank reference",
+    "Explore an indicative Assam CEE marks-to-rank estimate using the assumptions and historical references displayed by the SmartPrep Axom predictor. The output is a planning estimate, not an official merit position.",
+    "Actual rank depends on the current paper, candidate score distribution, tie-break rules and the official ASTU merit list. Use the estimate as a rough guide only and verify results through official notices."
+  ],
+  "/assam-cee-college-predictor": [
+    "Assam CEE college predictor for AEC, JEC and other engineering colleges",
+    "Compare available verified historical Assam CEE college cutoff records by institution, branch, category and counselling round. The current verified reference release covers 2023 and 2024 records; it is not a live seat matrix.",
+    "Historical closing ranks do not guarantee future allotment. Confirm current DTE Assam seat availability, eligibility, category rules and counselling schedules before preparing a preference list."
+  ],
+  "/about": [
+    "Built by a student, for every Assam CEE aspirant",
+    "SmartPrep Axom began as a student-built project with a simple goal: make useful Assam CEE preparation resources easier to find without clutter or forced website signup. The public website brings together exam guides, published PYQ downloads and reference tools for Physics, Chemistry and Mathematics.",
+    "The project is being developed for students across Assam, including those using slower mobile connections. English and Assamese learning support is available where the relevant content has been prepared. Public website resources are free; optional app plans and current inclusions are described in the app before activation."
+  ],
+  "/faq": [
+    "SmartPrep Axom FAQ: free Assam CEE resources, PYQs and predictors",
+    "Find clear answers about free public website access, Assam CEE previous-year papers, Assamese learning support, rank estimates, college cutoffs and optional Android app plans.",
+    "SmartPrep Axom is an independent educational preparation project. Verify examination details with ASTU and counselling information with DTE Assam."
+  ]
 };
 const faqData={
- "/previous-papers":[["Can I access the Assam CEE PYQ archive without login?","Yes. Public SmartPrep Axom website resources, including published PYQ archive entries, can be accessed without login or signup."],["Can I download a previous-year paper?","Yes. Where a paper is published and a downloadable file is available, use its download link on the archive page."],["Are all Assam CEE years available?","Only papers currently published in the archive are shown. Availability depends on uploaded and published records."],["Are mock tests and chapter practice free on the website?","The website's public resources are free. Expanded chapter practice, subject-wise tests and full mock tests are available in the Android app, with optional low-cost paid plans."]],
- "/exam-guide":[["Where should I check the Assam CEE exam date?","Check the latest official ASTU notification for confirmed dates and application updates."],["Where can I find Assam CEE previous-year papers?","Browse the SmartPrep Axom PYQ archive for papers currently published and available to download."],["Does SmartPrep Axom require website signup?","No. Public resources on the SmartPrep Axom website are accessible without login or signup."],["Are rank and college predictions guaranteed?","No. Predictors use historical references and are indicative only. Confirm admissions through official counselling notices."]],
- "/assam-cee-2027":[["Has Assam CEE 2027 been officially announced?","The 2027 examination schedule and detailed rules have not been confirmed in the official ASTU material checked for this guide. Check ASTU notices for the next announcement."],["What was the Assam CEE exam pattern in 2026?","The official 2026 brochure specifies one three-hour paper with 120 MCQs: 40 Mathematics, 40 Physics and 40 Chemistry. Correct answers carry four marks and wrong answers lose one mark."]],
- "/assam-cee-exam-pattern":[["How many questions were in Assam CEE 2026?","The official CEE 2026 brochure specifies 120 multiple-choice questions in one three-hour paper."],["Is the same pattern confirmed for Assam CEE 2027?","No 2027 pattern should be treated as final until ASTU publishes the 2027 information brochure."]],
- "/assam-cee-syllabus":[["Which syllabus did Assam CEE 2026 follow?","The official CEE 2026 brochure states that the examination followed the ASSEB Division II (Higher Secondary Division) syllabus."],["Is this the official Assam CEE 2027 syllabus?","No. It is a SmartPrep Axom planning catalogue. Confirm the 2027 official syllabus with ASTU and ASSEB."]],
- "/assam-cee-cutoff":[["Which years are covered by verified cutoff data?","The current verified dataset contains 375 records for 2023 and 320 records for 2024."],["Does a previous closing rank guarantee admission next year?","No. Cutoffs vary with seat intake, preferences, category, quota, counselling round and merit position."]],
- "/assam-cee-strategy":[["How should I divide three hours between PCM?","One possible practice split is 45 minutes Chemistry, 55 minutes Physics, 70 minutes Mathematics and 10 minutes for review."],["Should I skip chapters with fewer PYQs?","No. Historical frequency can guide revision order, but it cannot guarantee future questions."]],
- "/previous-papers/2026":[["Can I download the Assam CEE 2026 question paper PDF for free?","Yes. The published Assam CEE 2026 question paper PDF is available free from the SmartPrep Axom public archive without login or signup."],["What is the Assam CEE 2026 question paper pattern?","The 2026 paper has 120 MCQs: 40 each in Physics, Chemistry and Mathematics, with a three-hour duration and 480 maximum marks."],["Does this PDF include interactive question-by-question solutions?","The archive provides the published PDF. Interactive question-by-question records are not currently linked to this paper in the public question bank."]]
+  "/previous-papers": [
+    [
+      "Can I access the Assam CEE PYQ archive without login?",
+      "Yes. Public SmartPrep Axom website resources, including published PYQ archive entries, can be accessed without login or signup."
+    ],
+    [
+      "Can I download a previous-year paper?",
+      "Yes. Where a paper is published and a downloadable file is available, use its download link on the archive page."
+    ],
+    [
+      "Are all Assam CEE years available?",
+      "Only papers currently published in the archive are shown. Availability depends on uploaded and published records."
+    ],
+    [
+      "Are mock tests and chapter practice free on the website?",
+      "The website's public resources are free. Expanded chapter practice, subject-wise tests and full mock tests are available in the Android app, with optional low-cost paid plans."
+    ]
+  ],
+  "/exam-guide": [
+    [
+      "Where should I check the Assam CEE exam date?",
+      "Check the latest official ASTU notification for confirmed dates and application updates."
+    ],
+    [
+      "Where can I find Assam CEE previous-year papers?",
+      "Browse the SmartPrep Axom PYQ archive for papers currently published and available to download."
+    ],
+    [
+      "Does SmartPrep Axom require website signup?",
+      "No. Public resources on the SmartPrep Axom website are accessible without login or signup."
+    ],
+    [
+      "Are rank and college predictions guaranteed?",
+      "No. Predictors use historical references and are indicative only. Confirm admissions through official counselling notices."
+    ]
+  ],
+  "/assam-cee-2027": [
+    [
+      "Has Assam CEE 2027 been officially announced?",
+      "The 2027 examination schedule and detailed rules have not been confirmed in the official ASTU material checked for this guide. Check ASTU notices for the next announcement."
+    ],
+    [
+      "What was the Assam CEE exam pattern in 2026?",
+      "The official 2026 brochure specifies one three-hour paper with 120 MCQs: 40 Mathematics, 40 Physics and 40 Chemistry. Correct answers carry four marks and wrong answers lose one mark."
+    ]
+  ],
+  "/assam-cee-exam-pattern": [
+    [
+      "How many questions were in Assam CEE 2026?",
+      "The official CEE 2026 brochure specifies 120 multiple-choice questions in one three-hour paper."
+    ],
+    [
+      "Is the same pattern confirmed for Assam CEE 2027?",
+      "No 2027 pattern should be treated as final until ASTU publishes the 2027 information brochure."
+    ]
+  ],
+  "/assam-cee-syllabus": [
+    [
+      "Which syllabus did Assam CEE 2026 follow?",
+      "The official CEE 2026 brochure states that the examination followed the ASSEB Division II (Higher Secondary Division) syllabus."
+    ],
+    [
+      "Is this the official Assam CEE 2027 syllabus?",
+      "No. It is a SmartPrep Axom planning catalogue. Confirm the 2027 official syllabus with ASTU and ASSEB."
+    ]
+  ],
+  "/assam-cee-cutoff": [
+    [
+      "Which years are covered by verified cutoff data?",
+      "The current verified dataset contains 375 records for 2023 and 320 records for 2024."
+    ],
+    [
+      "Does a previous closing rank guarantee admission next year?",
+      "No. Cutoffs vary with seat intake, preferences, category, quota, counselling round and merit position."
+    ]
+  ],
+  "/assam-cee-strategy": [
+    [
+      "How should I divide three hours between PCM?",
+      "One possible practice split is 45 minutes Chemistry, 55 minutes Physics, 70 minutes Mathematics and 10 minutes for review."
+    ],
+    [
+      "Should I skip chapters with fewer PYQs?",
+      "No. Historical frequency can guide revision order, but it cannot guarantee future questions."
+    ]
+  ],
+  "/previous-papers/2026": [
+    [
+      "Can I download the Assam CEE 2026 question paper PDF for free?",
+      "Yes. The published Assam CEE 2026 question paper PDF is available free from the SmartPrep Axom public archive without login or signup."
+    ],
+    [
+      "What is the Assam CEE 2026 question paper pattern?",
+      "The 2026 paper has 120 MCQs: 40 each in Physics, Chemistry and Mathematics, with a three-hour duration and 480 maximum marks."
+    ],
+    [
+      "Does this PDF include interactive question-by-question solutions?",
+      "The archive provides the published PDF. Interactive question-by-question records are not currently linked to this paper in the public question bank."
+    ]
+  ],
+  "/faq": [
+    [
+      "Is SmartPrep Axom free for Assam CEE 2027 preparation?",
+      "Public guides, published PYQ downloads and website reference tools are free to access. Some expanded practice and mock-test features are offered through optional Android app plans; check the app for current prices and inclusions."
+    ],
+    [
+      "Do I need to create an account to use the website?",
+      "No. Public website pages and published resources can be opened without login or signup. Account-based progress and membership features in the Android app may require sign-in."
+    ],
+    [
+      "Can I practise Assam CEE previous-year question papers without login?",
+      "Yes. Published free-access papers in the SmartPrep Axom PYQ archive can be downloaded without creating an account. Only papers currently published in the archive are shown."
+    ],
+    [
+      "Does SmartPrep Axom support Assamese?",
+      "The platform supports English and Assamese learning content where available. Language availability can vary by page, question and app feature."
+    ],
+    [
+      "Does the Assam CEE rank or college predictor guarantee admission?",
+      "No. Rank estimates and college comparisons are indicative tools based on historical data and assumptions. Always verify current merit lists, seat matrices, eligibility and counselling rules through ASTU and DTE Assam."
+    ]
+  ],
+  "/assam-cee-mock-test": [
+    [
+      "Can I take a full Assam CEE mock test directly on the website?",
+      "The public website provides exam guides, published PYQ PDFs and reference tools. Full-length mock tests and expanded test-series access are offered through the Android app according to the current plan."
+    ],
+    [
+      "Can I practise Assam CEE questions without login?",
+      "Yes. Public guides and published PYQ downloads are available without login or signup."
+    ],
+    [
+      "What is the Assam CEE 2026 paper format?",
+      "The official 2026 brochure specifies 120 MCQs, 40 each in Mathematics, Physics and Chemistry, a three-hour duration and +4/−1 marking. Confirm the 2027 format with ASTU."
+    ]
+  ],
+  "/assam-cee-rank-predictor": [
+    [
+      "How accurate is the Assam CEE 2027 rank predictor?",
+      "It is an indicative planning estimate, not an official rank. Historical references may not represent every candidate or tie-break rule."
+    ],
+    [
+      "Does the predictor guarantee my Assam CEE rank?",
+      "No. Only the official ASTU merit list establishes a candidate's rank."
+    ],
+    [
+      "Can expected marks be converted into a guaranteed rank?",
+      "No. Marks-to-rank relationships vary with paper difficulty, candidate performance and merit distribution."
+    ]
+  ],
+  "/assam-cee-college-predictor": [
+    [
+      "Can I check AEC and JEC Assam CEE cutoffs?",
+      "The college tools compare available verified historical cutoff records by institution, branch, category and round. Coverage currently includes verified 2023 and 2024 records."
+    ],
+    [
+      "Does a previous AEC or JEC closing rank guarantee admission?",
+      "No. Historical closing ranks are not current vacancies or allotment guarantees."
+    ],
+    [
+      "Where can I verify current Assam CEE counselling rules?",
+      "Use the latest DTE Assam counselling notice, official seat matrix and ASTU merit information before preparing a preference list."
+    ]
+  ],
+  "/about": [
+    [
+      "Who built SmartPrep Axom?",
+      "SmartPrep Axom is a student-built independent preparation project focused on Assam CEE."
+    ],
+    [
+      "Can I use public website resources without login?",
+      "Yes. Public guides, published PYQ downloads and reference pages are available without website login or signup."
+    ],
+    [
+      "Which subjects does SmartPrep Axom focus on?",
+      "The platform focuses on Physics, Chemistry and Mathematics for Assam CEE preparation."
+    ],
+    [
+      "Does SmartPrep Axom provide Assamese content?",
+      "English and Assamese learning support is available where the relevant content has been prepared; availability varies by resource."
+    ],
+    [
+      "Is SmartPrep Axom affiliated with ASTU or DTE Assam?",
+      "No. It is independent and is not operated by ASTU, DTE Assam or the Government of Assam."
+    ]
+  ]
 };
 function staticSeoBody(path,title,description){
  const custom=seoContent[path];
@@ -96,7 +376,9 @@ for(const [path,title,description] of routes){
  html=setMeta(html,'<meta\\s+property="og:url"[^>]*>',`<meta property="og:url" content="${canonical}" />`);
  html=setMeta(html,'<meta\\s+property="og:title"[^>]*>',`<meta property="og:title" content="${esc(title)}" />`);
  html=setMeta(html,'<meta\\s+property="og:description"[^>]*>',`<meta property="og:description" content="${esc(description)}" />`);
- html=html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script type="module"/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>'+"\n"+'    <script type="module"');
+ html=setMeta(html,'<meta\\s+name="twitter:title"[^>]*>',`<meta name="twitter:title" content="${esc(title)}" />`);
+ html=setMeta(html,'<meta\\s+name="twitter:description"[^>]*>',`<meta name="twitter:description" content="${esc(description)}" />`);
+ html=html.replace(/<div id="root">[\s\S]*?<\/div>/,'<div id="root">'+staticSeoBody(path,title,description)+'</div>');
  const target=join("dist",path.slice(1),"index.html");
  await mkdir(dirname(target),{recursive:true});
  await writeFile(target,html,"utf8");
