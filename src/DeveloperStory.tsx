@@ -1,4 +1,4 @@
-import {ArrowRight,Heart,LockKeyhole,Sparkles,BookOpen,Database,GraduationCap,HandHeart,Lightbulb,ShieldCheck,Target} from "lucide-react";
+import {ArrowRight,Heart,LockKeyhole,Sparkles,BookOpen,Database,GraduationCap,Lightbulb,ShieldCheck,Target} from "lucide-react";
 import {Link} from "react-router-dom";
 import "./developer-story.css";
 
