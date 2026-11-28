@@ -72,6 +72,7 @@ function Rank(){
  const {rows:institutions}=useRows("engineering_institutions","id,name");
  const {rows:branches}=useRows("engineering_branches","id,name");
  const {rows:rounds}=useRows("counselling_rounds","id,admission_year,round_name");
+ const {rows:scoreRankPoints,loading:scoreRankLoading}=useRows("cee_score_rank_points","id,exam_year,score,merit_rank,verification_status,source_document_id");
  const [estimateData,setEstimateData]=useState<CEEForecastData|null>(null),[estimateError,setEstimateError]=useState("");
  const [mode,setMode]=useState<"marks"|"rank">("marks"),[input,setInput]=useState("200"),[generated,setGenerated]=useState(false);
  useEffect(()=>{let live=true;fetch("/data/cee-rank-estimates.json").then(r=>{if(!r.ok)throw new Error("Could not load the rank reference data.");return r.json()}).then(json=>{if(live)setEstimateData(json as CEEForecastData)}).catch(e=>{if(live)setEstimateError(e instanceof Error?e.message:"Could not load rank data.")});return()=>{live=false}},[]);
