@@ -20,9 +20,12 @@ self.addEventListener("fetch",event=>{
  }
  if(/\.(?:js|css|woff2?|png|jpe?g|webp|svg|ico)$/i.test(url.pathname)){
   event.respondWith((async()=>{
-   const cache=await caches.open(CACHE_NAME);const cached=await cache.match(request);
-   const network=fetch(request).then(response=>{if(response.ok&&response.type==="basic")void cache.put(request,response.clone());return response;}).catch(()=>cached);
-   return cached||network;
+   const cache=await caches.open(CACHE_NAME);
+   try{
+    const response=await fetch(request);
+    if(response.ok&&response.type==="basic")void cache.put(request,response.clone());
+    return response;
+   }catch(error){return (await cache.match(request))||Response.error();}
   })());
  }
 });
