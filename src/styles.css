@@ -1966,3 +1966,18 @@ html[data-theme="dark"] .chapter-insights>div>span{color:#bdc9d8}
 html[data-theme="dark"] .pyq-sync-note{background:linear-gradient(135deg,#15263b,#172d49);border-color:#314a68;border-left-color:#56a5ff}
 html[data-theme="dark"] .pyq-sync-note>b{color:#eff6ff}
 html[data-theme="dark"] .pyq-sync-note p{color:#c5d6ea}
+
+/* PYQ archive hero contrast: preserve its navy surface in both themes */
+html[data-theme="light"] .pyq-intro,
+html[data-theme="light"] .pyq-intro *{color:#f4f8ff!important}
+html[data-theme="light"] .pyq-intro h2{color:#ffffff!important}
+html[data-theme="light"] .pyq-intro>div>p,
+html[data-theme="light"] .pyq-intro .pyq-access-copy p,
+html[data-theme="light"] .pyq-intro .pyq-stat span{color:#c7d6eb!important}
+html[data-theme="light"] .pyq-intro .pyq-access-card{background:rgba(255,255,255,.075)!important;border:1px solid rgba(194,218,255,.28)!important;color:#f4f8ff!important}
+html[data-theme="light"] .pyq-intro .pyq-access-badge{background:rgba(5,22,49,.48)!important;border:1px solid rgba(194,218,255,.25)!important;color:#eaf3ff!important}
+html[data-theme="light"] .pyq-intro .pyq-access-copy{background:rgba(5,22,49,.38)!important;border:1px solid rgba(194,218,255,.2)!important;color:#f4f8ff!important}
+html[data-theme="light"] .pyq-intro .pyq-access-copy>b{color:#ffffff!important}
+html[data-theme="light"] .pyq-intro .pyq-stat strong{color:#8acbff!important}
+html[data-theme="light"] .pyq-intro .pyq-access-badge span{color:#d8e7fb!important}
+html[data-theme="dark"] .pyq-intro .pyq-access-copy>b{color:#f2f6fb!important}
