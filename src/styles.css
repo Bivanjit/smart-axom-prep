@@ -1922,3 +1922,38 @@ html,body,#root{transition:background-color 140ms ease-out,color 140ms ease-out!
 body{transition:background-color 140ms ease-out,color 140ms ease-out!important}
 .theme-toggle{transition:background-color 140ms ease-out,color 140ms ease-out,border-color 140ms ease-out,transform 160ms ease-out,opacity 140ms ease-out!important}
 @media(prefers-reduced-motion:reduce){html,body,#root,.theme-toggle{transition:none!important}}
+
+
+/* Fast, low-cost ambient theme morph: opacity-only snapshots avoid mobile GPU blur jank. */
+::view-transition-group(root){animation-duration:190ms;animation-timing-function:cubic-bezier(.2,.75,.25,1)}
+::view-transition-image-pair(root){isolation:isolate}
+::view-transition-old(root){animation:sp-theme-old 190ms cubic-bezier(.2,.75,.25,1) both}
+::view-transition-new(root){animation:sp-theme-new 190ms cubic-bezier(.2,.75,.25,1) both}
+@keyframes sp-theme-old{to{opacity:0}}
+@keyframes sp-theme-new{from{opacity:.82}to{opacity:1}}
+html,body,#root{transition:background-color 160ms cubic-bezier(.2,.75,.25,1),color 160ms cubic-bezier(.2,.75,.25,1)!important}
+.theme-toggle{isolation:isolate;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,box-shadow 160ms ease,transform 160ms ease!important}
+.theme-toggle.is-switching{animation:sp-theme-glow 260ms ease-out}
+@keyframes sp-theme-glow{0%{box-shadow:0 0 0 0 rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}40%{box-shadow:0 0 0 5px rgba(56,139,220,.12),0 0 16px rgba(56,139,220,.2),0 8px 22px rgba(18,38,62,.16)}100%{box-shadow:0 0 0 10px rgba(56,139,220,0),0 8px 22px rgba(18,38,62,.18)}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}html,body,#root,.theme-toggle{transition:none!important}.theme-toggle.is-switching{animation:none!important}}
+
+
+
+
+/* Native View Transitions API: compositor-friendly circular reveal for theme changes. */
+::view-transition-group(root){animation:none!important;isolation:isolate}
+::view-transition-image-pair(root){isolation:isolate}
+::view-transition-old(root){animation:none!important;z-index:1}
+::view-transition-new(root){
+ z-index:2;
+ clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%));
+ animation:sp-theme-radial-wipe 420ms cubic-bezier(.2,.82,.22,1) both;
+ will-change:clip-path;
+}
+@keyframes sp-theme-radial-wipe{
+ from{clip-path:circle(0px at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
+ to{clip-path:circle(var(--sp-theme-radius,150vmax) at var(--sp-theme-x,50%) var(--sp-theme-y,50%))}
+}
+@media(prefers-reduced-motion:reduce){
+ ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){animation:none!important}
+}
