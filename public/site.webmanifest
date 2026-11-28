@@ -3,13 +3,52 @@
   "short_name": "SmartPrep",
   "icons": [
     {
-      "src": "/favicon.svg?v=4",
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
   "theme_color": "#01194E",
   "background_color": "#01194E",
-  "display": "standalone"
+  "display": "standalone",
+  "description": "SmartPrep Axom: Assam CEE 2027 guides, public PYQ archive and admission-planning references.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "Previous-year papers",
+      "short_name": "PYQ archive",
+      "url": "/previous-papers",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "CEE predictors",
+      "short_name": "Predictors",
+      "url": "/predictor/rank",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
