@@ -1803,3 +1803,61 @@ html[data-theme="dark"] .admission-section p,html[data-theme="dark"] .admission-
 html[data-theme="dark"] .admission-faq details,html[data-theme="dark"] .admission-related,html[data-theme="dark"] .admission-official{background:#172231;border-color:#344255}
 html[data-theme="dark"] .admission-faq summary{color:#f1f6fc}
 html[data-theme="dark"] .admission-related a,html[data-theme="dark"] .admission-official a{color:#83c4ff}
+
+
+/* Contrast repair for editorial SEO hub pages in both themes */
+.seo-hero h1{color:#fff!important}
+.seo-hub{color:#14243b}
+.seo-section h2,.seo-faq h2,.seo-section h3{color:#14243b}
+.seo-section p,.seo-bullets{color:#52657b}
+.seo-faq summary{color:#172b43}
+.seo-faq details p{color:#586b80}
+.seo-footer{background:#f1f5fa}
+.seo-footer p{color:#52657b}
+.seo-callout{background:#f1f7ff;color:#173653}
+.seo-callout b{color:#173653}
+.seo-callout p{color:#52657b}
+.seo-stat-grid>div,.seo-mark-grid>div,.seo-paper-card{background:#f5f9fe}
+.seo-stat-grid b,.seo-paper-card h2{color:#123a70}
+.seo-stat-grid span,.seo-paper-card p{color:#52657b}
+.seo-time-plan>div{background:#fff;border-color:#dce4ee}
+.seo-time-plan span{color:#52657b}
+.seo-time-plan b{color:#123a70}
+.seo-table-wrap table{background:#fff}
+.seo-table-wrap th{background:#eef3f8;color:#263c55}
+.seo-table-wrap td{color:#40536a}
+.seo-table-wrap td b{color:#172b43}
+@media(max-width:720px){.seo-hero{padding:26px 22px}.seo-section{margin:20px 0;padding:18px 0}}
+html[data-theme="dark"] .seo-hub{color:#eaf1fa}
+html[data-theme="dark"] .seo-hero{background:linear-gradient(125deg,#142e50,#183b60);color:#f4f8ff}
+html[data-theme="dark"] .seo-hero h1{color:#fff!important}
+html[data-theme="dark"] .seo-hero>p{color:#d7e4f2}
+html[data-theme="dark"] .seo-hero>div{color:#c4d4e7}
+html[data-theme="dark"] .seo-section{border-color:#344255}
+html[data-theme="dark"] .seo-section h2,html[data-theme="dark"] .seo-faq h2,html[data-theme="dark"] .seo-section h3{color:#f1f6fc}
+html[data-theme="dark"] .seo-section p,html[data-theme="dark"] .seo-bullets{color:#c2cede}
+html[data-theme="dark"] .seo-faq details{border-color:#344255}
+html[data-theme="dark"] .seo-faq summary{color:#f1f6fc}
+html[data-theme="dark"] .seo-faq details p{color:#bdc9d8}
+html[data-theme="dark"] .seo-footer{background:#1b2939;border:1px solid #344255}
+html[data-theme="dark"] .seo-footer p{color:#c2cede}
+html[data-theme="dark"] .seo-callout{background:#1d3048;border-color:#3d5a7a;color:#edf4fc}
+html[data-theme="dark"] .seo-callout b{color:#f1f6fc}
+html[data-theme="dark"] .seo-callout p{color:#c2cede}
+html[data-theme="dark"] .seo-stat-grid>div,html[data-theme="dark"] .seo-mark-grid>div,html[data-theme="dark"] .seo-paper-card{background:#1b2939;border-color:#344255}
+html[data-theme="dark"] .seo-stat-grid b,html[data-theme="dark"] .seo-paper-card h2{color:#9bd2ff}
+html[data-theme="dark"] .seo-stat-grid span,html[data-theme="dark"] .seo-paper-card p{color:#c2cede}
+html[data-theme="dark"] .seo-time-plan>div{background:#172231;border-color:#344255}
+html[data-theme="dark"] .seo-time-plan span{color:#c2cede}
+html[data-theme="dark"] .seo-time-plan b{color:#9bd2ff}
+html[data-theme="dark"] .seo-table-wrap{border-color:#344255}
+html[data-theme="dark"] .seo-table-wrap table{background:#172231}
+html[data-theme="dark"] .seo-table-wrap th{background:#243449;color:#eaf1fa;border-color:#344255}
+html[data-theme="dark"] .seo-table-wrap td{color:#c2cede;border-color:#344255}
+html[data-theme="dark"] .seo-table-wrap td b{color:#f1f6fc}
+html[data-theme="dark"] .seo-table-wrap td small{color:#aab9ca}
+html[data-theme="dark"] .seo-filter-grid label{color:#d4deea}
+html[data-theme="dark"] .seo-filter-grid select,html[data-theme="dark"] .seo-search input{background:#172231;color:#f1f6fc;border-color:#40516a}
+html[data-theme="dark"] .seo-search{border-color:#40516a;color:#bdc9d8}
+html[data-theme="dark"] .seo-link-grid a{background:#172231;border-color:#344255}
+html[data-theme="dark"] .seo-mark-grid span,html[data-theme="dark"] .seo-results-count,html[data-theme="dark"] .seo-data-note{color:#bdc9d8!important}
