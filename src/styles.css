@@ -1721,3 +1721,5 @@ html[data-theme="dark"] .mobile-drawer .drawer-top > button {
   border-color: #405674 !important;
   color: #f3f7ff !important;
 }
+
+.pwa-install-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-left:10px;padding:9px 13px;border:1px solid rgba(34,197,150,.35);border-radius:999px;background:rgba(34,197,150,.09);color:var(--text-primary,#10213b);font:700 12px/1.2 Inter,system-ui,sans-serif;white-space:nowrap;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease}.pwa-install-button:hover{background:rgba(34,197,150,.16);border-color:rgba(34,197,150,.65);transform:translateY(-1px)}.pwa-install-button:focus-visible{outline:3px solid rgba(8,123,255,.35);outline-offset:3px}@media(max-width:760px){.pwa-install-button{margin-left:auto;margin-right:8px;padding:8px 10px;font-size:11px}.nav-wrap{gap:6px}}@media(prefers-reduced-motion:reduce){.pwa-install-button{transition:none}}
