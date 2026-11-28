@@ -459,7 +459,7 @@ const sitemap = [
   ...sitemapEntries,
   '</urlset>',
   ""
-].join("\\n");
+].join("\n");
 await writeFile("dist/sitemap.xml", sitemap, "utf8");
 
 console.log(`Generated ${routes.length} public route metadata documents and 3 noindex admin documents.`);
