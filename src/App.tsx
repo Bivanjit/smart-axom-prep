@@ -4,7 +4,6 @@ import {supabase} from './lib/supabase';
 import Reviews from "./Reviews";
 import Intelligence from "./Intelligence";
 import AdminIntelligence from "./AdminIntelligence";
-import AdminCalendar from "./AdminCalendar";
 import TargetCard from "./TargetCard";
 import CEEExperience from "./CEEExperience";
 import CEEOutlook from "./CEEOutlook";
@@ -16,7 +15,7 @@ import PWAInstall from "./PWAInstall";
 import "./admin-intelligence.css";
 import "./intelligence.css";
 import {createContext,useContext,useEffect,useState} from "react";
-import {Link,NavLink,Route,Routes,useLocation,Navigate} from "react-router-dom";
+import {Link,NavLink,Route,Routes,useLocation} from "react-router-dom";
 import {ArrowRight,Download,Atom,FlaskConical,Calculator,BookOpen,ClipboardList,ChartNoAxesColumnIncreasing,Menu,X,ChevronDown,ShieldCheck,Smartphone,GraduationCap,Sun,Moon,Info,CalendarCheck,Target,Trophy} from "lucide-react";
 const subjects=[{name:"Physics",path:"/practice/physics",icon:Atom,desc:"Concept-focused question practice."},{name:"Chemistry",path:"/practice/chemistry",icon:FlaskConical,desc:"Structured revision and practice."},{name:"Mathematics",path:"/practice/mathematics",icon:Calculator,desc:"Build problem-solving confidence."}];
 const legal:Record<string,[string,string,[string,string][]]>={
